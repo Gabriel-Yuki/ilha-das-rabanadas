@@ -5,13 +5,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Cadastro</title>
+  
 </head>
+<style>
+  .grid{
+    display: grid;
+    grid-template-columns: 200px 200px;
+  }
+</style>
 
 <body>
   <!doctype html>
   <html lang="en">
-
+  <link rel="shortcut icon" href="/imgs/logo.webp" type="image/x-icon">
   <head>
     <title>Title</title>
     <!-- Required meta tags -->
@@ -25,16 +32,17 @@
 
   <body>
     <header>
-      <!-- place navbar here -->
+      </div>
     </header>
     <main>
-      <div class="container">
+    
+      <div class="row">
         <form action="insert" method="POST">
-          <div class="mb-3">
+          <div  class="col-6">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" name="nome" id="nome" class="form-control" placeholder="Seu nome" aria-describedby="helpId">
           </div>
-          <div class="mb-3">
+          <div class="col-6">
             <label for="sobrenome" class="form-label">Sobrenome</label>
             <input type="text" name="sobrenome" id="sobrenome" class="form-control" placeholder="Seu sobrenome" aria-describedby="helpId">
           </div>

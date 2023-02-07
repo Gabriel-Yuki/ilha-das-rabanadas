@@ -19,7 +19,7 @@ class Produto
 
 
         $this->dados['produtos'] = $this->produtoModel->listar(); //chamando todos os itens do db
-        $carregarView = new \Core\ConfigView("Views/Produto/listarProdutos", $this->dados);
+        $carregarView = new \Core\ConfigView("Produto/listarProdutos", $this->dados);
         $carregarView->renderizar();
     }
     public function insert()
@@ -35,14 +35,14 @@ class Produto
     }
     public function form()
     {
-        $carregarView = new \Core\ConfigView("Views/Produto/CadastrarProduto", []);
+        $carregarView = new \Core\ConfigView("Produto/CadastrarProduto", []);
         $carregarView->renderizar();
     }
     public function editar_artigo()
     {
         $id = $_GET['id'];
         $this->dados['artigo'] = $this->produtoModel->selectById($id);
-        $carregarView = new \Core\ConfigView("Views/Produto/AtualizarProduto", $this->dados);
+        $carregarView = new \Core\ConfigView("Produto/AtualizarProduto", $this->dados);
         $carregarView->renderizar();
     }
     public function update()

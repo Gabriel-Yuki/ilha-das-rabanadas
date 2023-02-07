@@ -9,5 +9,6 @@
   </div>
   <p>Esqueceu a senha?</p>
   <input class="btn btn-success" type="submit" value="Entrar" name="SendLogin">
+  <a href="/"><button class="btn btn-warning"  value="Cadastrar" name="cadastro"></a>
 
 </form>

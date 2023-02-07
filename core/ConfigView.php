@@ -15,12 +15,12 @@ class ConfigView
     }
     public function renderizar()
     {
-        if (file_exists('app/' . $this->nome . '.php')) {
+        if (file_exists('app/Views/' . $this->nome . '.php')) {
             // verifica se o arquivo existe
-            include 'app/' . $this->nome . '.php';
+            include 'app/Views/' . $this->nome . '.php';
         } else {
             echo "error ao carregar: ";
-            echo 'app/' . $this->nome . '.php';
+            echo 'app/Views/' . $this->nome . '.php';
         }
     }
 }

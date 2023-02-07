@@ -12,7 +12,7 @@
 
 <body>
 
-    <form action="insert" method="POST">
+    <form action="insert" method="POST" enctype="multipart/form-data">
         <label for="titulo">
             <p>Nome</p>
             <input type="text" name="nome" id="nome">
@@ -35,6 +35,11 @@
 
             <input type="text" name="preco" id="preco">
 
+        </label>
+        <label for="imagemProduto">
+            
+    <p>Faça um upload de uma imagem</p>
+        <input type="file" name='arquivo' multiple>
         </label>
         <input type="submit" value="cadastrar">
     </form>

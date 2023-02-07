@@ -19,7 +19,7 @@ class Produto
 
 
         $this->dados['produtos'] = $this->produtoModel->listar(); //chamando todos os itens do db
-        $carregarView = new \Core\ConfigView("Produto/listarProdutos", $this->dados);
+        $carregarView = new \Core\ConfigView("Produto/Cardapio", $this->dados);
         $carregarView->renderizar();
     }
     public function insert()

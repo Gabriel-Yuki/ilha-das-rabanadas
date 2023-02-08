@@ -1,45 +1,6 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  <title>Ilhas das rabanadas</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<style>
-#container-form{
-  
-  max-width: 780px;
-background-color: rgba(217, 180, 72, 0.3);
-}
-form{
-width: 50%
-
- 
-}
-.inputs {
-max-width: 80%
-}
-.btn{
-  width: 155px;
-  height: 40px;
-}
-#entrar{
- background-color: rgba(65, 191, 97, 0.55)
-}
-#cadastrar{
-  background-color: rgba(255, 189, 89, 0.74);
-}
-
-
-
-</style>
-</head>
-
+<?php include './vendor/includes/headerPages.php'?>
+<link rel="stylesheet" href="http://localhost/projetoIntegrador/app/Views/Login/loginStyle.css">
+<?php include './vendor/includes/headerCloser.php'?>
 <body>
   
   <main>

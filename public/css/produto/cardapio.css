@@ -1,0 +1,19 @@
+.container>div {
+
+    margin-bottom: 1.2em;
+}
+
+.card {
+    width: 18em;
+    box-shadow: 3px 5px 3px 0px #0000004a;
+    margin-bottom: 2em;
+}
+
+.card-body {
+    background-color: #ffbd5991;
+}
+
+.card-footer {
+    background-color: #ffbd5991;
+}
+

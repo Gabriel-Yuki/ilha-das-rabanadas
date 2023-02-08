@@ -29,7 +29,7 @@ class Produto
         $this->produtoModel->descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_SPECIAL_CHARS);
         $this->produtoModel->preco = filter_input(INPUT_POST, 'preco', FILTER_SANITIZE_SPECIAL_CHARS);
         $this->produtoModel->tipo = filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->produtoModel->img_prod = "";//terminar de fazer
+        $this->produtoModel->img_prod = ""; //terminar de fazer
         $this->produtoModel->insert();
         header('Location: ./index');
     }

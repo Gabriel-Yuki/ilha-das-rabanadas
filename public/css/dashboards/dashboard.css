@@ -1,0 +1,13 @@
+#logo {
+    width: 300px;
+}
+
+#return {
+    transform: rotate(180deg);
+}
+.card{
+    width: 20em;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 1px black;
+}

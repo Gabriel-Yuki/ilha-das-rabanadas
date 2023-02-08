@@ -36,8 +36,9 @@
     </header>
     <main>
     
-      <div class="row">
+    
         <form action="insert" method="POST">
+        <div class="row">
           <div  class="col-6">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" name="nome" id="nome" class="form-control" placeholder="Seu nome" aria-describedby="helpId">
@@ -80,9 +81,9 @@
             <input type="password" name="senha" id="senha" class="form-control" placeholder="Seu senha" aria-describedby="helpId">
           </div>
           <input type="submit" value="Cadastrar">
-
+          </div>
         </form>
-      </div>
+  
 
       </div>
     </main>

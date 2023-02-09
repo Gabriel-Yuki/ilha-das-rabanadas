@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<link rel="shortcut icon" href="./imgs/img-home/logo.webp" type="image/x-icon">
+<link rel="shortcut icon" href="./public/imgs/img/logo-dashboards.webp" type="image/x-icon">
 </head>
 <style>
     *{
@@ -34,12 +34,12 @@
     #btn{
   align-items: center; 
   text-align: center;
-  background-color: rgba(65, 191, 97, 0.43);
+  background-color: rgba(11, 210, 61, 0.968);
 color: black;
 justify-content: center ;
 padding: 5px 10px 10px 5px;
 border: 30px;
-width: 400px;
+width: 200px;
 border-radius: 5px;
 -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
@@ -47,8 +47,12 @@ border-radius: 5px;
     font-size: 16px;
 }
 #btn:hover{
-  background-color: #41BF61 ; 
+  background-color: darkgreen ; 
     color: white;
+}
+.container{
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
     
@@ -57,7 +61,7 @@ border-radius: 5px;
 <body>
     <header>
     <div class="text-center">
-        <img id="img" src="./imgs/img-home/logo.webp" alt="" width="200px">
+        <img id="img" src="./public/imgs/img/logo-dashboards.webp" alt="" width="150px">
     </div>
   </header>
   <br>
@@ -66,27 +70,27 @@ border-radius: 5px;
  </div>
  <br>
   <main>
-  
-    <div id="grid" class="d-flex flex-column align-items-center justify-content-center" style="background-color:#f2f2f2 ; ">
+  <div class="container" style="background-color:rgba(217, 180, 72, 0.3)  ; max-width: 35%;">
+    <div id="grid" class="d-flex flex-column align-items-center justify-content-center" >
       <form action="insert" method="POST">
         <div>
-        <div id="grid" class="row">
-        <div  class="col">
+        <div  class="row">
+        <div  class="col-6">
           <label for="nome" class="form-label">Nome</label>
           <input type="text" name="nome" id="nome" class="form-control" placeholder="Seu nome" aria-describedby="helpId">
         </div>
-        <div class="col">
+        <div class="col-6">
           <label for="sobrenome" class="form-label">Sobrenome</label>
           <input type="text" name="sobrenome" id="sobrenome" class="form-control" placeholder="Seu sobrenome" aria-describedby="helpId">
         </div>
     </div>
     <br>
-        <div  class="col-5">
+        <div  class="col">
           <label for="cep" class="form-label">Cep</label>
           <input type="text" name="cep" id="cep" class="form-control" placeholder="11111-111" aria-describedby="helpId">
         </div>
         <br>
-        <div id="grid" class="row"> 
+        <div  class="row"> 
         <div class="col">
           <label for="rua" class="form-label">Rua</label>
           <input type="text" name="rua" id="rua" class="form-control" placeholder="" aria-describedby="helpId">
@@ -98,7 +102,7 @@ border-radius: 5px;
         </div>
     </div>
     <br>
-    <div id="grid" class="row"> 
+    <div class="row"> 
         <div class="col">
           <label for="bairro" class="form-label">Bairro</label>
           <input type="text" name="bairro" id="bairro" class="form-control" placeholder="" aria-describedby="helpId">
@@ -109,12 +113,12 @@ border-radius: 5px;
         </div>
     </div>
     <br> 
-        <div class="col-5">
+        <div class="col">
           <label for="email" class="form-label">E_mail</label>
           <input type="email" name="email" id="email" class="form-control" placeholder="Seu email" aria-describedby="helpId">
         </div>
         <br>
-        <div id="grid" class="row"> 
+        <div class="row"> 
         <div class="col">
           <label for="senha" class="form-label"> Senha</label>
           <input type="password" name="senha" id="senha" class="form-control" placeholder="Seu senha" aria-describedby="helpId">
@@ -128,7 +132,7 @@ border-radius: 5px;
     
     </div>
 </div>
-
+<br>
     <br>
     <div class="text-center">
         
@@ -139,6 +143,7 @@ border-radius: 5px;
     </div>
 
     </div>
+  </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
 </script>

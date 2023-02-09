@@ -55,4 +55,10 @@ class Cliente
         $perfil = new ConfigView($this->pathView . "\Perfil");
         $perfil->renderizar();
     }
+
+    public function minhasCompras()
+    {
+        $teste = new ConfigView($this->pathView . "\Carrinhocompras");
+        $teste->renderizar();
+    }
 }

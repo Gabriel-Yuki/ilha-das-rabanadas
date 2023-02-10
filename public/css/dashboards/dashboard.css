@@ -9,5 +9,11 @@
     width: 20em;
     align-items: center;
     justify-content: center;
-    box-shadow: 1px 1px 1px black;
+   
+    padding:7px;
+    height:15em;
+    background-color: #ffbd59;
+}
+.card-body{
+    flex: 0!important;
 }

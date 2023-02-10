@@ -32,7 +32,7 @@ class Login
         $carregarView->renderizar();
     }
 public function cadastrar(){
-    $carregarView = new \Core\ConfigView("Login/cadastrar", $this->dados);
+    $carregarView = new \Core\ConfigView("Login/cadastro", $this->dados);
 
     $carregarView->renderizar();
 

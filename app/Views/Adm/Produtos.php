@@ -14,7 +14,13 @@ include "./app/config.php"; ?>
     <link rel="stylesheet" href="<?php echo CSS; ?>/produto/cardapio.css">
     <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<style>
+    .card-footer>a{
+        width: 100%;
 
+    }
+    
+</style>
 </head>
 
 <body>
@@ -23,7 +29,7 @@ include "./app/config.php"; ?>
     ?>
 
     <main>
-        <h1 class="text-center">Cardápio</h1>
+        <h1 class="text-center">Produtos</h1>
         <div class="container">
             <div id="doces">
                 <h3>Doces</h3>
@@ -38,7 +44,7 @@ include "./app/config.php"; ?>
                                 <p class="card-text"><?php echo $descricao; ?></p>
                                 <p>R$<?php echo $preco; ?>,00</p>
                             </div>
-                            <div class="card-footer"><a href=""><button class="btn btn-success">Comprar</button></a></div>
+                            <div class="card-footer d-flex align-items-center justify-content-center gap-2"><a id="edit"href=""><button class="w-100 btn btn-success">Editar</button></a><a id="delete"href=""><button class="btn w-100">Excluir</button></a></div>
                         </div>
                     <?php } ?>
                 </div>

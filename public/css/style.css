@@ -3,28 +3,55 @@
 * {
     font-family: "lato";
 }
-#header{
-    background-color: #FFBD59;
 
+:root {
+    --background-principal: #ffbd59;
+    --btn-background: #7ebf41;
+    --hover: #247137;
+    --card-background: #ffbd5991;
+}
+
+main {
+    margin-top: 20px;
+}
+
+#header {
+    box-shadow: 3px 4px 6px #000000b0;
+}
+
+#header,
+#footer {
+    background-color: var(--background-principal) !important;
+
+}
+
+.links:hover {
+    color: var(--hover) !important;
+}
+
+#btn-login {
+    width: 10em;
 }
 
 
 /* estilo para os cards */
 .card {
-    background-color: #ffbd5991;
+    background-color: var(--card-background);
+    box-shadow: 3px 4px 6px #000000b0;
+    margin-bottom: 20px;
 }
 
 .card-footer {
     width: 100%;
-   
+
 }
 
 .card-footer>a>.btn {
     width: 100%;
-    background-color: #41bf60;
+    background-color: var(--btn-background);
 }
 
 .card-footer>a>.btn:hover {
     transition: all ease-in-out linear;
-    background-color: #247137;
+    background-color: var(--hover)
 }

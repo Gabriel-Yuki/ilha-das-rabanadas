@@ -11,10 +11,17 @@ include "./app/config.php"; ?>
     <style>
         h1 {
             text-align: center;
-            
-        }
 
-        
+        }
+        .container{
+            align-items: center;
+        }
+        #limpa{
+            background-color: rgba(255, 189, 89, 0.8);
+        }
+        #fechar{
+            background-color: rgba(65, 191, 97, 1);
+        }
     </style>
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -33,7 +40,7 @@ include "./app/config.php"; ?>
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
+                    <img src="###" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -61,8 +68,12 @@ include "./app/config.php"; ?>
     </div>
 
     <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary" type="button">Limpar Carrinho</button>
-        <button class="btn btn-primary" type="button">Fechar Entrega</button>
+        <div class="limpa">
+            <button class="btn btn-primary" type="button">Limpar Carrinho</button>
+        </div>
+        <div class="fechar">
+            <button class="btn btn-primary" type="button">Fechar Entrega</button>
+        </div>
     </div>
 
 

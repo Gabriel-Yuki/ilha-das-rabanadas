@@ -12,7 +12,7 @@
           <a class="nav-link active links" aria-current="page" href="<?php echo URL; ?>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-black links" href="./produto/index">Cardápio</a>
+          <a class="nav-link text-black links" href="/projetoIntegrador/produto/index">Cardápio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-black links" href="/projetoIntegrador/home/sobre">Sobre</a>

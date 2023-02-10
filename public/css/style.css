@@ -3,6 +3,9 @@
 * {
     font-family: "lato";
 }
+#return {
+    transform: rotate(180deg);
+}
 
 :root {
     --background-principal: #ffbd59;

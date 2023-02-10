@@ -14,18 +14,17 @@ include "./app/config.php"; ?>
     <link rel="stylesheet" href="<?php echo CSS; ?>/produto/cardapio.css">
     <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-<style>
-    .card-footer>a{
-        width: 100%;
+    <style>
+        .card-footer>a {
+            width: 100%;
 
-    }
-    
-</style>
+        }
+    </style>
 </head>
 
 <body>
     <?php
-    include HEADER;
+    include './app/Views/Headers/header-dashboards-adm-acesado.php';
     ?>
 
     <main>
@@ -44,7 +43,7 @@ include "./app/config.php"; ?>
                                 <p class="card-text"><?php echo $descricao; ?></p>
                                 <p>R$<?php echo $preco; ?>,00</p>
                             </div>
-                            <div class="card-footer d-flex align-items-center justify-content-center gap-2"><a id="edit"href=""><button class="w-100 btn btn-success">Editar</button></a><a id="delete"href=""><button class="btn w-100">Excluir</button></a></div>
+                            <div class="card-footer d-flex align-items-center justify-content-center gap-2"><a id="edit" href=""><button class="w-100 btn btn-success">Editar</button></a><a id="delete" href=""><button class="btn w-100">Excluir</button></a></div>
                         </div>
                     <?php } ?>
                 </div>
@@ -112,6 +111,8 @@ include "./app/config.php"; ?>
     </main>
     <?php
     include FOOTER; ?>
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>

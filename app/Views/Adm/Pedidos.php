@@ -14,7 +14,6 @@ include "./app/config.php"; ?>
 
     <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
     <link rel="stylesheet" href="<?php echo CSS; ?>/dashboards/dashboard.css">
     
 
@@ -51,7 +50,7 @@ include "./app/config.php"; ?>
         </table>
     </div>
 </div>
-
+<script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>

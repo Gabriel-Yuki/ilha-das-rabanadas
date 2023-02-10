@@ -16,9 +16,7 @@ include "./app/config.php"; ?>
     <link rel="stylesheet" href="<?php echo CSS; ?>/home/home.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
-    <style>
-
-    </style>
+    
 </head>
 
 <body>
@@ -72,7 +70,7 @@ include "./app/config.php"; ?>
             </div>
         </div>
     </section>
-    <section id="secao-servico d-flex  justify-content-center align-center" class="">
+    <section id="secao-servico" class="d-flex  justify-content-center align-center">
 
         <div class="container p-3">
             <h3 class="text-center my-3">

@@ -2,9 +2,7 @@
     width: 300px;
 }
 
-#return {
-    transform: rotate(180deg);
-}
+
 .card{
     width: 20em;
     align-items: center;

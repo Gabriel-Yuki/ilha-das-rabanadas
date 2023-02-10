@@ -1,151 +1,131 @@
-+
-<!DOCTYPE html>
+<?php
+include "./app/config.php"; ?>
+<!doctype html>
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro</title>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link rel="shortcut icon" href="./imgs/img-home/logo.webp" type="image/x-icon">
+
+  <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+  <style>
+    :root {
+      --background-principal: #ffbd59;
+
+      --btn-background: #7ebf41;
+      --hover: #247137;
+
+    }
+
+    form {
+      width: 40%;
+      background-color: #d9b4484d;
+      padding: 1em;
+      margin-bottom: 20px;
+      box-shadow: 3px 4px 6px #000000b0;
+    }
+
+    input[type="submit"] {
+      width: 60%;
+      background-color: var(--btn-background);
+
+
+
+    }
+
+    #submit-button {
+
+      width: 100%;
+    }
+
+    #finalizar:hover {
+      background-color: var(--hover);
+      color: white;
+    }
+  </style>
 </head>
-<style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-  }
-
-  #grid {
-
-    display: grid;
-    grid-template-columns: 500px 500px;
-
-  }
-
-  #img {
-    align-items: center;
-  }
-
-  header {
-    background-color: #F2AC57;
-  }
-
-  h1 {
-    font-size: 20px;
-    font-style: normal;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  #btn {
-    align-items: center;
-    text-align: center;
-    background-color: rgba(65, 191, 97, 0.43);
-    color: black;
-    justify-content: center;
-    padding: 5px 10px 10px 5px;
-    border: 30px;
-    width: 400px;
-    border-radius: 5px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
-  }
-
-  #btn:hover {
-    background-color: #41BF61;
-    color: white;
-  }
-</style>
 
 <body>
-  <header>
-    <div class="text-center">
-      <img id="img" src="./imgs/img-home/logo.webp" alt="" width="200px">
-    </div>
-  </header>
-  <br>
-  <div class="text-center">
-    <h1>Cadastro</h1>
-  </div>
-  <br>
+  <?php include './app/Views/Headers/header-login.php' ?>
   <main>
 
-    <div id="grid" class="d-flex flex-column align-items-center justify-content-center" style="background-color:#f2f2f2 ; ">
-      <form action="insert" method="POST">
-        <div>
-          <div id="grid" class="row">
-            <div class="col">
-              <label for="nome" class="form-label">Nome</label>
-              <input type="text" name="nome" id="nome" class="form-control" placeholder="Seu nome" aria-describedby="helpId">
-            </div>
-            <div class="col">
-              <label for="sobrenome" class="form-label">Sobrenome</label>
-              <input type="text" name="sobrenome" id="sobrenome" class="form-control" placeholder="Seu sobrenome" aria-describedby="helpId">
-            </div>
+    <div class="container d-flex justify-content-center align-items-center my-5 flex-column gap-3">
+      <h1 class="text-center">Cadastro</h1>
+      <form action="insert" method="POST" class="rounded">
+        <div class="mb-4 row">
+
+          <div class="col-6">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" name="nome" id="nome" class="form-control" placeholder="" aria-describedby="helpId">
           </div>
-          <br>
-          <div class="col-5">
+          <div class="col-6">
+            <label for="sobrenome" class="form-label">Sobrenome</label>
+            <input type="text" name="sobrenome" id="sobrenome" class="form-control" placeholder="" aria-describedby="helpId">
+          </div>
+
+        </div>
+        <div class="mb-4 row">
+          <div class="col">
             <label for="cep" class="form-label">Cep</label>
             <input type="text" name="cep" id="cep" class="form-control" placeholder="11111-111" aria-describedby="helpId">
           </div>
-          <br>
-          <div id="grid" class="row">
-            <div class="col">
-              <label for="rua" class="form-label">Rua</label>
-              <input type="text" name="rua" id="rua" class="form-control" placeholder="" aria-describedby="helpId">
-            </div>
-            <div class="col">
-              <label for="numero" class="form-label">numero</label>
-              <input type="text" name="numero" id="numero" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
 
-            </div>
+        <div class="mb-4 row">
+          <div class="col-10">
+            <label for="rua" class="form-label">Rua</label>
+            <input type="text" name="rua" id="rua" class="form-control" placeholder="" aria-describedby="helpId">
           </div>
-          <br>
-          <div id="grid" class="row">
-            <div class="col">
-              <label for="bairro" class="form-label">Bairro</label>
-              <input type="text" name="bairro" id="bairro" class="form-control" placeholder="" aria-describedby="helpId">
-            </div>
-            <div class="col">
-              <label for="cidade" class="form-label">Cidade</label>
-              <input type="text" name="cidade" id="cidade" class="form-control" placeholder="" aria-describedby="helpId">
-            </div>
-          </div>
-          <br>
-          <div class="col-5">
-            <label for="email" class="form-label">E_mail</label>
-            <input type="email" name="email" id="email" class="form-control" placeholder="Seu email" aria-describedby="helpId">
-          </div>
-          <br>
-          <div id="grid" class="row">
-            <div class="col">
-              <label for="senha" class="form-label"> Senha</label>
-              <input type="password" name="senha" id="senha" class="form-control" placeholder="Seu senha" aria-describedby="helpId">
-            </div>
-            <div class="col">
-              <label for="senha" class="form-label">Confime sua enha</label>
-              <input type="password" name="senha" id="senha" class="form-control" placeholder="Seu senha" aria-describedby="helpId">
-            </div>
-
-
+          <div class="col">
+            <label for="numero" class="form-label">Número</label>
+            <input type="text" name="numero" id="numero" class="form-control" placeholder="" aria-describedby="helpId">
 
           </div>
         </div>
-
-        <br>
-        <div class="text-center">
-
-          <input id="btn" class="btn" type="submit" value="Finalizar">
-
+        <div class="mb-4 row">
+          <div class="col">
+            <label for="bairro" class="form-label">Bairro</label>
+            <input type="text" name="bairro" id="bairro" class="form-control" placeholder="" aria-describedby="helpId">
+          </div>
+          <div class="col">
+            <label for="cidade" class="form-label">Cidade</label>
+            <input type="text" readonly value="Nova Iguaçu" name="cidade" id="cidade" class="form-control " placeholder="" aria-describedby="helpId">
+          </div>
         </div>
+        <div class="mb-4 row">
+        <div class="col">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+          </div>
+        </div>
+
+        <div class="mb-4 row ">
+          <div class="col">
+            <label for="senha" class="form-label">Senha</label>
+            <input type="password" name="senha" id="senha" class="form-control" placeholder="" aria-describedby="helpId">
+          </div>
+          <div class="col">
+            <label for="senha" class="form-label">Confirme sua senha</label>
+            <input type="password" name="senha" id="senha" class="form-control" placeholder="" aria-describedby="helpId">
+          </div>
+        </div>
+        <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn   " type="submit" value="Finalizar"></div>
+
       </form>
     </div>
 
-    </div>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha484-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">

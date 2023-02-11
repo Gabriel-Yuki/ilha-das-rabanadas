@@ -5,7 +5,7 @@
 
 <!doctype html>
 
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <title>Title</title>

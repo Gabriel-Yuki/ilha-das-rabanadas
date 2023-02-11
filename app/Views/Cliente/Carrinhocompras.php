@@ -13,13 +13,12 @@ include "./app/config.php"; ?>
             text-align: center;
 
         }
-        .container{
-            align-items: center;
-        }
-        #limpa{
+
+        button.btn.btn-primary.btn-sm {
             background-color: rgba(255, 189, 89, 0.8);
         }
-        #fechar{
+
+        button.btn.btn-secondary.btn-sm {
             background-color: rgba(65, 191, 97, 1);
         }
     </style>
@@ -36,46 +35,42 @@ include "./app/config.php"; ?>
 
     <h1>Carrinho de Compras</h1>
 
-    <div class="container align-items-center">
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="###" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Rabanada Vegana</h5>
-                        <p class="card-text">Valor R$ 5,00</p>
-                        <p class="card-text">Quantidade: </p>
-                        <p class="card-text">Total: </p>
+    <center>
+        <div class="container align-items-center">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="###" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Rabanada Vegana</h5>
+                            <p class="card-text">Valor R$ 5,00</p>
+                            <p class="card-text">Quantidade: </p>
+                            <p class="card-text">Total: </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Endereço de Entrega</h5>
-                        <p class="card-text">Rua: <input type="text"></p>
-                        <p class="card-text">Data da entrega: <input type="date"></p>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Endereço de Entrega</h5>
+                            <p class="card-text">Rua: <input type="text"></p>
+                            <p class="card-text">Data da entrega: <input type="date"></p>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-    </div>
+        <button type="button" class="btn btn-primary btn-sm">limpar carrinho</button>
 
-    <div class="d-grid gap-2 col-6 mx-auto">
-        <div class="limpa">
-            <button class="btn btn-primary" type="button">Limpar Carrinho</button>
-        </div>
-        <div class="fechar">
-            <button class="btn btn-primary" type="button">Fechar Entrega</button>
-        </div>
-    </div>
-
+        <button type="button" class="btn btn-secondary btn-sm">Fechar compras</button>
+    </center>
 
 
 

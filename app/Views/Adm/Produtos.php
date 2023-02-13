@@ -15,21 +15,20 @@ include "./app/config.php"; ?>
     <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style>
-        .card-footer>a {
-            width: 100%;
 
-        }
     </style>
 </head>
 
 <body>
     <?php
-    include './app/Views/Headers/header-dashboards-adm-acesado.php';
+    include './app/Views/Headers/header-dashboards-adm-acessado.php';
     ?>
 
     <main>
-        <h1 class="text-center">Produtos</h1>
+        <h1 class="text-center">Seus produtos</h1>
+
         <div class="container">
+            <a href="./form"><span class="btn btn-success"><span>Adicionar novo produto</span></span></a>
             <div id="doces">
                 <h3>Doces</h3>
                 <div class="d-flex flex-row justify-content-evenly align-items-center flex-wrap">
@@ -39,7 +38,7 @@ include "./app/config.php"; ?>
                         <div class="card">
                             <img class="card-img-top" src="<?php echo IMG; ?>/cardapio/kits.webp" alt="Title">
                             <div class="card-body text-center">
-                                <h4 class="card-title"><?php echo $nome; ?></h4>
+                                <h4 class="card-title"><?php echo $nomeProduto; ?></h4>
                                 <p class="card-text"><?php echo $descricao; ?></p>
                                 <p>R$<?php echo $preco; ?>,00</p>
                             </div>

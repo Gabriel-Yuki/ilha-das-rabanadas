@@ -26,7 +26,7 @@ include "./app/config.php"; ?>
         <h1 class="text-center">Cardápio</h1>
         <div class="container">
             <div id="doces">
-                <h3>Doces</h3>
+                <h3>Rabanadas Doces</h3>
                 <div class="d-flex flex-row justify-content-evenly align-items-center flex-wrap">
                     <?php
                     foreach ($this->dados['produtos'] as $produto) {
@@ -34,70 +34,16 @@ include "./app/config.php"; ?>
                         <div class="card">
                             <img class="card-img-top" src="<?php echo IMG; ?>/cardapio/kits.webp" alt="Title">
                             <div class="card-body text-center">
-                                <h4 class="card-title"><?php echo $nome; ?></h4>
+                                <h4 class="card-title"><?php echo $nomeProduto; ?></h4>
                                 <p class="card-text"><?php echo $descricao; ?></p>
-                                <p>R$<?php echo $preco; ?>,00</p>
+                                <p>R$<?php echo $preco; ?></p>
                             </div>
                             <div class="card-footer"><a href=""><button class="btn btn-success">Comprar</button></a></div>
                         </div>
                     <?php } ?>
                 </div>
             </div>
-            <div id="salgadas">
-                <h3>Salgadas</h3>
-                <div class="d-flex flex-row justify-content-evenly align-items-center flex-wrap">
-                    <?php
-                    foreach ($this->dados['produtos'] as $produto) {
-                        extract($produto); ?>
-                        <div class="card">
-                            <img class="card-img-top" src="<?php echo IMG; ?>/cardapio/kits.webp" alt="Title">
-                            <div class="card-body text-center">
-                                <h4 class="card-title"><?php echo $nome; ?></h4>
-                                <p class="card-text"><?php echo $descricao; ?></p>
-                                <p>R$<?php echo $preco; ?>,00</p>
-                            </div>
-                            <div class="card-footer"><a href=""><button class="btn btn-success">Comprar</button></a></div>
-                        </div>
-                    <?php } ?>
-                </div>
-            </div>
-            <div id="veganas">
-                <h3>Veganas</h3>
-                <div class="d-flex flex-row justify-content-evenly align-items-center flex-wrap">
-                    <?php
-                    foreach ($this->dados['produtos'] as $produto) {
-                        extract($produto); ?>
-                        <div class="card">
-                            <img class="card-img-top" src="<?php echo IMG; ?>/cardapio/kits.webp" alt="Title">
-                            <div class="card-body text-center">
-                                <h4 class="card-title"><?php echo $nome; ?></h4>
-                                <p class="card-text"><?php echo $descricao; ?></p>
-                                <p>R$<?php echo $preco; ?>,00</p>
-                            </div>
-                            <div class="card-footer"><a href=""><button class="btn btn-success">Comprar</button></a></div>
-                        </div>
-                    <?php } ?>
-                </div>
-            </div>
-
-            <div id="porcoes">
-                <h3>Porções</h3>
-                <div class="d-flex flex-row justify-content-evenly align-items-center flex-wrap">
-                    <?php
-                    foreach ($this->dados['produtos'] as $produto) {
-                        extract($produto); ?>
-                        <div class="card">
-                            <img class="card-img-top" src="<?php echo IMG; ?>/cardapio/kits.webp" alt="Title">
-                            <div class="card-body text-center">
-                                <h4 class="card-title"><?php echo $nome; ?></h4>
-                                <p class="card-text"><?php echo $descricao; ?></p>
-                                <p>R$<?php echo $preco; ?>,00</p>
-                            </div>
-                            <div class="card-footer"><a href=""><button class="btn btn-success">Comprar</button></a></div>
-                        </div>
-                    <?php } ?>
-                </div>
-            </div>
+         
 
 
 

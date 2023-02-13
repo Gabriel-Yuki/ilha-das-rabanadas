@@ -11,115 +11,104 @@ include "./app/config.php"; ?>
 
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="<?php echo CSS; ?>/form/forms.css">
 
   <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
-  <style>
-    :root {
-      --background-principal: #ffbd59;
-
-      --btn-background: #7ebf41;
-      --hover: #247137;
-
-    }
-
-    form {
-      width: 40%;
-      background-color: #d9b4484d;
-      padding: 1em;
-      margin-bottom: 20px;
-      box-shadow: 3px 4px 6px #000000b0;
-    }
-
-    input[type="submit"] {
-      width: 60%;
-      background-color: var(--btn-background);
-
-
-
-    }
-
-    #submit-button {
-
-      width: 100%;
-    }
-
-    #finalizar:hover {
-      background-color: var(--hover);
-      color: white;
-    }
-  </style>
 </head>
 
 <body>
-  <?php include './app/Views/Headers/header-login.php' ?>
-  <main>
+  <div class="container-fluid " id="header">
+    <header class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 
-    <div class="container d-flex justify-content-center align-items-center my-5 flex-column gap-3">
-      <h1 class="text-center">Cadastro</h1>
-      <form action="insert" method="POST" class="rounded">
-        <div class="mb-4 row">
 
-          <div class="col-6">
-            <label for="nome" class="form-label">Nome</label>
-            <input type="text" name="nome" id="nome" class="form-control" placeholder="" aria-describedby="helpId">
-          </div>
-          <div class="col-6">
-            <label for="sobrenome" class="form-label">Sobrenome</label>
-            <input type="text" name="sobrenome" id="sobrenome" class="form-control" placeholder="" aria-describedby="helpId">
-          </div>
+      <a href="../login/index " class="nav  col-md-auto mb-2 justify-content-center mb-md-0" id="return">
 
+        <lord-icon src="https://cdn.lordicon.com/zmkotitn.json" trigger="hover" colors="primary:#121331" state="hover-2" style="width:50px;height:50px">
+        </lord-icon>
+      </a>
+
+      <div class="col-md-3 text-center m-auto">
+        <img width="60%" src="<?php echo IMG ?>/img/logo-dashboards.webp" alt="">
+      </div>
+    </header>
+  </div>
+
+  <div class="container d-flex justify-content-center align-items-center my-5 flex-column gap-3">
+    <h1 class="text-center">Cadastro</h1>
+    <form action="insert" method="POST" class="rounded">
+      <div class="mb-4 row">
+
+        <div class="col-6">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" name="nome" id="nome" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
-        <div class="mb-4 row">
-          <div class="col">
-            <label for="cep" class="form-label">Cep</label>
-            <input type="text" name="cep" id="cep" class="form-control" placeholder="11111-111" aria-describedby="helpId">
-          </div>
+        <div class="col-6">
+          <label for="sobrenome" class="form-label">Sobrenome</label>
+          <input type="text" name="sobrenome" id="sobrenome" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
 
-        <div class="mb-4 row">
-          <div class="col-10">
-            <label for="rua" class="form-label">Rua</label>
-            <input type="text" name="rua" id="rua" class="form-control" placeholder="" aria-describedby="helpId">
-          </div>
-          <div class="col">
-            <label for="numero" class="form-label">Número</label>
-            <input type="text" name="numero" id="numero" class="form-control" placeholder="" aria-describedby="helpId">
-
-          </div>
-        </div>
-        <div class="mb-4 row">
-          <div class="col">
-            <label for="bairro" class="form-label">Bairro</label>
-            <input type="text" name="bairro" id="bairro" class="form-control" placeholder="" aria-describedby="helpId">
-          </div>
-          <div class="col">
-            <label for="cidade" class="form-label">Cidade</label>
-            <input type="text" readonly value="Nova Iguaçu" name="cidade" id="cidade" class="form-control " placeholder="" aria-describedby="helpId">
-          </div>
-        </div>
-        <div class="mb-4 row">
+      </div>
+      <div class="mb-3 row">
         <div class="col">
-            <label for="email" class="form-label">E-mail</label>
-            <input type="email" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
-          </div>
+          <label for="cep" class="form-label">Telefone residencial</label>
+          <input type="text" name="cep" id="numeroResidencial" class="form-control" placeholder="11111-111" aria-describedby="helpId">
         </div>
-
-        <div class="mb-4 row ">
-          <div class="col">
-            <label for="senha" class="form-label">Senha</label>
-            <input type="password" name="senha" id="senha" class="form-control" placeholder="" aria-describedby="helpId">
-          </div>
-          <div class="col">
-            <label for="senha" class="form-label">Confirme sua senha</label>
-            <input type="password" name="senha" id="senha" class="form-control" placeholder="" aria-describedby="helpId">
-          </div>
+        <div class="col">
+          <label for="cep" class="form-label">Telefone celular</label>
+          <input type="text" name="cep" id="numeroCelula" class="form-control" placeholder="11111-111" aria-describedby="helpId">
         </div>
-        <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn   " type="submit" value="Finalizar"></div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-6">
+          <label for="cep" class="form-label">Cep</label>
+          <input type="text" name="cep" id="cep" class="form-control" placeholder="11111-111" aria-describedby="helpId">
+        </div>
+      </div>
 
-      </form>
-    </div>
+      <div class="mb-4 row">
+        <div class="col-10">
+          <label for="rua" class="form-label">Rua</label>
+          <input type="text" name="rua" id="rua" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+        <div class="col">
+          <label for="numero" class="form-label">Número</label>
+          <input type="text" name="numero" id="numero" class="form-control" placeholder="" aria-describedby="helpId">
+
+        </div>
+      </div>
+      <div class="mb-4 row">
+        <div class="col">
+          <label for="bairro" class="form-label">Bairro</label>
+          <input type="text" name="bairro" id="bairro" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+        <div class="col">
+          <label for="cidade" class="form-label">Cidade</label>
+          <input type="text" readonly value="Nova Iguaçu" name="cidade" id="cidade" class="form-control " placeholder="" aria-describedby="helpId">
+        </div>
+      </div>
+      <div class="mb-4 row">
+        <div class="col">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+      </div>
+
+      <div class="mb-4 row ">
+        <div class="col">
+          <label for="senha" class="form-label">Senha</label>
+          <input type="password" name="senha" id="senha" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+        <div class="col">
+          <label for="senha" class="form-label">Confirme sua senha</label>
+          <input type="password" name="senha" id="senha" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+      </div>
+      <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn   " type="submit" value="Finalizar"></div>
+
+    </form>
+  </div>
 
   </main>
   <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>

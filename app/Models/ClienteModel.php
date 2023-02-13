@@ -4,8 +4,7 @@ namespace App\Models;
 
 class ClienteModel extends Conn
 {
-    public string $nome, $sobrenome, $cep, $rua, $numero, $bairro, $cidade, $email, $senha;
-    public $id;
+    
 
     private $conn;
     public function __construct()
@@ -14,67 +13,54 @@ class ClienteModel extends Conn
     }
     public function insert()
     {
-        $nome = $this->nome;
-        $sobrenome = $this->sobrenome;
-        $cep = $this->cep;
-        $rua = $this->rua;
-        $numero = $this->numero;
-        $bairro = $this->bairro;
-        $cidade = $this->cidade;
-        $email = $this->email;
-        $senha = md5($this->senha);
 
-        $query = "INSERT INTO cliente (nome,sobrenome,cep,rua,numero,bairro,cidade,email,senha) VALUES (?,?,?,?,?,?,?,?,?);";
 
+        $query = "INSERT INTO cliente (nomeCliente,sobrenome,numeroCliente,residencialCliente,cep,rua,bairro,numero,idLogin') VALUES (?,?,?,?,?,?,?,?,?,?);";
+
+        $password=md5($this->password);
         $stmt = $this->conn->prepare($query);
-        $stmt->bindValue(1, $nome);
-        $stmt->bindValue(2, $sobrenome);
-        $stmt->bindValue(3, $cep);
-        $stmt->bindValue(4, $rua);
-        $stmt->bindValue(5, $numero);
-        $stmt->bindValue(6, $bairro);
-        $stmt->bindValue(7, $cidade);
-        $stmt->bindValue(8, $email);
-        $stmt->bindValue(9, $senha);
+        $stmt->bindValue(1, $this->name);
+        $stmt->bindValue(2, $this->lastname);
+        $stmt->bindValue(3, $this->phoneNumber);
+        $stmt->bindValue(4, $this->residentialNumber);
+        $stmt->bindValue(5, $this->zipCode);
+        $stmt->bindValue(6, $this->street);
+        $stmt->bindValue(7, $this->district);
+        $stmt->bindValue(8, $this->number);
+        $stmt->bindValue(9, $this->city);
+     
 
 
         $stmt->execute();
     }
-    public function update()
+    public function update($id,$name,$lastName,$zipCode,$street,$number,$district,$city,$residentialNumber,$phoneNumber)
     {
-        $nome = $this->nome;
-        $sobrenome = $this->sobrenome;
-        $cep = $this->cep;
-        $rua = $this->rua;
-        $numero = $this->numero;
-        $bairro = $this->bairro;
-        $cidade = $this->cidade;
-        $email = $this->email;
-        $id = $this->id;
 
-        $query = "UPDATE cliente SET nome =?, sobrenome=?, cep=?, rua=?, numero=?, bairro=?, cidade=?, email=? WHERE id= ?";
-
+        $query = "UPDATE cliente SET nomeCliente=?,sobrenome=?,numeroCliente=?,residencialCliente=?,cep=?,rua=?,bairro=?,numero=?,cidade=? WHERE idCliente= ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindValue(1, $nome);
-        $stmt->bindValue(2, $sobrenome);
-        $stmt->bindValue(3, $cep);
-        $stmt->bindValue(4, $rua);
-        $stmt->bindValue(5, $numero);
-        $stmt->bindValue(6, $bairro);
-        $stmt->bindValue(7, $cidade);
-        $stmt->bindValue(8, $email);
-
-        $stmt->bindValue(9, $id);
-
-
-        if (!$stmt->execute()) {
-            return false;
-        }
-        return true;
+        $stmt->bindValue(1, $name);
+        $stmt->bindValue(2, $lastName);
+        $stmt->bindValue(3, $phoneNumber);
+        $stmt->bindValue(4, $residentialNumber);
+        $stmt->bindValue(5, $zipCode);
+        $stmt->bindValue(6, $street);
+        $stmt->bindValue(7, $district);
+        $stmt->bindValue(8, $number);
+        $stmt->bindValue(9, $city);
+        $stmt->bindValue(10,  $id);
+        $stmt->execute();
     }
-    public function selectById($id)
+    public function selectByIdLogin($id)
     {
-        $query = "SELECT * FROM cliente WHERE id=?";
+        $query = "SELECT * FROM cliente WHERE idLogin=?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+      public function myRequests($id)
+    {
+        $query = "SELECT * FROM pedido WHERE idCliente=?";
         $stmt = $this->conn->prepare($query);
         $stmt->bindValue(1, $id);
         $stmt->execute();

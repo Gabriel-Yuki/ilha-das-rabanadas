@@ -6,21 +6,22 @@ namespace Core;
 
 class ConfigView
 {
-    private string $nome;
-    private  $dados;
-    public function __construct($nome, array $dados = null)
+    private string $name;
+    private  $datas;
+    private $teste;
+    public function __construct($name, array $datas = null)
     {
-        $this->nome = $nome;
-        $this->dados = $dados;
+        $this->name = $name;    
+        $this->datas = $datas;
     }
     public function renderizar()
     {
-        if (file_exists('app/Views/' . $this->nome . '.php')) {
+        if (file_exists('app/Views/' . $this->name . '.php')) {
             // verifica se o arquivo existe
-            include 'app/Views/' . $this->nome . '.php';
+            include 'app/Views/' . $this->name . '.php';
         } else {
             echo "error ao carregar: ";
-            echo 'app/Views/' . $this->nome . '.php';
+            echo 'app/Views/' . $this->name . '.php';
         }
     }
 }

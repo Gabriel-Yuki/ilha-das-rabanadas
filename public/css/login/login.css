@@ -1,14 +1,14 @@
-main {
-    height: 100vh;
 
+main{
+    height: 93vh;
 }
-
 #container-form {
 
     width: 480px;
-    background-color: #d9b4484d;
+    background-color: #ffbd59;
     padding: 3em;
     box-shadow: 3px 4px 6px #000000b0;
+    z-index: 4;
 }
 
 form {
@@ -35,10 +35,4 @@ form {
 }
 
 
-#cadastrar {
-    background-color: rgba(255, 189, 89, 0.74);
-}
 
-#cadastrar:hover {
-    background-color: #F2AC57;
-}

@@ -2,7 +2,16 @@
 
 * {
     font-family: "lato";
+    letter-spacing: 0.5px;
 }
+#informacoes{
+    width: 50%;
+    background-color: #d9b4484d;
+    padding: 1em;
+    margin-bottom: 20px;
+    box-shadow: 3px 4px 6px #000000b0;
+}
+
 #return {
     transform: rotate(180deg);
 }

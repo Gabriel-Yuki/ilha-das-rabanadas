@@ -1,4 +1,5 @@
 <?php
+
 namespace Core;
 
 // responsavel por indicar as rotas para o  controller
@@ -30,11 +31,12 @@ class ConfigController
       $this->urlController = "Home";
       $this->urlMetodo = "index";
     }
-
   }
   public function carregar()
   {
     // carregar a requisição feita pelo user 
+    $permissao = new \Core\Permissao();
+    $permissao->index($this->urlController, $this->urlMetodo);
     $classe = "\\App\\Controllers\\" . $this->urlController;
     $metodo = $this->urlMetodo;
     $classeCarregar = new $classe;

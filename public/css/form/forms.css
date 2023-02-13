@@ -1,0 +1,36 @@
+
+
+
+:root {
+    --background-principal: #ffbd59;
+
+    --btn-background: #7ebf41;
+    --hover: #247137;
+
+  }
+
+  form ,#informacoes{
+    width: 50%;
+    background-color: #d9b4484d;
+    padding: 1em;
+    margin-bottom: 20px;
+    box-shadow: 3px 4px 6px #000000b0;
+  }
+
+  input[type="submit"] {
+    width: 60%;
+    background-color: var(--btn-background);
+
+
+
+  }
+
+  #submit-button {
+
+    width: 100%;
+  }
+
+  #finalizar:hover {
+    background-color: var(--hover);
+    color: white;
+  }

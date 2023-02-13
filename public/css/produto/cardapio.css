@@ -1,6 +1,12 @@
+main {
+    background-color: white;
+    margin-top: 0px !important;
+    padding: 1em 0em;
+}
+
 .container>div {
 
-    margin-bottom: 1.2em;
+    padding: 1em 0em;
 }
 
 .card {
@@ -17,3 +23,7 @@
     background-color: #ffbd5991;
 }
 
+.card-footer>a {
+    width: 100%;
+
+}

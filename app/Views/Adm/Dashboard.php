@@ -20,7 +20,7 @@ include "./app/config.php"; ?>
 </head>
 
 <body>
- <?php include "./app/Views/Headers/header-dashboards-adm.php"?>
+ <?php include "./app/Views/Headers/header-dashboards.php"?>
     <main>
         <h1 class="text-center my-4">Seu dashboard</h1>
         <div class="container">

@@ -1,10 +1,7 @@
 <?php
-foreach ($this->dados['artigo'] as $dados) {
-    extract($dados);
-}
-?>
-<!DOCTYPE html>
-<html lang="en">
+include "./app/config.php"; ?>
+<!doctype html>
+<html lang="pt-br">
 
 <head>
     <title>Title</title>
@@ -15,33 +12,17 @@ foreach ($this->dados['artigo'] as $dados) {
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+
 </head>
 
 <body>
-    <div>
-
-        <form action="update" method="POST">
-            <input type="hidden" name="id" value="<?php echo $id; ?>">
-            <label for="titulo">
-                <p>TITULO</p>
-                <input type="text" name="titulo" id="titulo" value="<?php echo $titulo; ?>">
-
-            </label>
-            <label for="conteudo">
-                <p>conteudo</p>
-
-                <input type="text" name="conteudo" id="conteudo" value="<?php echo $conteudo; ?>">
-
-            </label>
-            <label for="conteudo">
-                <p>conteudo</p>
-
-                <input type="text" name="conteudo" id="conteudo" value="<?php echo $conteudo; ?>">
-
-            </label>
-            <input type="submit" value="atualizar">
-        </form>
-    </div>
+<?php
+    include './app/Views/Headers/header-dashboards-adm-acesado.php';
+    ?>
+    <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
 

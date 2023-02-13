@@ -18,7 +18,7 @@ class Conn
     private string $password = "";
 
 
-    public function connect()
+    protected function connect()
     {
         try {
             //code...
@@ -26,11 +26,10 @@ class Conn
                 'mysql:host=' .
                     $this->host . ';dbname=' .
                     $this->dbName,
-                    $this->user,
-                    $this->password
+                $this->user,
+                $this->password
             );
-            return $this->connect;
-            ;
+            return $this->connect;;
         } catch (Exception $ex) {
             die("ERR: CONTATE O ADM->>$ex");
         }

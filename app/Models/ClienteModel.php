@@ -4,20 +4,21 @@ namespace App\Models;
 
 class ClienteModel extends Conn
 {
-    
+
 
     private $conn;
     public function __construct()
     {
         $this->conn = $this->connect();
     }
+
     public function insert()
     {
 
 
         $query = "INSERT INTO cliente (nomeCliente,sobrenome,numeroCliente,residencialCliente,cep,rua,bairro,numero,idLogin') VALUES (?,?,?,?,?,?,?,?,?,?);";
 
-        $password=md5($this->password);
+        $password = md5($this->password);
         $stmt = $this->conn->prepare($query);
         $stmt->bindValue(1, $this->name);
         $stmt->bindValue(2, $this->lastname);
@@ -28,12 +29,12 @@ class ClienteModel extends Conn
         $stmt->bindValue(7, $this->district);
         $stmt->bindValue(8, $this->number);
         $stmt->bindValue(9, $this->city);
-     
+
 
 
         $stmt->execute();
     }
-    public function update($id,$name,$lastName,$zipCode,$street,$number,$district,$city,$residentialNumber,$phoneNumber)
+    public function update($id, $name, $lastName, $zipCode, $street, $number, $district, $city, $residentialNumber, $phoneNumber)
     {
 
         $query = "UPDATE cliente SET nomeCliente=?,sobrenome=?,numeroCliente=?,residencialCliente=?,cep=?,rua=?,bairro=?,numero=?,cidade=? WHERE idCliente= ?";
@@ -58,12 +59,25 @@ class ClienteModel extends Conn
         $stmt->execute();
         return $stmt->fetchAll();
     }
-      public function myRequests($id)
+    public function myRequests($id)
     {
-        $query = "SELECT * FROM pedido WHERE idCliente=?";
+        $query = "SELECT
+        *
+    FROM
+        cliente c
+    INNER JOIN
+        pedido a
+    ON a.idCliente = c.idCliente";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindValue(1, $id);
         $stmt->execute();
-        return $stmt->fetchAll();
+
+        $informationRequest = $stmt->fetchAll();
+   
+
+
+    
+
+
+        return $informationRequest;
     }
 }

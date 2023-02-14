@@ -42,7 +42,12 @@ class ClienteDao
 
         $datas = $this->clienteModel->myRequests($id);
 
-
-        return $datas;
+        // verifica pedidos do user
+        for ($i = 0; $i < sizeof($datas); $i++) {
+            if ($datas[$i]["idCliente"] == $id) {
+                $requests[] = $datas[$i];
+            }
+        }
+        return ($requests);
     }
 }

@@ -21,8 +21,10 @@ class Permissao
     {
         $this->urlController = $urlController;
 
-
-        $this->pagPublica = ["login", "logout", "home","sobre"];
+        if (isset($_SESSION["idLogin"]) &&  $this->urlController == "login") {
+            header("Location:../home/index");
+        }
+        $this->pagPublica = ["login", "logout", "home", "sobre", "produto"];
         if (in_array($this->urlController, $this->pagPublica)) {
             $this->resultado = $this->urlController;
         } else {
@@ -36,12 +38,13 @@ class Permissao
             $this->verificarLogin();
         } else {
             $_SESSION['msg'] = "<p class='text-danger' >ERROR</p>";
-            
+
             header("Location:../login/index");
         }
     }
     private function verificarLogin(): void
     {
+
         if ($_SESSION["idLogin"] == 1 && $this->urlController == "adm") {
             $this->resultado = $this->urlController;
         } else if ($_SESSION["idLogin"] > 1 && $this->urlController == "cliente") {

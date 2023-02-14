@@ -1,17 +1,5 @@
 <?php
 include "./app/config.php";
-
-if (isset(
-
-    $this->dados["request"]
-)) {
-
-    foreach ($this->dados["request"] as $response) {
-        extract($response);
-    }
-} else {
-    echo "text";
-}
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -27,7 +15,6 @@ if (isset(
 
     <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="<?php echo CSS; ?>/dashboards/dashboard.css">
 
     <style>
         :root {
@@ -66,45 +53,16 @@ if (isset(
     <h1 class="text-center">Meus pedidos</h1>
     <div class="table-responsive">
         <div class="container">
-            <table class="table  table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Código do Pedido</th>
-                        <th scope="col">Data da entrega</th>
-                        <th scope="col">Hora da entrega </th>
-                        <th scope="col">Endereço</th>
-                        <th scope="col">Valor</th>
-                        <th scope="col" colspan="2">Açoes</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <?php
 
+            if (isset($this->datas["request"])) {
 
-
-                    <tr class="">
-                        <td scope="row"><?php echo $idPedido; ?></td>
-                        <td><?php echo $dataEntrega; ?></td>
-                        <td><?php echo $hora; ?></td>
-                        <td><?php echo ($rua . ", " . $numero . ", " . $bairro . "," . $cidade); ?></td>
-                        <td><?php echo $valorPedido; ?></td>
-                        <td>
-
-                            <a href="../pedido/update?id=<?php echo $idPedido; ?>">
-
-                                <button class="btn btn-outline-success">
-                                    <i class="bi bi-pencil"></i> <span>Editar Pedido</span>
-                                </button>
-                            </a>
-                            <a href="../pedido/delete?id=<?php echo $idPedido; ?>">
-                                <button class="btn btn-outline-secondary">
-                                    <i class="bi    bi-trash"></i> <span>Cancelar</span>
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
+               
+                include './app/Views/Cliente/meusPedidos.php';
+            } else {
+                include './app/Views/Cliente/semPedidos.php';
+            }
+            ?>
         </div>
     </div>
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>

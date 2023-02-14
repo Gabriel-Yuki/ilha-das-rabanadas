@@ -14,7 +14,23 @@ include "./app/config.php"; ?>
     <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
     <link rel="stylesheet" href="<?php echo CSS; ?>/home/home.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        #card-cardapio {
+            height: 290px;
+            background-image: url("http://localhost/projetoIntegrador/public/imgs/img/rabanada-doce.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 15em;
+            height: 20em;
+        }
 
+        #card-body {
+            display: none!important;
+        }
+
+        #card-cardapio:hover {}
+    </style>
 
 </head>
 
@@ -22,17 +38,7 @@ include "./app/config.php"; ?>
 
     <?php
 
-    if (!isset($_SESSION['idLogin'])) {
-        include('./app/Views/Headers/headerPadrao.php');
-    } else {
-        if ($_SESSION['idLogin'] == 1) {
-            //sem sessao
-            include('./app/Views/Headers/headerAdm.php');
-        } else if ($_SESSION["idLogin"] > 1) {
-            //clientes
-            include('./app/Views/Headers/headerCliente.php');
-        }
-    }
+    include './app/Views/Headers/headerManager.php';
     ?>
 
 
@@ -46,16 +52,15 @@ include "./app/config.php"; ?>
     <section id="secao-cardapio">
         <div class="container  p-3">
             <h3 class="text-center">Cardápio</h3>
-            <a class="nav-link links" href="produto/index">
+            <a class="nav-link links" href="../produto/index">
                 <p class="text-end">Visualizar cardápio completo</p>
             </a>
             <div class="row justify-content-evenly align-items-center ">
                 <div class="col-4">
-                    <div class="card">
-                        <img src="<?php echo IMG ?>/img/rabanada-vegana.webp" alt="" class="fluid">
-                        <div class="card-body">
-                            <h3 class="card-title">Title</h3>
-                            <p class="card-text">Rabanads veganas</p>
+                    <div class="card" id="card-cardapio">
+                        <div class="card-body  d-flex   flex-column justify-content-end align-items-center">
+                            <h6 class="card-title">Rabanadas Vegans</h6>
+                            <a class="nav-link" href="../produto/cardapio/vegana"><button class="btn btn-success">Visualizar</button></a>
                         </div>
                     </div>
                 </div>

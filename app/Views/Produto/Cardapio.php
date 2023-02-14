@@ -14,13 +14,16 @@ include "./app/config.php"; ?>
     <link rel="stylesheet" href="<?php echo CSS; ?>/produto/cardapio.css">
     <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
 
 </head>
 
 <body>
-    <?php
-    include HEADER;
-    ?>
+
+<?php
+
+include'./app/Views/Headers/headerManager.php';
+?>
 
     <main>
         <h1 class="text-center">Cardápio</h1>

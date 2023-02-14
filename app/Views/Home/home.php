@@ -15,21 +15,132 @@ include "./app/config.php"; ?>
     <link rel="stylesheet" href="<?php echo CSS; ?>/home/home.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style>
-        #card-cardapio {
-            height: 290px;
-            background-image: url("http://localhost/projetoIntegrador/public/imgs/img/rabanada-doce.webp");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            width: 15em;
-            height: 20em;
-        }
+        @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        #card-body {
-            display: none!important;
-        }
+html,
+body {
+    width: 100%;
+    height: 100%;
+    cursor: default;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f3f3f3;
+    user-select: none;
+}
 
-        #card-cardapio:hover {}
+h3 {
+    font-size: 30px;
+    padding: 30px;
+    color: #484848;
+}
+
+/*/DON'T NEED BEFORE/*/
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-flow: column;
+}
+
+.content {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.box_ {
+    width: 300px;
+    height: 400px;
+    background-color: #ffffffcb;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #858585, -1px -1px 5px #858585;
+    transition: 0.3s;
+    margin: 30px;
+}
+
+.box_:hover {
+    box-shadow: 0px 5px 10px #858585;
+    transition: 0.3s;
+    transform: scale(1.2);
+}
+
+.box_ img {
+    width: 300px;
+    height: 400px;
+    transition: 0.3s;
+}
+
+.box_:hover img {
+    transform: scale(1.3);
+    transition: 0.3s;
+    filter: blur(3px);
+}
+
+.box_ p {
+    position: relative;
+    color: rgb(255, 255, 255);
+    z-index: 20;
+    text-align: center;
+    top: 0px;
+    border-radius: 5px;
+    padding: 20px 10px;
+    font-weight: 300;
+    width: 300px;
+    height: 400px;
+    display: inline-flex;
+    background-color: #272727cb;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.box_:hover p {
+    animation: toTop 0.3s both;
+}
+
+.btn_ {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0px 10px 6px #1f1f1f;
+    transition: 0.1s;
+}
+
+.btn_:hover {
+    background-color: #fff;
+    color: #363636;
+    box-shadow: none;
+    transform: translateY(3px);
+    transition: 0.1s;
+}
+
+@keyframes toTop {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: -404px;
+    }
+}
     </style>
 
 </head>
@@ -50,19 +161,19 @@ include "./app/config.php"; ?>
         </div>
     </section>
     <section id="secao-cardapio">
-        <div class="container  p-3">
+        <!-- <div class="container  p-3">
             <h3 class="text-center">Cardápio</h3>
             <a class="nav-link links" href="../produto/index">
                 <p class="text-end">Visualizar cardápio completo</p>
             </a>
             <div class="row justify-content-evenly align-items-center ">
                 <div class="col-4">
-                    <div class="card" id="card-cardapio">
-                        <div class="card-body  d-flex   flex-column justify-content-end align-items-center">
-                            <h6 class="card-title">Rabanadas Vegans</h6>
-                            <a class="nav-link" href="../produto/cardapio/vegana"><button class="btn btn-success">Visualizar</button></a>
-                        </div>
-                    </div>
+                <div class="box_">
+                <img src="https://i.goopics.net/y4mxO.jpg">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur!
+                    <button class="btn_">Learn More</button>
+                </p>
+            </div>
                 </div>
                 <div class="col-4">
                     <div class="card">
@@ -83,7 +194,37 @@ include "./app/config.php"; ?>
                     </div>
                 </div>
             </div>
+        </div> -->
+        <div class="card">
+        <h3>This model is responsive</h3>
+        <div class="content">
+            <div class="box_">
+                <img src="https://i.goopics.net/y4mxO.jpg">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur!
+                    <button class="btn_">Learn More</button>
+                </p>
+            </div>
+            <div class="box_">
+                <img src="https://i.goopics.net/naAN1.jpg">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur! orem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur!
+                    <button class="btn_">Learn More</button>
+                </p>
+            </div>
+            <div class="box_">
+                <img src="https://i.goopics.net/nawKl.jpg">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iusto hic reiciendis assumenda itaque, natus dolore ullam ipsam atque iure aliquid explicabo necessitatibus nobis illo! Dignissimos nisi alias minima in.
+                    <button class="btn_">Learn More</button>
+                </p>
+            </div>
+            <div class="box_">
+                <img src="https://i.goopics.net/NJqmR.jpg">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt inventore illo perferendis tempora, nemo quibusdam nihil non aperiam quaerat nisi veniam suscipit sunt quia sint saepe ipsa optio corporis corrupti, recusandae omnis quas
+                    deleniti aut? Placeat nisi velit excepturi. Unde omnis alias facilis obcaecati, vel qui quisquam vitae consequatur accusantium.
+                    <button class="btn_">Learn More</button>
+                </p>
+            </div>
         </div>
+    </div>
     </section>
     <section id="secao-servico" class="d-flex  justify-content-center align-center">
 
@@ -146,6 +287,7 @@ include "./app/config.php"; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+   
 </body>
 
 </html>

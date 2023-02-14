@@ -102,10 +102,10 @@ include "./app/config.php"; ?>
         </div>
         <div class="col">
           <label for="senha" class="form-label">Confirme sua senha</label>
-          <input type="password" name="senha" id="senha" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="password" name="senha" id="confirmaSenha" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
       </div>
-      <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn   " type="submit" value="Finalizar"></div>
+      <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn" type="submit" value="Finalizar"></div>
 
     </form>
   </div>
@@ -119,6 +119,8 @@ include "./app/config.php"; ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
+  <script>
+    </script>
 </body>
 
 </html>

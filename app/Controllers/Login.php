@@ -50,7 +50,3 @@ class Login
         $carregarView->renderizar();
     }
 }
-/**
- *  filter_input(INPUT_POST, 'numerocelular', FILTER_SANITIZE_SPECIAL_CHARS);
- * filter_input(INPUT_POST, 'numeroResidencial', FILTER_SANITIZE_SPECIAL_CHARS);
- */

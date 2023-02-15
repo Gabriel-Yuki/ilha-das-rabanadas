@@ -2,9 +2,7 @@
 
 include "./app/config.php";
 
-if (isset($this->dados['form'])) {
-  $valorForm = $this->dados['form'];
-}
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -37,9 +35,7 @@ if (isset($this->dados['form'])) {
       <form method="POST" class="d-flex justify-content-center align-items-center flex-column">
         <div class="inputs mb-3">
           <label for="email" class="form-label">Email</label>
-          <input value="<?php if (isset($valorForm['email'])) {
-                          echo $valorForm['email'];
-                        } ?>" type="email" class="form-control" name="email" id="email" placeholder="abc@mail.com">
+          <input type="email" class="form-control" name="email" id="email" placeholder="abc@mail.com">
         </div>
         <div class="inputs mb-3">
           <label for="" class="form-label">Senha</label>

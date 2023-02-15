@@ -41,7 +41,7 @@ include "./app/config.php"; ?>
                         <i><lord-icon src="https://cdn.lordicon.com/pmegrqxm.json" trigger="hover" style="width:80px;height:80px">
                                 </lord-icon></i>
                         </div>
-                        <h4>Área de pedidos</h4>
+                        <h4>Área de produtos</h4>
                     </div>
                     <div class="card-footer"><a href="../adm/produtos"><button class="btn btn-success">Acessar</button></a></div>
                 </div>

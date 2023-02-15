@@ -17,7 +17,6 @@ class Cliente
         $this->clienteDao = new \App\Helpers\ClienteDao();
         $this->idLogin = $_SESSION["idLogin"];
         $this->id = $this->clienteDao->selectByIdLogin($this->idLogin);
-        $_SESSION['idCliente'] = $this->id[0]['idCliente'];
     }
     public function index()
     {

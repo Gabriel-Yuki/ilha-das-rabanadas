@@ -12,7 +12,7 @@
     <tbody>
 
         <?php
-        $teste = $this->datas["request"];
+       
 
         var_dump($this->datas["request"]);
         for ($i = 0; $i < sizeof($this->datas["request"]); $i++) {

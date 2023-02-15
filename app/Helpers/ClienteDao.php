@@ -48,6 +48,8 @@ class ClienteDao
                 $requests[] = $datas[$i];
             }
         }
-        return ($requests);
+        if (isset($requests)) {
+            return $requests;
+        }
     }
 }

@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ProdutoModel;
 
-class Produto
+class Produto 
 {
 
     private array $dados;

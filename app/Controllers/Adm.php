@@ -33,7 +33,7 @@ class Adm extends Produto
     public function cadastrarproduto()
 
     {
-        $Produtos = new ConfigView("Adm/cadastrarproduto", $this->dados);
+        $Produtos = new ConfigView("Adm/CadastrarProduto", $this->dados);
         $Produtos->renderizar();
     }
     public function setPath()

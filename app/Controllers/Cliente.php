@@ -16,7 +16,7 @@ class Cliente
     {
         $this->clienteDao = new \App\Helpers\ClienteDao();
         $this->idLogin = $_SESSION["idLogin"];
-        $this->id = $this->clienteDao->selectByIdLogin($this->idLogin);
+        $this->id = $this->clienteDao->selectByIdLogin($this->idLogin)[0]['idCliente'];
     }
     public function index()
     {
@@ -29,7 +29,7 @@ class Cliente
     public function perfil()
     {
 
-        $this->datas["informations"] = $this->clienteDao->selectByIdLogin($this->idLogin);
+        $this->datas["informations"] = $this->clienteDao->selectByIdLogin($this->id);
 
         $perfil = new ConfigView($this->pathView . "\Perfil", $this->datas);
         $perfil->renderizar();
@@ -37,8 +37,7 @@ class Cliente
     public function meusPedidos()
     {
 
-        $id = $_SESSION["idCliente"];
-        $this->datas["request"] = $this->clienteDao->myRequests($id);
+        $this->datas["request"] = $this->clienteDao->myRequests($this->id);
 
 
         $pedidos = new ConfigView($this->pathView . "\Pedidos", $this->datas);

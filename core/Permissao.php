@@ -24,7 +24,7 @@ class Permissao
         if (isset($_SESSION["idLogin"]) &&  $this->urlController == "login") {
             header("Location:../home/index");
         }
-        $this->pagPublica = ["login", "logout", "home", "sobre", "produto"];
+        $this->pagPublica = ["login", "logout", "home", "sobre", "produto","carregar"];
         if (in_array($this->urlController, $this->pagPublica)) {
             $this->resultado = $this->urlController;
         } else {

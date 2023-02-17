@@ -12,10 +12,13 @@ include "./app/config.php"; ?>
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
+    <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo CSS; ?>/sobre/sobre.css">
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+<style>
+  
+</style>
 
 </head>
 
@@ -27,7 +30,7 @@ include "./app/config.php"; ?>
     ?>
 
 
-    <div class="container" role="alert">
+    <div id="card" class="container " role="alert">
         <h1 class="text-center">Sobre a Ilha</h1>
         <div class="row">
             <div class="col">
@@ -53,7 +56,7 @@ include "./app/config.php"; ?>
             </div>
         </div>
     </div>
-    <div class="container" role="alert">
+    <div id="card" class="container body" role="alert">
         <h1 class="text-center">Nossa Missão</h1>
         <div class="row">
             <div class="col">
@@ -74,7 +77,7 @@ include "./app/config.php"; ?>
             </div>
         </div>
     </div>
-    <div class="container" role="alert">
+    <div id="card" class="container body" role="alert">
         <h1 class="text-center">Nossos Valores</h1>
         <div class="row">
             <div class="col">
@@ -100,8 +103,8 @@ include "./app/config.php"; ?>
             </div>
         </div>
     </div>
-    <div class="container" role="alert">
-        <h1 class="text-center">Nossa Visão</h1>
+    <div id="card" class="container body" role="alert">
+        <h1 class="text-center body">Nossa Visão</h1>
         <div class="row">
             <div class="col">
                 <img src="<?php echo IMG ?>/img/servico-prestado.webp" alt="">
@@ -126,7 +129,7 @@ include "./app/config.php"; ?>
             </div>
         </div>
     </div>
-    <div class="container" role="alert">
+    <div id="card" class="container body" role="alert">
         <h1 class="text-center">Trabalhe Conosco</h1>
         <h2 class="text-center">Quer fazer parte da minha família?! Enviar-nós seu currículo!</h2>
         <div class="row">

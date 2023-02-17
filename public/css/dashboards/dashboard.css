@@ -15,3 +15,12 @@
 .card-body{
     flex: 0!important;
 }
+
+
+@media (max-width: 600px){
+    .card{
+        float: none;
+        
+    }
+}
+

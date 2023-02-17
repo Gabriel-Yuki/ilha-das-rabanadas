@@ -141,6 +141,42 @@ h3 {
         top: -404px;
     }
 }
+@media (max-width: 720px) {
+  body::before {
+    content: 'Best on wider screens.';
+    display: block;
+    margin: 1em;
+    fon-weight: bold;
+    color: #444;
+  }
+}
+
+@media (520px) {
+  .flex {
+    animation: none;
+  }
+}
+  
+  body::after {
+    content: 'Resize your screen to see how it behaves';
+    display: block;
+    font-weight: bold;
+    color: #444;
+    margin: 2em 0;
+  }
+  @media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+    grid-template-columns: min-content;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
     </style>
 
 </head>
@@ -154,7 +190,7 @@ h3 {
 
 
     <section>
-        <div id="boas-vindas-banner" class=" banner container-fluid d-flex align-items-center justify-content-center">
+        <div id="boas-vindas-banner" class=" banner container-fluid d-flex align-items-center justify-content-center body">
             <h1 class="text-white">Ilha das rabanadas
                 <p>Primeira loja especializada em produção de rabanadas</p>
             </h1>
@@ -195,28 +231,28 @@ h3 {
                 </div>
             </div>
         </div> -->
-        <div class="card">
+        <div class="card facet_sidebar body">
         <h3>This model is responsive</h3>
-        <div class="content">
-            <div class="box_">
+        <div class="content body column">
+            <div class="box_ flex">
                 <img src="https://i.goopics.net/y4mxO.jpg">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur!
-                    <button class="btn_">Learn More</button>
+                    <button class="btn_ coulumn">Learn More</button>
                 </p>
             </div>
-            <div class="box_">
+            <div class="box_ column">
                 <img src="https://i.goopics.net/naAN1.jpg">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur! orem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur!
                     <button class="btn_">Learn More</button>
                 </p>
             </div>
-            <div class="box_">
+            <div class="box_ column">
                 <img src="https://i.goopics.net/nawKl.jpg">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iusto hic reiciendis assumenda itaque, natus dolore ullam ipsam atque iure aliquid explicabo necessitatibus nobis illo! Dignissimos nisi alias minima in.
                     <button class="btn_">Learn More</button>
                 </p>
             </div>
-            <div class="box_">
+            <div class="box_ column">
                 <img src="https://i.goopics.net/NJqmR.jpg">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt inventore illo perferendis tempora, nemo quibusdam nihil non aperiam quaerat nisi veniam suscipit sunt quia sint saepe ipsa optio corporis corrupti, recusandae omnis quas
                     deleniti aut? Placeat nisi velit excepturi. Unde omnis alias facilis obcaecati, vel qui quisquam vitae consequatur accusantium.
@@ -274,7 +310,7 @@ h3 {
             <h1 class="text-white">Venha conhecer a nossa história!
 
             </h1>
-            <a href="../home/sobre"><button id="btn-sobre" class=" rounded-pill  btn btn-success">Sobre nós</button></a>
+            <a href="../home/sobre"><button id="btn-sobre" class=" rounded-pill  btn btn-success body">Sobre nós</button></a>
         </div>
     </section>
     <?php

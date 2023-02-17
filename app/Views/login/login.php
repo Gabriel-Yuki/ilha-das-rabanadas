@@ -24,7 +24,15 @@ include "./app/config.php";
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
 </head>
-
+<style>
+    @media (max-width: 600px)
+{
+  .facet_sidebar
+   {
+    display: none;
+   }
+}  
+      </style>
 <body>
   <main class="m-auto d-flex flex-column align-items-center">
 

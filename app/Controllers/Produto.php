@@ -7,7 +7,7 @@ use App\Models\ProdutoModel;
 class Produto extends Upload
 {
 
-    private array $dados;
+    private array $datas;
     private object $produtoDao;
 
     public function __construct()
@@ -18,16 +18,15 @@ class Produto extends Upload
     {
 
 
-        $this->dados['produtos'] = $this->produtoDao->listProducts(); //chamando todos os itens do db
-        $carregarView = new \Core\ConfigView("Produto/Cardapio", $this->dados);
+        $this->datas['produtos'] = $this->produtoDao->listProducts(); //chamando todos os itens do db
+        $carregarView = new \Core\ConfigView("Produto/Cardapio", $this->datas);
         $carregarView->renderizar();
     }
     public function insert()
     {
-        $response = $this->produtoDao->insert();
-        if ($response) {
-            $produtos = new \Core\ConfigView("Adm/Produtos");
-            $produtos->renderizar();
+        $status = $this->produtoDao->insert();
+        if ($status) {
+            header("Location: ../adm/produtos");
         }
     }
     public function form()
@@ -48,7 +47,11 @@ class Produto extends Upload
     public function delete()
     {
         $id = $_GET['id'];
-        $this->produtoModel->delete($id);
-        header('Location: ./index');
+        if ($this->produtoDao->delete($id)) {
+            header('Location: ../adm/produtos');
+        } else {
+            $_SESSION['msg'] = "Não foi possivel deletar esse produto!Verifique se há algum pedido!";
+            header('Location: ../adm/produtos');
+        }
     }
 }

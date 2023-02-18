@@ -37,4 +37,9 @@ class ProdutoDao
             }
         }
     }
+    public function delete($id)
+
+    {
+    $this->produtoModel->delete($id);    # code...
+    }
 }

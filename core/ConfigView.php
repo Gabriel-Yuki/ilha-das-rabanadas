@@ -11,7 +11,7 @@ class ConfigView
     private $teste;
     public function __construct($name, array $datas = null)
     {
-        $this->name = $name;    
+        $this->name = $name;
         $this->datas = $datas;
     }
     public function renderizar()

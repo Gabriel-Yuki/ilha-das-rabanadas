@@ -44,7 +44,7 @@ include "./app/config.php"; ?>
                         </div>
                         <h4>Área de produtos</h4>
                     </div>
-                    <div class="card-footer"><a href="../adm/products"><button class="btn btn-success">Acessar</button></a></div>
+                    <div class="card-footer"><a href="../adm/produtos"><button class="btn btn-success">Acessar</button></a></div>
                 </div>
             </div>
         </div>

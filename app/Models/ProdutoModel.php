@@ -47,7 +47,7 @@ class ProdutoModel extends Conn
     }
     public function delete(int $id)
     {
-        $query = "DELETE FROM `produto` WHERE id = ?";
+        $query = "DELETE FROM `produto` WHERE idProduto = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->bindValue(1, $id);
         $stmt->execute();

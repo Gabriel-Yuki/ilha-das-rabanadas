@@ -14,6 +14,7 @@ include "./app/config.php"; ?>
 
     <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
     <link rel="stylesheet" href="<?php echo CSS; ?>/dashboards/dashboard.css">
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
 
     
     
@@ -43,14 +44,13 @@ include "./app/config.php"; ?>
                         </div>
                         <h4>Área de produtos</h4>
                     </div>
-                    <div class="card-footer"><a href="../adm/produtos"><button class="btn btn-success">Acessar</button></a></div>
+                    <div class="card-footer"><a href="../adm/products"><button class="btn btn-success">Acessar</button></a></div>
                 </div>
             </div>
         </div>
     </main>  
 
     <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
 

@@ -16,167 +16,123 @@ include "./app/config.php"; ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
-html,
-body {
-    width: 100%;
-    height: 100%;
-    cursor: default;
-    font-family: 'Montserrat', sans-serif;
-    scroll-behavior: smooth;
-    background-color: #f3f3f3;
-    user-select: none;
-}
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-h3 {
-    font-size: 30px;
-    padding: 30px;
-    color: #484848;
-}
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            cursor: default;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f3f3f3;
+            user-select: none;
+        }
 
-/*/DON'T NEED BEFORE/*/
+        h3 {
+            font-size: 30px;
+            padding: 30px;
+            color: #484848;
+        }
 
-.container {
-    width: 100%;
-    height: 100%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-flow: column;
-}
+        /*/DON'T NEED BEFORE/*/
 
-.content {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-}
+        .container {
+            width: 100%;
+            height: 100%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-flow: column;
+        }
 
-.box_ {
-    width: 300px;
-    height: 400px;
-    background-color: #ffffffcb;
-    overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px #858585, -1px -1px 5px #858585;
-    transition: 0.3s;
-    margin: 30px;
-}
+        .content {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-.box_:hover {
-    box-shadow: 0px 5px 10px #858585;
-    transition: 0.3s;
-    transform: scale(1.2);
-}
+        .box_ {
+            width: 300px;
+            height: 400px;
+            background-color: #ffffffcb;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px #858585, -1px -1px 5px #858585;
+            transition: 0.3s;
+            margin: 30px;
+        }
 
-.box_ img {
-    width: 300px;
-    height: 400px;
-    transition: 0.3s;
-}
+        .box_:hover {
+            box-shadow: 0px 5px 10px #858585;
+            transition: 0.3s;
+            transform: scale(1.2);
+        }
 
-.box_:hover img {
-    transform: scale(1.3);
-    transition: 0.3s;
-    filter: blur(3px);
-}
+        .box_ img {
+            width: 300px;
+            height: 400px;
+            transition: 0.3s;
+        }
 
-.box_ p {
-    position: relative;
-    color: rgb(255, 255, 255);
-    z-index: 20;
-    text-align: center;
-    top: 0px;
-    border-radius: 5px;
-    padding: 20px 10px;
-    font-weight: 300;
-    width: 300px;
-    height: 400px;
-    display: inline-flex;
-    background-color: #272727cb;
-    align-items: flex-end;
-    flex-wrap: wrap;
-}
+        .box_:hover img {
+            transform: scale(1.3);
+            transition: 0.3s;
+            filter: blur(3px);
+        }
 
-.box_:hover p {
-    animation: toTop 0.3s both;
-}
+        .box_ p {
+            position: relative;
+            color: rgb(255, 255, 255);
+            z-index: 20;
+            text-align: center;
+            top: 0px;
+            border-radius: 5px;
+            padding: 20px 10px;
+            font-weight: 300;
+            width: 300px;
+            height: 400px;
+            display: inline-flex;
+            background-color: #272727cb;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
 
-.btn_ {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 15px;
-    background: none;
-    border: 2px solid #fff;
-    color: #fff;
-    border-radius: 5px;
-    outline: none;
-    box-shadow: 0px 10px 6px #1f1f1f;
-    transition: 0.1s;
-}
+        .box_:hover p {
+            animation: toTop 0.3s both;
+        }
 
-.btn_:hover {
-    background-color: #fff;
-    color: #363636;
-    box-shadow: none;
-    transform: translateY(3px);
-    transition: 0.1s;
-}
+        .btn_ {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 15px;
+            background: none;
+            border: 2px solid #fff;
+            color: #fff;
+            border-radius: 5px;
+            outline: none;
+            box-shadow: 0px 10px 6px #1f1f1f;
+            transition: 0.1s;
+        }
 
-@keyframes toTop {
-    0% {
-        top: 0px;
-    }
-    100% {
-        top: -404px;
-    }
-}
-@media (max-width: 720px) {
-  body::before {
-    content: 'Best on wider screens.';
-    display: block;
-    margin: 1em;
-    fon-weight: bold;
-    color: #444;
-  }
-}
-
-@media (520px) {
-  .flex {
-    animation: none;
-  }
-}
-  
-  body::after {
-    content: 'Resize your screen to see how it behaves';
-    display: block;
-    font-weight: bold;
-    color: #444;
-    margin: 2em 0;
-  }
-  @media screen and (max-width: 992px) {
-  .column {
-    width: 50%;
-    grid-template-columns: min-content;
-  }
-}
-
-
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
+        .btn_:hover {
+            background-color: #fff;
+            color: #363636;
+            box-shadow: none;
+            transform: translateY(3px);
+            transition: 0.1s;
+        }
     </style>
 
 </head>
@@ -232,35 +188,35 @@ h3 {
             </div>
         </div> -->
         <div class="card facet_sidebar body">
-        <h3>This model is responsive</h3>
-        <div class="content body column">
-            <div class="box_ flex">
-                <img src="https://i.goopics.net/y4mxO.jpg">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur!
-                    <button class="btn_ coulumn">Learn More</button>
-                </p>
-            </div>
-            <div class="box_ column">
-                <img src="https://i.goopics.net/naAN1.jpg">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur! orem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur!
-                    <button class="btn_">Learn More</button>
-                </p>
-            </div>
-            <div class="box_ column">
-                <img src="https://i.goopics.net/nawKl.jpg">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iusto hic reiciendis assumenda itaque, natus dolore ullam ipsam atque iure aliquid explicabo necessitatibus nobis illo! Dignissimos nisi alias minima in.
-                    <button class="btn_">Learn More</button>
-                </p>
-            </div>
-            <div class="box_ column">
-                <img src="https://i.goopics.net/NJqmR.jpg">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt inventore illo perferendis tempora, nemo quibusdam nihil non aperiam quaerat nisi veniam suscipit sunt quia sint saepe ipsa optio corporis corrupti, recusandae omnis quas
-                    deleniti aut? Placeat nisi velit excepturi. Unde omnis alias facilis obcaecati, vel qui quisquam vitae consequatur accusantium.
-                    <button class="btn_">Learn More</button>
-                </p>
+            <h3>This model is responsive</h3>
+            <div class="content body column">
+                <div class="box_ flex">
+                    <img src="https://i.goopics.net/y4mxO.jpg">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur!
+                        <button class="btn_ coulumn">Learn More</button>
+                    </p>
+                </div>
+                <div class="box_ column">
+                    <img src="https://i.goopics.net/naAN1.jpg">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur! orem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur!
+                        <button class="btn_">Learn More</button>
+                    </p>
+                </div>
+                <div class="box_ column">
+                    <img src="https://i.goopics.net/nawKl.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iusto hic reiciendis assumenda itaque, natus dolore ullam ipsam atque iure aliquid explicabo necessitatibus nobis illo! Dignissimos nisi alias minima in.
+                        <button class="btn_">Learn More</button>
+                    </p>
+                </div>
+                <div class="box_ column">
+                    <img src="https://i.goopics.net/NJqmR.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt inventore illo perferendis tempora, nemo quibusdam nihil non aperiam quaerat nisi veniam suscipit sunt quia sint saepe ipsa optio corporis corrupti, recusandae omnis quas
+                        deleniti aut? Placeat nisi velit excepturi. Unde omnis alias facilis obcaecati, vel qui quisquam vitae consequatur accusantium.
+                        <button class="btn_">Learn More</button>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
     </section>
     <section id="secao-servico" class="d-flex  justify-content-center align-center">
 
@@ -323,7 +279,7 @@ h3 {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-   
+
 </body>
 
 </html>

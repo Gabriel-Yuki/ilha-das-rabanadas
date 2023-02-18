@@ -36,6 +36,9 @@ class Cliente
     }
     public function meusPedidos()
     {
+ 
+
+
 
         $this->datas["request"] = $this->clienteDao->myRequests($this->id);
 

@@ -30,4 +30,11 @@ class PedidoModel extends Conn
             return false;
         }
     }
+    public function listOrders()
+    {
+
+        $query = "SELECT * FROM pedido";
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute();
+    }
 }

@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form action=""></form>
+    <form action="../upload/existe" method="POST" enctype="multipart/form-data">
+        <input type="file" name="arquivo">
+    <input type="submit" > </form>
 </body>
 </html>

@@ -17,26 +17,49 @@ include "./app/config.php"; ?>
     <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
     <style>
         section {
-            background: aqua;
-            width: 70%!important;
-            height: 62vh;
+            background: rgba(217, 180, 72, 0.3);
+            height: max-content;
+
+
+        }
+
+        form {
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        .card-content{
-
-            max-width:90%;
+            flex-direction: column;
+            width: 100%;
         }
 
-.col{
-    max-height: 100%;
-    max-width: 30%;
-}
+        .card {
+
+            width: 65%;
+        }
+
+        .col {
+            max-height: 100%;
+            max-width: 30%;
+
+        }
+        .card-body{
+            width: max-content;
+        }
         input[type=number] {
-            width: 25% !important;
+            width: 40% !important;
             display: inline;
 
+        }
+        #buttons{
+            width: 65%;
+            gap: 30%;
+
+            align-items: center;
+            justify-content: center;
+            margin-top: 2em;
+        }
+        #buttons>input,button {
+            width: max-content;
+            height: 3em;
         }
     </style>
 </head>
@@ -48,47 +71,62 @@ include "./app/config.php"; ?>
     include './app/Views/Headers/headerManager.php';
     ?>
 
-    <main>
+    <main class="my-5">
 
 
+<h1 class="text-center">Seu carrinho </h1>
 
-
-        <section class="container ">
-            <div class= "card card-content  mb-3">
-                <div class="row g-0">
-                    <div class="col">
-                        <img src="<?php echo IMG ?>/img/rabanada-salgada.webp " class="" alt="..." height="100%" width="90%">
-                    </div>
-                    <div class="col">
-                        <div class="card-body">
-                            <h5 class="card-title">Rabanda com brigadeiro</h5>
-                            <p class="card-text">Valor:R$ <span>400</span></p>
-
-                            <div class="mb-3">
-                                <label for="" class="form-label">
-                                    <span>Quantidade</span>
-
-
-                                    <input type="number" name="" id="quantidade" class="form-control" placeholder="" aria-describedby="helpId">
-                                </label>
-
-
-
+        <section class="container  flex-column p-4">
+            <form action="" method="POST">
+                <div class="card   mb-3">
+                    <div class="row  align-items-center g-0">
+                        <div class="col">
+                            <img src="<?php echo IMG ?>/img/rabanada-salgada.webp " class="" alt="..." height="100%" width="90%">
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h5 class="card-title">Rabanda com brigadeiro</h5>
+                                <p class="card-text">Valor:R$ <span>400</span></p>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">
+                                        <span>Quantidade</span>
+                                        <input type="number" name="" id="quantidade" class="form-control" placeholder="" aria-describedby="helpId">
+                                    </label>
+                                </div>
+                                <p>Total: <span>2000</span></p>
                             </div>
-
-                            <p>Total: <span>2000</span></p>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="card   mb-3">
+                    <div class="row g-0">
+                        <div class="col">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">
+                                        Endereço de entrega:
+                                    </label>
+                                    <input type="text" name="" id="endereco" class="form-control" placeholder="" aria-describedby="helpId">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="">Data de entrega</label>
+                                    <input type="date" name="dataEntrega" id="dataEntrega" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex " id="buttons">
+                    <button type="button" class="btn btn-secondary" >Cancelar encomenda</button>
+                    <input type="submit" class=" btn btn-success" value="Fechar encomenda">
+                </div>
+            </form>
+
         </section>
     </main>
 
 
 
-    <button type="button" class="btn btn-primary btn-sm">limpar carrinho</button>
-
-    <button type="button" class="btn btn-secondary btn-sm">Fechar compras</button>
 
 
     <?php

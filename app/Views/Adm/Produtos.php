@@ -4,7 +4,7 @@ include "./app/config.php"; ?>
 <html lang="pt-br">
 
 <head>
-    <title>Title</title>
+    <title>ilhas das Rabanadas</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,7 +33,8 @@ include "./app/config.php"; ?>
                 <h3>Doces</h3>
                 <div class="d-flex flex-row justify-content-evenly align-items-center flex-wrap">
                     <?php
-                    foreach ($this->dados['produtos'] as $produto) {
+                    echo sizeof($this->datas["products"]);
+                    foreach ($this->datas["products"] as $produto) {
                         extract($produto); ?>
                         <div class="card">
                             <img class="card-img-top" src="<?php echo IMG; ?>/cardapio/kits.webp" alt="Title">
@@ -42,12 +43,12 @@ include "./app/config.php"; ?>
                                 <p class="card-text"><?php echo $descricao; ?></p>
                                 <p>R$<?php echo $preco; ?>,00</p>
                             </div>
-                            <div class="card-footer d-flex align-items-center justify-content-center gap-2"><a id="edit" href=""><button class="w-100 btn btn-success">Editar</button></a><a id="delete" href=""><button class="btn w-100">Excluir</button></a></div>
+                            <div class="card-footer d-flex align-items-center justify-content-center gap-2"><a id="edit" href="../Adm/AtualizarProduto.php"><button class="w-100 btn btn-success">Editar</button></a><a id="delete" href=""><button class="btn w-100">Excluir</button></a></div>
                         </div>
                     <?php } ?>
                 </div>
             </div>
-            <div id="salgadas">
+            <!-- <div id="salgadas">
                 <h3>Salgadas</h3>
                 <div class="d-flex flex-row justify-content-evenly align-items-center flex-wrap">
                     <?php
@@ -101,7 +102,7 @@ include "./app/config.php"; ?>
                         </div>
                     <?php } ?>
                 </div>
-            </div>
+            </div> -->
 
 
 

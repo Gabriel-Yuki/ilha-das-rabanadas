@@ -28,7 +28,7 @@ include "./app/config.php"; ?>
     ?>
     <div class="container d-flex justify-content-center align-items-center my-5 flex-column gap-3">
         <h1 class="text-center">Cadastro</h1>
-        <form action="setPath" method="POST" enctype="">
+        <form action="../produto/insert" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nomeProduto" class="form-label">Nome do Produto</label>
                 <input type="text" name="nomeProduto" id="nomeProduto" class="form-control" placeholder="" aria-describedby="helpId">
@@ -47,7 +47,8 @@ include "./app/config.php"; ?>
             </div>
             <div class="mb-3">
                 <label for="imagemProduto" class="form-label">Imagem do produto</label>
-                <input type="file" name='arquivos[]' class='form-control' multiple>
+                <input type="file" name='arquivo' class='form-control'>
+
             </div>
             <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn" type="submit" name='enviar-formulario' value="Finalizar"></div>
         </form>

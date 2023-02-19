@@ -1,5 +1,34 @@
 <?php
-include "./app/config.php"; ?>
+include "./app/config.php";
+
+
+if (isset($_SESSION['msg'])) :
+    echo (" <div class='toast-container position-fixed top-0 end-0 p-3 '>
+            <div id='toast' class='toast ' role='alert' aria-live='assertive' aria-atomic='true'>
+                <div class='toast-header d-flex justify-content-between'>
+                <i class='bi bi-info-circle'></i>
+                   
+                    
+                    <button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
+                </div>
+                <div class='toast-body '>$_SESSION[msg]</div>
+            </div>
+        </div>") ?>
+    <script>
+        onload = () => {
+            const toastEl = document.getElementById("toast");
+
+            const toast = new bootstrap.Toast(toastEl);
+
+            toast.show();
+        };
+    </script>
+<?php
+endif;
+unset($_SESSION['msg']);
+
+?>
+
 <!doctype html>
 <html lang="pt-br">
 
@@ -31,20 +60,21 @@ include "./app/config.php"; ?>
             <a href="./cadastrarproduto"><span class="btn btn-success"><span>Adicionar novo produto</span></span></a>
             <div id="doces">
                 <h3>Doces</h3>
-                <div class="d-flex flex-row justify-content-evenly align-items-center flex-wrap">
+                <div class="d-flex flex-row  align-items-center flex-wrap">
                     <?php
 
                     foreach ($this->datas["products"] as $produto) {
                         extract($produto); ?>
                         <div class="card">
-                            <img class="card-img-top" src="<?php echo $imagem; ?>" alt="Title">
+                            <div class="card-img"><img class="card-img-top " src="<?php echo $imagem; ?>" alt="Title"></div>
                             <div class="card-body text-center">
                                 <h4 class="card-title"><?php echo $nomeProduto; ?></h4>
                                 <p class="card-text"><?php echo $descricao; ?></p>
                                 <p>R$<?php echo $preco; ?></p>
                             </div>
                             <div class="card-footer d-flex align-items-center justify-content-center gap-2">
-                                <a id="edit" href="../Adm/AtualizarProduto.php"><button class="w-100 btn btn-success">Editar</button></a> <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
+                                <a id="edit" href="../adm/atualizarproduto?id=<?php echo $idProduto; ?>"><button class="btn btn-success">Editar</button></a>
+                                <button type="button" class="btn btn-outline-danger W" data-bs-toggle="modal" data-bs-target="#modalId">
                                     Deletar
                                 </button>
                             </div>
@@ -59,25 +89,31 @@ include "./app/config.php"; ?>
         </div>
 
     </main>
-    <div class="modal fade" id="modalId" tabindex="-1"  role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
-            <div class="modal-content">
 
+
+
+    <!-- Modal Body -->
+    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
                 <div class="modal-body">
-                    Voce quer deletar esse item?
+                    <p>Tem certeza que quer deletar esse item?</p>
                 </div>
                 <div class="modal-footer">
-                    <a id="delete" href="../produto/delete?id=<?php echo $idProduto; ?>"><button class="btn w-100">Excluir</button></a>
-
-                    <button type="button" class="btn btn-outline-secondary">Cancelar</button>
+                    <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Cancelar</button>
+                    <a href="../produto/delete?id=<?php echo $idProduto; ?>"><button type="button" class="btn btn-success">Sim</button></a>
                 </div>
             </div>
         </div>
     </div>
 
-<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip Content">
-    Button name
-</button>
+
+    <!-- Optional: Place to the bottom of scripts -->
     <script>
         const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
     </script>

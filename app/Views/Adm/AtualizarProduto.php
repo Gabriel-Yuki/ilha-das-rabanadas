@@ -1,10 +1,20 @@
 <?php
-include "./app/config.php"; ?>
+include "./app/config.php";
+
+if (isset($this->datas)) {
+    foreach ($this->datas['informations'] as $data) {
+        extract($data);
+        # code...
+    }
+}
+
+?>
+
 <!doctype html>
 <html lang="pt-br">
 
 <head>
-    <title>Title</title>
+    <title>Ilhas das Rabanadas</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,11 +25,6 @@ include "./app/config.php"; ?>
     <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo CSS ?>/form/formS.css">
-    <?php
-    // verificando se existe esse indice(enviar-formulario) na super global post
-
-
-    ?>
 </head>
 
 <body>
@@ -27,28 +32,28 @@ include "./app/config.php"; ?>
     include './app/Views/Headers/header-dashboards-adm-acessado.php';
     ?>
     <div class="container d-flex justify-content-center align-items-center my-5 flex-column gap-3">
-        <h1 class="text-center">Cadastro</h1>
-        <form action="../produto/insert" method="POST" enctype="multipart/form-data">
-            <input type="hidden" value="<?php echo ?>">
+        <h1 class="text-center">Atualizar Produto</h1>
+        <form action="../produto/update" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name='id' value="<?php echo $idProduto; ?>">
             <div class="mb-3">
                 <label for="nomeProduto" class="form-label">Nome do Produto</label>
-                <input type="text" name="nomeProduto" id="nomeProduto" class="form-control" placeholder="" aria-describedby="helpId">
+                <input type="text" name="nomeProduto" id="nomeProduto" class="form-control" value="<?php echo $nomeProduto; ?>" placeholder="" aria-describedby="helpId">
             </div>
             <div class="mb-3">
                 <label for="descricao" class="form-label">Descrição do Produto</label>
-                <input type="text" name="descricao" id="descricao" class="form-control" placeholder="" aria-describedby="helpId">
+                <input type="text" name="descricao" id="descricao" class="form-control" placeholder="" value="<?php echo $descricao; ?>" aria-describedby="helpId">
             </div>
             <div class="mb-3">
                 <label for="preco" class="form-label">Preço do produto</label>
-                <input type="text" name="preco" id="preco" class="form-control" placeholder="" aria-describedby="helpId">
+                <input type="text" name="preco" id="preco" class="form-control" placeholder="" aria-describedby="helpId" value="<?php echo $preco; ?>">
             </div>
             <div class="mb-3">
                 <label for="categoria" class="form-label">Categoria do produto</label>
-                <input type="text" name="categoria" id="categoria" class="form-control" placeholder="Doce,salgado,vegano ..." aria-describedby="helpId">
+                <input type="text" name="categoria" id="categoria" class="form-control" placeholder="Doce,salgado,vegano ..." value="<?php echo $categoria; ?>" aria-describedby="helpId">
             </div>
             <div class="mb-3">
                 <label for="imagemProduto" class="form-label">Imagem do produto</label>
-                <input type="file" name='arquivo' class='form-control'>
+                <input type="file" name='arquivo' class='form-control' value="<?php echo $imagem ?>">
 
             </div>
             <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn" type="submit" name='enviar-formulario' value="Finalizar"></div>

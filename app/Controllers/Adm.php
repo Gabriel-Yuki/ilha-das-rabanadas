@@ -30,7 +30,7 @@ class Adm
     public function produtos()
     {
         $this->datas['products'] = $this->produtoDao->listProducts();
-        $Produtos = new ConfigView("Adm/Produtos",$this->datas);
+        $Produtos = new ConfigView("Adm/Produtos", $this->datas);
         $Produtos->renderizar();
     }
     public function cadastrarproduto()
@@ -38,5 +38,13 @@ class Adm
     {
         $Produtos = new ConfigView("Adm/CadastrarProduto");
         $Produtos->renderizar();
+    }
+    public function atualizarProduto()
+    {
+        $id = $_GET["id"];
+        $this->datas["informations"]  = $this->produtoDao->selectById($id);
+
+        $formAtualizar = new ConfigView("Adm/AtualizarProduto", $this->datas);
+        $formAtualizar->renderizar();
     }
 }

@@ -16,6 +16,12 @@ class ProdutoDao
         $this->produtoModel = new \App\Models\ProdutoModel(); //instanciando a class model
 
     }
+    public function selectById($id)
+
+    {
+        $informations = $this->produtoModel->selectById($id);
+        return $informations;     # code...
+    }
     public function listProducts()
     {
         $produtos = $this->produtoModel->listProducts(); //chamando todos os itens do db
@@ -37,9 +43,27 @@ class ProdutoDao
             }
         }
     }
+    public function update()
+    {
+        if (isset($_FILES)) {
+            $upload = new \App\Controllers\Upload($_FILES["arquivo"]);
+            if ($upload) {
+                $imgdb = $this->pathImageDb . "/" . $_FILES["arquivo"]["name"];
+                $this->produtoModel->nomeProduto = filter_input(INPUT_POST, 'nomeProduto', FILTER_SANITIZE_SPECIAL_CHARS);
+                $this->produtoModel->descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_SPECIAL_CHARS);
+                $this->produtoModel->preco = filter_input(INPUT_POST, 'preco', FILTER_SANITIZE_SPECIAL_CHARS);
+                $this->produtoModel->categoria = filter_input(INPUT_POST, 'categoria', FILTER_SANITIZE_SPECIAL_CHARS);
+                $this->produtoModel->imgProduto = $imgdb;
+
+                $this->produtoModel->id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+                $status = $this->produtoModel->update();
+                return $status;
+            }
+        }
+    }
     public function delete($id)
 
     {
-    $this->produtoModel->delete($id);    # code...
+        $this->produtoModel->delete($id);    # code...
     }
 }

@@ -26,6 +26,8 @@ class Produto extends Upload
     {
         $status = $this->produtoDao->insert();
         if ($status) {
+            $_SESSION['msg'] = "Cadastrado com sucesso!";
+
             header("Location: ../adm/produtos");
         }
     }
@@ -38,19 +40,21 @@ class Produto extends Upload
     public function update()
 
     {
-        $this->produtoModel->id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
-        $this->produtoModel->titulo = filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->produtoModel->conteudo = filter_input(INPUT_POST, 'conteudo', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->produtoModel->update();
-        header('Location: ./index');
+        $status = $this->produtoDao->update();
+        if ($status) {
+            $_SESSION['msg'] = "Atualizado com sucesso";
+            header("Location: ../adm/produtos");
+        }
     }
     public function delete()
     {
         $id = $_GET['id'];
         if ($this->produtoDao->delete($id)) {
+            $_SESSION['msg'] = "Deletado com sucesso!";
+
             header('Location: ../adm/produtos');
         } else {
-            $_SESSION['msg'] = "Não foi possivel deletar esse produto!Verifique se há algum pedido!";
+            $_SESSION['msg'] = "Não foi possivel deletar esse produto!Verifique se há algum pedido dele!";
             header('Location: ../adm/produtos');
         }
     }

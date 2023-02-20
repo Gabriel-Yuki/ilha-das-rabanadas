@@ -23,12 +23,19 @@ class Produto extends Upload
         $carregarView->renderizar();
     }
     public function insert()
-    {
+    {// {  $teste = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+    //     var_dump($teste);
         $status = $this->produtoDao->insert();
         if ($status) {
             $_SESSION['msg'] = "Cadastrado com sucesso!";
 
+          
             header("Location: ../adm/produtos");
+        } else {
+      
+            $_SESSION['msg'] = "Verifique se todos os campos estão preenchidos!";
+
+            header("Location: ../adm/cadastrarproduto");
         }
     }
     public function form()

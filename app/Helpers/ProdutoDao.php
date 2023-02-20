@@ -29,7 +29,17 @@ class ProdutoDao
     }
     public function insert()
     {
-        if (isset($_FILES)) {
+        $inputs = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        foreach ($inputs as $k) {
+            if ($k === "") {
+                return false;
+            }
+        }
+
+
+
+
+        if (isset($_FILES['arquivo'])&&$_FILES['arquivo']['error']!== 4) {
             $upload = new \App\Controllers\Upload($_FILES["arquivo"]);
             if ($upload) {
                 $imgdb = $this->pathImageDb . "/" . $_FILES["arquivo"]["name"];
@@ -39,9 +49,13 @@ class ProdutoDao
                 $this->produtoModel->categoria = filter_input(INPUT_POST, 'categoria', FILTER_SANITIZE_SPECIAL_CHARS);
                 $this->produtoModel->imgProduto = $imgdb;
                 $status = $this->produtoModel->insert();
-                return $status;
+                if ($status) {
+                    return true;
+                }
+                return false;
             }
         }
+        return false;
     }
     public function update()
     {

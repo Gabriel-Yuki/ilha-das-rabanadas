@@ -60,15 +60,19 @@ unset($_SESSION['msg']);
             <a href="./cadastrarproduto"><span class="btn btn-success"><span>Adicionar novo produto</span></span></a>
             <div id="doces">
                 <h3>Doces</h3>
-                <div class="d-flex flex-row  align-items-center flex-wrap">
+             
+                <div class="d-flex flex-row  align-items-center flex-wrap gap-5 px-5">
                     <?php
 
                     foreach ($this->datas["products"] as $produto) {
-                        extract($produto); ?>
+                        extract($produto); 
+                        if ($categoria === "Doce") {
+                            # code...
+                         ?>
                         <div class="card">
                             <div class="card-img"><img class="card-img-top " src="<?php echo $imagem; ?>" alt="Title"></div>
-                            <div class="card-body text-center">
-                                <h4 class="card-title"><?php echo $nomeProduto; ?></h4>
+                            <div class="card-body ">
+                                <h5 class="card-title fw-bold"><?php echo $nomeProduto; ?></h5>
                                 <p class="card-text"><?php echo $descricao; ?></p>
                                 <p>R$<?php echo $preco; ?></p>
                             </div>
@@ -79,11 +83,38 @@ unset($_SESSION['msg']);
                                 </button>
                             </div>
                         </div>
-                    <?php } ?>
+                    <?php }} ?>
                 </div>
             </div>
 
+            <div id="salgados">
+                <h3>Salgados</h3>
+              
+                <div class="d-flex flex-row  align-items-center flex-wrap gap-5 px-5">
+                    <?php
 
+                    foreach ($this->datas["products"] as $produto) {
+                        extract($produto); 
+                        if ($categoria === "Salgado") {
+                            # code...
+                         ?>
+                        <div class="card">
+                            <div class="card-img"><img class="card-img-top " src="<?php echo $imagem; ?>" alt="Title"></div>
+                            <div class="card-body " >
+                                <h5 class="card-title fw-bold"><?php echo $nomeProduto; ?></h5>
+                                <p class="card-text"><?php echo $descricao; ?></p>
+                                <p>R$<?php echo $preco; ?></p>
+                            </div>
+                            <div class="card-footer d-flex align-items-center justify-content-center gap-2">
+                                <a id="edit" href="../adm/atualizarproduto?id=<?php echo $idProduto; ?>"><button class="btn btn-success">Editar</button></a>
+                                <button type="button" class="btn btn-outline-danger W" data-bs-toggle="modal" data-bs-target="#modalId">
+                                    Deletar
+                                </button>
+                            </div>
+                        </div>
+                    <?php }} ?>
+                </div>
+            </div>
 
 
         </div>
@@ -92,9 +123,7 @@ unset($_SESSION['msg']);
 
 
 
-    <!-- Modal Body -->
-    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm " role="document">
             <div class="modal-content">
                 <div class="modal-header">

@@ -39,7 +39,7 @@ class ProdutoDao
 
 
 
-        if (isset($_FILES['arquivo'])&&$_FILES['arquivo']['error']!== 4) {
+        if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] !== 4) {
             $upload = new \App\Controllers\Upload($_FILES["arquivo"]);
             if ($upload) {
                 $imgdb = $this->pathImageDb . "/" . $_FILES["arquivo"]["name"];
@@ -78,6 +78,12 @@ class ProdutoDao
     public function delete($id)
 
     {
-        $this->produtoModel->delete($id);    # code...
+        if ($this->produtoModel->delete($id));    # code...
+        {
+           
+            return    $_SESSION['msg'] = "Não foi possivel deletar esse produto!Verifique se há algum pedido dele!";
+        }
+        return $_SESSION['msg'] = "Deletado com sucesso!";
+      
     }
 }

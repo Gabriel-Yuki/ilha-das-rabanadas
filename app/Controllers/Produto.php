@@ -23,16 +23,16 @@ class Produto extends Upload
         $carregarView->renderizar();
     }
     public function insert()
-    {// {  $teste = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-    //     var_dump($teste);
+    { // {  $teste = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        //     var_dump($teste);
         $status = $this->produtoDao->insert();
         if ($status) {
             $_SESSION['msg'] = "Cadastrado com sucesso!";
 
-          
+
             header("Location: ../adm/produtos");
         } else {
-      
+
             $_SESSION['msg'] = "Verifique se todos os campos estão preenchidos!";
 
             header("Location: ../adm/cadastrarproduto");
@@ -56,13 +56,7 @@ class Produto extends Upload
     public function delete()
     {
         $id = $_GET['id'];
-        if ($this->produtoDao->delete($id)) {
-            $_SESSION['msg'] = "Deletado com sucesso!";
-
-            header('Location: ../adm/produtos');
-        } else {
-            $_SESSION['msg'] = "Não foi possivel deletar esse produto!Verifique se há algum pedido dele!";
-            header('Location: ../adm/produtos');
-        }
+        $this->produtoDao->delete($id);
+        header('Location: ../adm/produtos');
     }
 }

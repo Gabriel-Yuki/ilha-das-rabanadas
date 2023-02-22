@@ -7,7 +7,7 @@ include "./app/config.php"; ?>
   <title>Title</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <metarequired name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -42,75 +42,73 @@ include "./app/config.php"; ?>
 
         <div class="col-6">
           <label for="nome" class="form-label">Nome</label>
-          <input type="text" name="nome" id="nome" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="text"required name="nome" id="nome" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
         <div class="col-6">
           <label for="sobrenome" class="form-label">Sobrenome</label>
-          <input type="text" name="sobrenome" id="sobrenome" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="text"required name="sobrenome" id="sobrenome" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
 
       </div>
       <div class="mb-3 row">
         <div class="col">
           <label for="cep" class="form-label">Telefone residencial</label>
-          <input type="text" name="cep" id="numeroResidencial" class="form-control" placeholder="11111-111" aria-describedby="helpId">
+          <input type="text"required name="cep" id="numeroResidencial" class="form-control" placeholder="11111-111" aria-describedby="helpId">
         </div>
         <div class="col">
           <label for="cep" class="form-label">Telefone celular</label>
-          <input type="text" name="cep" id="numeroCelula" class="form-control" placeholder="11111-111" aria-describedby="helpId">
+          <input type="text"required name="cep" id="numeroCelula" class="form-control" placeholder="11111-111" aria-describedby="helpId">
         </div>
       </div>
       <div class="mb-3 row">
         <div class="col-6">
           <label for="cep" class="form-label">Cep</label>
-          <input type="text" name="cep" id="cep" class="form-control" placeholder="11111-111" aria-describedby="helpId">
+          <input type="text"required name="cep" id="cep" class="form-control" placeholder="11111-111" aria-describedby="helpId">
         </div>
       </div>
 
       <div class="mb-4 row">
         <div class="col-10">
           <label for="rua" class="form-label">Rua</label>
-          <input type="text" name="rua" id="rua" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="text"required name="rua" id="rua" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
         <div class="col">
           <label for="numero" class="form-label">Número</label>
-          <input type="text" name="numero" id="numero" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="text"required name="numero" id="numero" class="form-control" placeholder="" aria-describedby="helpId">
 
         </div>
       </div>
       <div class="mb-4 row">
         <div class="col">
           <label for="bairro" class="form-label">Bairro</label>
-          <input type="text" name="bairro" id="bairro" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="text"required name="bairro" id="bairro" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
         <div class="col">
           <label for="cidade" class="form-label">Cidade</label>
-          <input type="text" readonly value="Nova Iguaçu" name="cidade" id="cidade" class="form-control " placeholder="" aria-describedby="helpId">
+          <input  readonly value="Nova Iguaçu" name="cidade" id="cidade" class="form-control " placeholder="" aria-describedby="helpId">
         </div>
       </div>
       <div class="mb-4 row">
         <div class="col">
           <label for="email" class="form-label">E-mail</label>
-          <input type="email" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="email"required name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
       </div>
 
       <div class="mb-4 row ">
         <div class="col">
           <label for="senha" class="form-label">Senha</label>
-          <input type="password" name="senha" id="senha" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="password"required name="senha" id="senha" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
-        <div class="col">
-          <label for="senha" class="form-label">Confirme sua senha</label>
-          <input type="password" name="senha" id="confirmaSenha" class="form-control" placeholder="" aria-describedby="helpId">
-        </div>
+        
       </div>
-      <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn" type="submit" value="Finalizar"></div>
+      <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn" type="submit" value="Finalizar o cadastro"></div>
 
     </form>
   </div>
 
   </main>
+
   <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
 
   <!-- Bootstrap JavaScript Libraries -->
@@ -119,7 +117,9 @@ include "./app/config.php"; ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
-  <script>
+  <script src="<?php echo JS;?>/login/validarLogin.js">
+    </script>
+      <script src="<?php echo JS;?>/login/viaCep.js">
     </script>
 </body>
 

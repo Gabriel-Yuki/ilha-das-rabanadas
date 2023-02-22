@@ -55,8 +55,14 @@ class Produto extends Upload
     }
     public function delete()
     {
-        $id = $_GET['id'];
-        $this->produtoDao->delete($id);
-        header('Location: ../adm/produtos');
+        echo $this->produtoDao->delete();
+
+        if ($this->produtoDao->delete() == "true") {
+            $_SESSION['msg'] = "Deletado com sucesso!";
+            header('Location: ../adm/produtos');
+        } else {
+            $_SESSION['msg'] = "Falha ao deletar! Verifique se esse produto foi pedido!";
+            header('Location: ../adm/produtos');
+        }
     }
 }

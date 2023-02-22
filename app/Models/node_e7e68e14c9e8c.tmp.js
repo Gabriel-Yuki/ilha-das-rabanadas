@@ -47,16 +47,11 @@ class ProdutoModel extends Conn
     }
     public function delete()
     {
-        if ($this->orderedProduct($this->id) > 0) {
-            return "false";
-        } else {
-
-            $query = "DELETE FROM `produto` WHERE idProduto = ?";
-            $stmt = $this->conn->prepare($query);
-            $stmt->bindValue(1, $this->id);
-            $stmt->execute();
-            return "true";
-        }
+        $this->orderedProduct($this->id);
+        // $query = "DELETE FROM `produto` WHERE idProduto = ?";
+        // $stmt = $this->conn->prepare($query);
+        // $stmt->bindValue(1, $this->id);
+        // $stmt->execute();
     }
     public function update()
     {
@@ -82,6 +77,7 @@ class ProdutoModel extends Conn
         $stmt->bindValue(1, $id);
         $stmt->execute();
         $ordersNumber = sizeof($stmt->fetchAll());
-        return $ordersNumber;
+        $status =$ordersNumber == 0 ? "false" : "true";
+       echo $status;
     }
 }

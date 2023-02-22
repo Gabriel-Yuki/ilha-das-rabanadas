@@ -1,31 +1,7 @@
 <?php
 include "./app/config.php";
 
-
-if (isset($_SESSION['msg'])) :
-    echo (" <div class='toast-container position-fixed top-0 end-0 p-3 '>
-            <div id='toast' class='toast ' role='alert' aria-live='assertive' aria-atomic='true'>
-                <div class='toast-header d-flex justify-content-between'>
-                <i class='bi bi-info-circle'></i>
-                   
-                    
-                    <button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
-                </div>
-                <div class='toast-body '>$_SESSION[msg]</div>
-            </div>
-        </div>") ?>
-    <script>
-        onload = () => {
-            const toastEl = document.getElementById("toast");
-
-            const toast = new bootstrap.Toast(toastEl);
-
-            toast.show();
-        };
-    </script>
-<?php
-endif;
-unset($_SESSION['msg']);
+include './app/Views/message.php';
 
 ?>
 <!doctype html>
@@ -51,11 +27,21 @@ unset($_SESSION['msg']);
 </head>
 
 <body>
-    <?php
-    include './app/Views/Headers/header-dashboards-adm-acessado.php';
+<div class="container-fluid " id="header">
+  <header class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 
 
-    ?>
+    <a href="../adm/produtos" class="nav  col-md-auto mb-2 justify-content-center mb-md-0" id="return">
+
+      <lord-icon src="https://cdn.lordicon.com/zmkotitn.json" trigger="click" colors="primary:#121331" state="hover-2" style="width:50px;height:50px">
+</lord-icon>
+    </a>
+
+    <div class="col-md-3 text-center m-auto">
+     <img width="60%" src="<?php echo IMG?>/img/logo-dashboards.webp" alt="">
+    </div>
+  </header>
+</div>
     <div class="container d-flex justify-content-center align-items-center my-5 flex-column gap-3">
         <h1 class="text-center">Cadastro</h1>
         <form action="../produto/insert" method="POST" enctype="multipart/form-data">

@@ -75,15 +75,11 @@ class ProdutoDao
             }
         }
     }
-    public function delete($id)
+    public function delete()
 
     {
-        if ($this->produtoModel->delete($id));    # code...
-        {
-           
-            return    $_SESSION['msg'] = "Não foi possivel deletar esse produto!Verifique se há algum pedido dele!";
-        }
-        return $_SESSION['msg'] = "Deletado com sucesso!";
-      
+
+        $this->produtoModel->id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+ return $this->produtoModel->delete();
     }
 }

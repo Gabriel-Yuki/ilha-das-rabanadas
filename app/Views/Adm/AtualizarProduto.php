@@ -1,12 +1,8 @@
 <?php
 include "./app/config.php";
 
-if (isset($this->datas)) {
-    foreach ($this->datas['informations'] as $data) {
-        extract($data);
-        # code...
-    }
-}
+include './app/Views/message.php';
+
 
 ?>
 
@@ -28,9 +24,21 @@ if (isset($this->datas)) {
 </head>
 
 <body>
-    <?php
-    include './app/Views/Headers/header-dashboards-adm-acessado.php';
-    ?>
+<div class="container-fluid " id="header">
+  <header class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+
+
+    <a href="../adm/produtos" class="nav  col-md-auto mb-2 justify-content-center mb-md-0" id="return">
+
+      <lord-icon src="https://cdn.lordicon.com/zmkotitn.json" trigger="click" colors="primary:#121331" state="hover-2" style="width:50px;height:50px">
+</lord-icon>
+    </a>
+
+    <div class="col-md-3 text-center m-auto">
+     <img width="60%" src="<?php echo IMG?>/img/logo-dashboards.webp" alt="">
+    </div>
+  </header>
+</div>
     <div class="container d-flex justify-content-center align-items-center my-5 flex-column gap-3">
         <h1 class="text-center">Atualizar Produto</h1>
         <form action="../produto/update" method="POST" enctype="multipart/form-data">

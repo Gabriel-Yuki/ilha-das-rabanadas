@@ -25,7 +25,7 @@
     </div>
 
     <div class="col">
-      <h5>Nossas Redes Sociais</h5>
+      <h5>Nossas Redes Sociais:</h5>
       <ul class="nav gap-5 ">
         <li class="nav-item mb-2 fs-2"><a href="#" class="nav-link p-0 text-muted  links"><i class="bi bi-instagram"></i></a></li>
         <li class="nav-item mb-2 fs-2"><a href="#" class="nav-link p-0 text-muted links"><i class="bi bi-whatsapp"></i></a></li>

@@ -8,16 +8,16 @@ use Core\ConfigView;
 
 class Pedido
 {
-    public object $pedidoModel;
+    public object $pedidoDao;
     public function __construct()
     {
-        $this->pedidoModel = new \App\Models\pedidoModel(); //instanciando a class model
+        $this->pedidoDao = new \App\Helpers\pedidoDao(); //instanciando a class Dao
 
     }
     public function update(){
         
         $id = $_GET['id'];
-        $response =  $this->pedidoModel->update($id);
+        $response =  $this->pedidoDao->update($id);
 
     }
 
@@ -25,11 +25,12 @@ class Pedido
     {
 
         $id = $_GET['id'];
-        $response =  $this->pedidoModel->delete($id);
+        $response =  $this->pedidoDao->delete($id);
         if ($response) {
             echo "ok";
             die;
         }
         echo "ERROR";
     }
+    
 }

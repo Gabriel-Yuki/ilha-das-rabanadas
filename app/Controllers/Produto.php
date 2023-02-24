@@ -18,7 +18,7 @@ class Produto extends Upload
     {
 
 
-        $this->datas['produtos'] = $this->produtoDao->listProducts(); //chamando todos os itens do db
+        $this->datas['products'] = $this->produtoDao->listProducts(); //chamando todos os itens do db
         $carregarView = new \Core\ConfigView("Produto/Cardapio", $this->datas);
         $carregarView->renderizar();
     }

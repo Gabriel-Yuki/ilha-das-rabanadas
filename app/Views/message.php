@@ -1,5 +1,4 @@
 <?php
-include "./app/config.php";
 
 
 if (isset($_SESSION['msg'])) :

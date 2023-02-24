@@ -1,11 +1,18 @@
 <?php
-include "./app/config.php"; ?>
+include "./app/config.php";
+if (sizeof($this->datas['myProducts']) !== 0) {
+
+    foreach ($this->datas['myProducts'] as $myProducts) {
+        extract($myProducts);
+    }
+}
+
+?>
 <!doctype html>
 <html lang="pt-br">
 
 <head>
     <title>Title</title>
-    <!-- Required meta tags -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,15 +48,27 @@ include "./app/config.php"; ?>
             max-width: 30%;
 
         }
-        .card-body{
+
+        .card-body {
             width: max-content;
         }
+
         input[type=number] {
             width: 40% !important;
             display: inline;
 
         }
-        #buttons{
+
+        #valorTotal {
+            background-color: transparent;
+
+        }
+
+        #valorTotal:focus-visible {
+            outline: 0px;
+        }
+
+        #buttons {
             width: 65%;
             gap: 30%;
 
@@ -57,7 +76,9 @@ include "./app/config.php"; ?>
             justify-content: center;
             margin-top: 2em;
         }
-        #buttons>input,button {
+
+        #buttons>input,
+        button {
             width: max-content;
             height: 3em;
         }
@@ -74,26 +95,26 @@ include "./app/config.php"; ?>
     <main class="my-5">
 
 
-<h1 class="text-center">Seu carrinho </h1>
+        <h1 class="text-center">Seu carrinho </h1>
 
         <section class="container  flex-column p-4">
             <form action="" method="POST">
                 <div class="card   mb-3">
                     <div class="row  align-items-center g-0">
                         <div class="col">
-                            <img src="<?php echo IMG ?>/img/rabanada-salgada.webp " class="" alt="..." height="100%" width="90%">
+                            <img src="<?php echo $imagem; ?> " class="" alt="..." height="100%" width="90%">
                         </div>
                         <div class="col">
                             <div class="card-body">
-                                <h5 class="card-title">Rabanda com brigadeiro</h5>
-                                <p class="card-text">Valor:R$ <span>400</span></p>
+                                <h5 class="card-title"><?php echo $nomeProduto; ?></h5>
+                                <p class="card-text">Valor:<span class="fw-bold"> <?php echo $preco; ?></span>
                                 <div class="mb-3">
                                     <label for="" class="form-label">
                                         <span>Quantidade</span>
-                                        <input type="number" name="" id="quantidade" class="form-control" placeholder="" aria-describedby="helpId">
+                                        <input type="number" name="quantidade" value="1" id="quantidade" min="1" class="form-control" placeholder="" aria-describedby="helpId">
                                     </label>
                                 </div>
-                                <p>Total: <span>2000</span></p>
+                                <p>Total: <input type="text" value="<?php echo $preco; ?>" id="valorTotal" class="border-0" name="valorTotal" readonly></p>
                             </div>
                         </div>
                     </div>
@@ -117,7 +138,7 @@ include "./app/config.php"; ?>
                     </div>
                 </div>
                 <div class="d-flex " id="buttons">
-                    <button type="button" class="btn btn-secondary" >Cancelar encomenda</button>
+                    <button type="button" class="btn btn-secondary">Cancelar encomenda</button>
                     <input type="submit" class=" btn btn-success" value="Fechar encomenda">
                 </div>
             </form>
@@ -131,7 +152,15 @@ include "./app/config.php"; ?>
 
     <?php
     include FOOTER; ?>
-
+    <script>
+        const inputQuantidade = document.querySelector("#quantidade");
+        const inputValorTotal = document.querySelector("#valorTotal");
+        quantidade.addEventListener("click", () => {
+            let quantidade = inputQuantidade.value;
+            let valorTotal = inputValorTotal.value;
+            console.log(quantidade* valorTotal)
+        })
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>

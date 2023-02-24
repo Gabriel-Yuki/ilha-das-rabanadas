@@ -37,4 +37,5 @@ class PedidoModel extends Conn
         $stmt = $this->conn->prepare($query);
         return $stmt->execute();
     }
+    
 }

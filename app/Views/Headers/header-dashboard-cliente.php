@@ -1,9 +1,7 @@
-
 <nav id="header" class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-   <img width="10%" src="<?php echo IMG ?>/img/logo-dashboards.webp" alt="">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <img width="10%" src="<?php echo IMG ?>/img/logo-dashboards.webp" alt="">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
@@ -18,9 +16,12 @@
           <a class="nav-link text-black links" href="/projetoIntegrador/home/sobre">Sobre</a>
         </li>
       </ul>
-      <span class="navbar-text">
-        <a href="/projetoIntegrador/login/index"><button id="btn-login" class="btn btn-success" type="submit">Login</button></a>
-      </span>
+      <div>
+        
+        <span class="navbar-text">
+          <a href="/projetoIntegrador/login/index"><button id="btn-login" class="btn btn-success" type="submit">Login</button></a>
+        </span>
+      </div>
     </div>
   </div>
 </nav>

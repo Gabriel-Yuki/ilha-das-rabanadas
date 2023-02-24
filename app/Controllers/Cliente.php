@@ -36,7 +36,7 @@ class Cliente
     }
     public function meusPedidos()
     {
- 
+
 
 
 
@@ -62,9 +62,13 @@ class Cliente
         header('Location:perfil');
     }
 
-    public function minhasCompras()
+    public function minhascompras()
     {
-        $teste = new ConfigView($this->pathView . "\Carrinhocompras");
+        $teste = new ConfigView($this->pathView . "\minhascompras");
         $teste->renderizar();
+    }
+    public function getId()
+    {
+        return $this->id;
     }
 }

@@ -1,6 +1,7 @@
 <?php
+
 include "./app/config.php";
-include './app/Views/message.php';
+include "./App/Views/message.php";
 
 ?>
 
@@ -8,6 +9,7 @@ include './app/Views/message.php';
 <html lang="pt-br">
 
 <head>
+
     <title>ilhas das Rabanadas</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -36,16 +38,14 @@ include './app/Views/message.php';
             <div id="doces">
                 <h3>Doces</h3>
 
-                <div class="d-flex flex-row  align-items-center flex-wrap gap-5 px-5">
+                <div class="d-flex flex-row  align-items-center justify-content-between flex-wrap gap-5 ">
                     <?php
-                    // var_dump($this->datas['products'][0]);
 
                     foreach ($this->datas["products"] as $produto) {
                         extract($produto);
                         if ($categoria === "Doce") {
-                    include './app/Views/Adm/include-produtos.php';
-                           
-                     }
+                            include './app/Views/Adm/include-produtos.php';
+                        }
                     } ?>
                 </div>
             </div>
@@ -53,14 +53,14 @@ include './app/Views/message.php';
             <div id="salgados">
                 <h3>Salgados</h3>
 
-                <div class="d-flex flex-row  align-items-center flex-wrap gap-5 px-5">
+                <div class="d-flex flex-row  align-items-center justify-content-between flex-wrap gap-5">
                     <?php
 
                     foreach ($this->datas["products"] as $produto) {
                         extract($produto);
                         if ($categoria === "Salgado") {
-                    
-                             include './app/Views/Adm/include-produtos.php';
+
+                            include './app/Views/Adm/include-produtos.php';
                         }
                     } ?>
                 </div>

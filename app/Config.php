@@ -1,5 +1,4 @@
 <?php
-
 namespace Core;
 define("PATH_DB","C:/xampp/htdocs/projetoIntegrador/public/imgs/uploads");
 define('URL', "http://localhost/projetoIntegrador/");
@@ -11,5 +10,3 @@ define("CSS_PADRAO", "http://localhost/projetoIntegrador/public/css/style.css");
 
 define("HEADER", "./app/Views/Headers/header.php");
 define("FOOTER", "./app/Views/Footers/footer.php");
-
-?>

@@ -1,6 +1,7 @@
 <?php
 include "./app/config.php";
-if (sizeof($this->datas['myProducts']) !== 0) {
+var_dump($this->datas['myProducts']);
+if (sizeof($this->datas['myProducts'][0]) != 0) {
 
     foreach ($this->datas['myProducts'] as $myProducts) {
         extract($myProducts);
@@ -107,7 +108,7 @@ if (sizeof($this->datas['myProducts']) !== 0) {
                         <div class="col">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $nomeProduto; ?></h5>
-                                <p class="card-text">Valor:<span class="fw-bold"> <?php echo $preco; ?></span>
+                                <p class="card-text">Valor:<span class="fw-bold" id="preco"> <?php echo $preco; ?></span>
                                 <div class="mb-3">
                                     <label for="" class="form-label">
                                         <span>Quantidade</span>
@@ -154,11 +155,21 @@ if (sizeof($this->datas['myProducts']) !== 0) {
     include FOOTER; ?>
     <script>
         const inputQuantidade = document.querySelector("#quantidade");
+        const precoElemento = document.querySelector("#preco");
         const inputValorTotal = document.querySelector("#valorTotal");
         quantidade.addEventListener("click", () => {
+
             let quantidade = inputQuantidade.value;
-            let valorTotal = inputValorTotal.value;
-            console.log(quantidade* valorTotal)
+            let preco = precoElemento.textContent;
+            preco = preco.replace("R$", "");
+            preco = preco.replace(",", ".");
+
+            let valorTotalAtual = (Number(preco) * quantidade).toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+            });
+            inputValorTotal.value = valorTotalAtual
+
         })
     </script>
 

@@ -6,7 +6,7 @@ use Core\ConfigView;
 
 class Cliente
 {
-    private  $idLogin, $id;
+    private  $idLogin, $id,$rua,$bairro,$numero;
     private object $clienteDao;
     private  array $datas;
     private string $pathView = "\Cliente";
@@ -17,6 +17,14 @@ class Cliente
         $this->clienteDao = new \App\Helpers\ClienteDao();
         $this->idLogin = $_SESSION["idLogin"];
         $this->id = $this->clienteDao->selectByIdLogin($this->idLogin)[0]['idCliente'];
+        $this->rua = $this->clienteDao->selectByIdLogin($this->idLogin)[0]['rua'];
+        $this->bairro = $this->clienteDao->selectByIdLogin($this->idLogin)[0]['bairro'];
+
+        $this->numero = $this->clienteDao->selectByIdLogin($this->idLogin)[0]['numero'];
+
+
+
+
     }
     public function index()
     {
@@ -70,5 +78,10 @@ class Cliente
     public function getId()
     {
         return $this->id;
+    }
+    public function getAddress()
+    {
+        $address = $this->rua.", ".$this->numero.", ".$this->bairro;
+        return $address;
     }
 }

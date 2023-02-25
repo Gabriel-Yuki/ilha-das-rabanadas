@@ -19,6 +19,14 @@ class CarrinhoModel extends Conn
         $stmt->bindValue(2,  $idProduto);
         $stmt->execute();
     }
+    public function update($idCliente, $idProduto)
+    {
+        $query = "UPDATE carrinho SET idProduto=? WHERE idCliente = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(1,  $idProduto);
+        $stmt->bindValue(2,  $idCliente);
+        $stmt->execute();
+    }
     public function verifyCart($id)
     {
         $query = "SELECT * FROM carrinho WHERE idCliente=?";

@@ -19,4 +19,8 @@ class PedidoDao
     {
         $this->listOrders();
     }
+    public function insert()
+    {
+        
+    }
 }

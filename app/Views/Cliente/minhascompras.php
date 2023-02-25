@@ -1,12 +1,16 @@
 <?php
 include "./app/config.php";
-var_dump($this->datas['myProducts']);
+date_default_timezone_set('America/Sao_Paulo');
+$datahoje = date('Y-m-d', time());
+// var_dump($this->datas['myProducts']);
 if (sizeof($this->datas['myProducts'][0]) != 0) {
 
     foreach ($this->datas['myProducts'] as $myProducts) {
         extract($myProducts);
+        // echo $idCliente;
     }
 }
+echo($this->datas['address']);
 
 ?>
 <!doctype html>
@@ -99,7 +103,9 @@ if (sizeof($this->datas['myProducts'][0]) != 0) {
         <h1 class="text-center">Seu carrinho </h1>
 
         <section class="container  flex-column p-4">
-            <form action="" method="POST">
+            <form action="../pedido/insert" method="POST">
+                <input type="hidden" name="id" value="<?php echo $idCliente;?>">
+                <input type="hidden" name="produto" value="<?php echo $idProduto;?>">
                 <div class="card   mb-3">
                     <div class="row  align-items-center g-0">
                         <div class="col">
@@ -128,11 +134,11 @@ if (sizeof($this->datas['myProducts'][0]) != 0) {
                                     <label for="" class="form-label">
                                         Endereço de entrega:
                                     </label>
-                                    <input type="text" name="" id="endereco" class="form-control" placeholder="" aria-describedby="helpId">
+                                    <input type="text" name="" id="endereco" class="form-control" placeholder="" aria-describedby="helpId" value="<?php  echo($this->datas['address']);?>" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Data de entrega</label>
-                                    <input type="date" name="dataEntrega" id="dataEntrega" class="form-control">
+                                    <input type="date" min="<?php echo $datahoje; ?>" name="dataEntrega" id="dataEntrega" class="form-control" required>
                                 </div>
                             </div>
                         </div>

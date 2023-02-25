@@ -14,6 +14,12 @@ class Pedido
         $this->pedidoDao = new \App\Helpers\pedidoDao(); //instanciando a class Dao
 
     }
+    public function insert()
+    {
+$this->pedidoDao->insert();
+
+
+}
     public function update(){
         
         $id = $_GET['id'];

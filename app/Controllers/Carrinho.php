@@ -15,9 +15,16 @@ class Carrinho
         $this->carrinhoDao = new \App\Helpers\CarrinhoDao();
         $this->cliente = new \App\Controllers\Cliente();
         $this->idCliente = $this->cliente->getId();
+        $this->datas["address"] = $this->cliente->getAddress();
     }
-    
-    
+
+    public function index()
+
+    {
+        $idProduto = $_GET["id"];
+        $this->carrinhoDao->insert($idProduto, $this->idCliente);
+        $this->getMyproducts();
+    }
 
     public function getMyproducts()
 

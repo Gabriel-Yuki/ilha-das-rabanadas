@@ -75,7 +75,7 @@ include "./app/config.php"; ?>
         }
 
         .box_:hover {
-            box-shadow: 0px 5px 10px #858585;
+            box-shadow: 0px 2px 7px #858585;
             transition: 0.3s;
             transform: scale(1.2);
         }
@@ -147,8 +147,8 @@ include "./app/config.php"; ?>
 
     <section>
         <div id="boas-vindas-banner" class=" banner container-fluid d-flex align-items-center justify-content-center body">
-            <h1 class="text-white">Ilha das rabanadas
-                <p>Primeira loja especializada em produção de rabanadas</p>
+            <h1 class="text-white"><b> Ilha das Rabanadas</b>
+                <p><b>Primeira loja especializada na produção de rabanadas</b></p>
             </h1>
         </div>
     </section>
@@ -188,28 +188,28 @@ include "./app/config.php"; ?>
             </div>
         </div> -->
         <div class="card facet_sidebar body">
-            <h3>This model is responsive</h3>
+            <h3><b>Cardápio</b></h3>
             <div class="content body column">
                 <div class="box_ flex">
-                    <img src="https://i.goopics.net/y4mxO.jpg">
+                    <img src="<?php echo IMG ?>/img/rabanada-salgada.webp" class="fluid">
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur!
                         <button class="btn_ coulumn">Learn More</button>
                     </p>
                 </div>
                 <div class="box_ column">
-                    <img src="https://i.goopics.net/naAN1.jpg">
+                <img src="<?php echo IMG ?>/img/rabanada-vegana.webp" alt="" class="fluid">
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur! orem ipsum dolor, sit amet consectetur adipisicing elit. Neque, consequatur!
                         <button class="btn_">Learn More</button>
                     </p>
                 </div>
                 <div class="box_ column">
-                    <img src="https://i.goopics.net/nawKl.jpg">
+                <img src="<?php echo IMG ?>/img/rabanada-doce.webp" alt="" class="fluid">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iusto hic reiciendis assumenda itaque, natus dolore ullam ipsam atque iure aliquid explicabo necessitatibus nobis illo! Dignissimos nisi alias minima in.
                         <button class="btn_">Learn More</button>
                     </p>
                 </div>
                 <div class="box_ column">
-                    <img src="https://i.goopics.net/NJqmR.jpg">
+                <img src="<?php echo IMG ?>/cardapio/frango.webp" alt="" class="fluid">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt inventore illo perferendis tempora, nemo quibusdam nihil non aperiam quaerat nisi veniam suscipit sunt quia sint saepe ipsa optio corporis corrupti, recusandae omnis quas
                         deleniti aut? Placeat nisi velit excepturi. Unde omnis alias facilis obcaecati, vel qui quisquam vitae consequatur accusantium.
                         <button class="btn_">Learn More</button>
@@ -222,7 +222,7 @@ include "./app/config.php"; ?>
 
         <div class="container p-3">
             <h3 class="text-center my-3">
-                Serviços prestados
+             <br>  <b> Serviços prestados</b>
             </h3>
 
             <div class="row justify-content-center align-items-center g-2">
@@ -263,10 +263,10 @@ include "./app/config.php"; ?>
     </section>
     <section>
         <div id="sobre-banner" class=" banner container-fluid d-flex flex-column align-items-center gap-5 justify-content-center">
-            <h1 class="text-white">Venha conhecer a nossa história!
+            <h1 class="text-white"><b>Venha conhecer a nossa história!</b>
 
             </h1>
-            <a href="../home/sobre"><button id="btn-sobre" class=" rounded-pill  btn btn-success body">Sobre nós</button></a>
+            <a href="../home/sobre"><button id="btn-sobre" class=" rounded-pill  btn btn-success body"><b>Sobre nós</b></button></a>
         </div>
     </section>
     <?php

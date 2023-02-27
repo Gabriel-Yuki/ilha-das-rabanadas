@@ -19,7 +19,7 @@
       <div>
         
         <span class="navbar-text">
-          <a href="/projetoIntegrador/login/index"><button id="btn-login" class="btn btn-success" type="submit">Login</button></a>
+          <a href="/projetoIntegrador/login/index"><button id="btn-login" class="btn btn-success" type="submit"><b>Login</b></button></a>
         </span>
       </div>
     </div>

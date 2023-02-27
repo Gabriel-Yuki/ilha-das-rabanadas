@@ -2,7 +2,11 @@
 include "./app/config.php";
 
 include './app/Views/message.php';
-
+if (isset($this->datas['informations'])) 
+foreach ($this->datas['informations'] as $data) {
+    extract($data);
+    # code...
+}
 
 ?>
 

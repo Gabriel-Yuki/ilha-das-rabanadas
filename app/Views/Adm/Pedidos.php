@@ -1,1 +1,3 @@
-ok
+<?php 
+
+echo "text";?>

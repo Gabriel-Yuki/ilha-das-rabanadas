@@ -23,6 +23,8 @@ class Adm
     }
     public function pedidos()
     {
+        $pedido = new \Core\ConfigView('Adm/Pedidos');
+        $pedido->renderizar();
     }
     public function produtos()
     {

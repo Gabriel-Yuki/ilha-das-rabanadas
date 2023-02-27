@@ -37,7 +37,7 @@ class Cliente
     public function perfil()
     {
 
-        $this->datas["informations"] = $this->clienteDao->selectByIdLogin($this->id);
+        $this->datas["informations"] = $this->clienteDao->selectById($this->id);
 
         $perfil = new ConfigView($this->pathView . "\Perfil", $this->datas);
         $perfil->renderizar();
@@ -57,7 +57,7 @@ class Cliente
     public function atualizarPerfil()
     {
 
-        $this->datas["informations"] = $this->clienteDao->selectByIdLogin($this->idLogin);
+        $this->datas["informations"] = $this->clienteDao->selectById($this->id);
 
         $formUpdate = new ConfigView($this->pathView . "\EditarPerfil", $this->datas);
         $formUpdate->renderizar();

@@ -5,6 +5,8 @@ namespace App\Models;
 class PedidoModel extends Conn
 {
     public $idRequest;
+    public string $dataEntrega, $hora, $valorPedido, $quantidadePedido, $endereco;
+    public $idCliente, $idProduto;
 
 
     private object $conn;
@@ -12,11 +14,22 @@ class PedidoModel extends Conn
     {
         $this->conn = $this->connect();
     }
-    public function update(int $id)
-
+  
+    public function insert()
     {
-        echo $id;
+
+        $query = "INSERT INTO pedido (dataEntrega,hora,valorPedido,quantidadePedido,idCliente,idProduto,endereco) VALUES  (?,?,?,?,?,?,?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(1, $this->dataEntrega);
+        $stmt->bindValue(2, $this->hora);
+        $stmt->bindValue(3, $this->valorPedido);
+        $stmt->bindValue(4, $this->quantidadePedido);
+        $stmt->bindValue(5, $this->idCliente);
+        $stmt->bindValue(6, $this->idProduto);
+        $stmt->bindValue(7, $this->endereco);
+        $stmt->execute();
     }
+   
     public function delete(int $id)
     {
         try {
@@ -37,5 +50,4 @@ class PedidoModel extends Conn
         $stmt = $this->conn->prepare($query);
         return $stmt->execute();
     }
-    
 }

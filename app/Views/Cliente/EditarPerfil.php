@@ -2,7 +2,6 @@
 include "./app/config.php";
 
 
-
 foreach ($this->datas["informations"] as $data) {
   extract($data);
 }
@@ -42,68 +41,68 @@ foreach ($this->datas["informations"] as $data) {
     </header>
   </div>
 
+
   <div class="container d-flex justify-content-center align-items-center my-5 flex-column gap-3">
     <h1 class="text-center">Atualizar</h1>
     <form action="update" method="POST" class="rounded">
-      <input type="hidden" name="id" value="<?php echo $idCliente;?>">
+      <input type="hidden" name="idCliente" value="<?php echo $idCliente; ?>">
       <div class="mb-4 row">
 
         <div class="col-6">
           <label for="nome" class="form-label">Nome</label>
-          <input type="text"value="<?php echo $nomeCliente;?>" name="nome" id="nome" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="text" required value="<?php echo $nomeCliente; ?>" name="nome" id="nome" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
         <div class="col-6">
           <label for="sobrenome" class="form-label">Sobrenome</label>
-          <input type="text" name="sobrenome" id="sobrenome" value="<?php echo $sobrenome;?>" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="text" value="<?php echo $sobrenome; ?> " required name=" sobrenome" id="sobrenome" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
 
       </div>
       <div class="mb-3 row">
-        <div class="col">
-          <label for="numeroResidencial" class="form-label">Telefone residencial</label>
-          <input type="text" name="numeroResidencial" id="numeroResidencial" class="form-control" value="<?php echo $residencialCliente;?>"placeholder="11111-111" aria-describedby="helpId">
-        </div>
-        <div class="col">
+
+        <div class="col-6">
           <label for="numeroCelular" class="form-label">Telefone celular</label>
-          <input type="text" name="numeroCelular" id="numeroCelular" class="form-control"value="<?php echo $numeroCliente;?>" placeholder="11111-111" aria-describedby="helpId">
+          <input type="text" required name="numeroCelular" id="numeroCelular" value="<?php echo $numeroCliente; ?>" class=" form-control" placeholder="(99) 9999-9999" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})" title="Número de telefone precisa ser no formato (99) 9999-9999" required="required">
         </div>
       </div>
       <div class="mb-3 row">
         <div class="col-6">
-          <label for="cep" class="form-label"  value="<?php echo $cep;?>">Cep</label>
-          <input type="text" name="cep" id="cep" class="form-control" placeholder="11111-111" aria-describedby="helpId">
+          <label for="cep" class="form-label">Cep</label>
+          <input type="text" value="<?php echo $cep; ?>" required name=" cep" id="cep" class="form-control" placeholder="99999-999" aria-describedby="helpId" pattern="\d{5}-?\d{3}" maxlength="9">
         </div>
       </div>
 
       <div class="mb-4 row">
         <div class="col-10">
           <label for="rua" class="form-label">Rua</label>
-          <input type="text" name="rua" id="rua" class="form-control"  value="<?php echo $rua;?>"placeholder="" aria-describedby="helpId">
+          <input type="text" required name="rua" value="<?php echo $rua; ?>" id=" logradouro" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
         <div class="col">
           <label for="numero" class="form-label">Número</label>
-          <input type="text" name="numero" id="numero" class="form-control" placeholder=""  value="<?php echo $numero;?>"aria-describedby="helpId">
+          <input type="text" value="<?php echo $numero; ?> " required name="numero" id="numero" class="form-control" placeholder="" aria-describedby="helpId">
 
         </div>
       </div>
       <div class="mb-4 row">
         <div class="col">
           <label for="bairro" class="form-label">Bairro</label>
-          <input type="text" name="bairro" id="bairro" class="form-control" placeholder="" aria-describedby="helpId" value="<?php echo $bairro;?>">
+          <input type="text" required name="bairro" value="<?php echo $bairro; ?>" id="bairro" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
         <div class="col">
           <label for="cidade" class="form-label">Cidade</label>
-          <input  value="<?php echo $cidade;?>"type="text" readonly value="Nova Iguaçu" name="cidade" id="cidade" class="form-control " placeholder="" aria-describedby="helpId">
+          <input readonly value="Nova Iguaçu" name="cidade" id="localidade" value="<?php echo $cidade; ?>" class="form-control " placeholder="" aria-describedby="helpId">
         </div>
       </div>
-   
 
-      <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn   " type="submit" value="Atualizar"></div>
+
+
+      <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn" type="submit" value="Finalizar o cadastro"></div>
 
     </form>
   </div>
 
   </main>
+
   <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
 
   <!-- Bootstrap JavaScript Libraries -->
@@ -111,6 +110,9 @@ foreach ($this->datas["informations"] as $data) {
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+  <script src="<?php echo JS; ?>/login/viaCep.js">
   </script>
 </body>
 

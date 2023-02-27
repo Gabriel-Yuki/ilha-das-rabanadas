@@ -6,14 +6,15 @@ use Core\ConfigView;
 
 class Carrinho
 {
-    private $idCliente;
+    public $idCliente;
     private object $carrinhoDao;
-    private object $cliente;
+    private object $cliente, $pedido;
     private array $datas;
     public function __construct()
     {
         $this->carrinhoDao = new \App\Helpers\CarrinhoDao();
         $this->cliente = new \App\Controllers\Cliente();
+        $this->pedido = new \App\Controllers\Pedido();
         $this->idCliente = $this->cliente->getId();
         $this->datas["address"] = $this->cliente->getAddress();
     }
@@ -33,5 +34,10 @@ class Carrinho
 
         $carrinho = new ConfigView("\Cliente\minhascompras", $this->datas);
         $carrinho->renderizar();
+    }
+    public function insert()
+    {
+        $this->pedido->insert();
+        
     }
 }

@@ -57,14 +57,45 @@ include "./app/config.php";
 
             if (isset($this->datas["request"])) {
 
-               
+
                 include './app/Views/Cliente/meusPedidos.php';
             } else {
                 include './app/Views/Cliente/semPedidos.php';
             }
             ?>
         </div>
+
+
     </div>
+
+
+    <script>
+        const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+    </script>
+    <script>
+        const inputElementCancel = document.querySelector("#justifyCancel");
+        const inputText = document.querySelector("#justify");
+        const codigoPedido = document.querySelector("#codigoPedido");
+
+        inputElementCancel.addEventListener("click", () => {
+
+            let justify = inputText.value;
+            let codigo = codigoPedido.value;
+            console.log(justify);
+            window.location.href = `https://wa.me/5521982441600?text=Olá!Queria efetuar o cancelamento do meu pedido! CODIGO DO PEDIDO:${codigo}!Minha justificativa:${justify}.`;
+        })
+        const inputElementEdit = document.querySelector("#edit");
+        const text = document.querySelector("#dado");
+       
+
+        inputElementEdit.addEventListener("click", () => {
+
+            let justify = text.value;
+            let codigo = codigoPedido.value;
+            console.log(justify);
+            window.location.href = `https://wa.me/5521982441600?text=Olá!; Quero fazer uma mudança no meu pedido! CODIGO DO PEDIDO:${codigo}!Minha mudança:${justify}.`;
+        })
+    </script>
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

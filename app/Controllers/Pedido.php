@@ -8,23 +8,27 @@ use Core\ConfigView;
 
 class Pedido
 {
-    public object $pedidoDao;
+    private object $pedidoDao;
+    private array $data;
     public function __construct()
     {
         $this->pedidoDao = new \App\Helpers\pedidoDao(); //instanciando a class Dao
 
+
     }
     public function insert()
     {
-$this->pedidoDao->insert();
+        $this->pedidoDao->insert();
 
 
-}
-    public function update(){
-        
-        $id = $_GET['id'];
-        $response =  $this->pedidoDao->update($id);
-
+        header('Location:../cliente/meusPedidos');
+    }
+    public function editarPedido()
+    {
+        $idPedido = $_GET["id"];
+        $this->data["myProducts"] =  $this->pedidoDao->getById($idPedido);
+        $editarPedido = new \Core\ConfigView("Cliente/EditarPedido", $this->data);
+        $editarPedido->renderizar();
     }
 
     public function delete()
@@ -38,5 +42,4 @@ $this->pedidoDao->insert();
         }
         echo "ERROR";
     }
-    
 }

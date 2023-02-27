@@ -56,10 +56,7 @@ foreach ($this->datas["informations"] as $data) {
 
       </div>
       <div class="mb-3 row">
-        <div class="col-6">
-          <h5>Telefone residencial</h5>
-          <p><?php echo $residencialCliente; ?></p>
-        </div>
+
         <div class="col-6">
           <h5>Telefone celular</h5>
           <p><?php echo $numeroCliente; ?></p>

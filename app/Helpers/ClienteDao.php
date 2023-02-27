@@ -11,31 +11,47 @@ class ClienteDao
     {
         $this->clienteModel = new \App\Models\ClienteModel();
     }
-    private function index()
+
+    public function insert($idLogin)
     {
+
+        $this->clienteModel->name = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->lastName = filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->zipCode = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->street = filter_input(INPUT_POST, 'rua', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->number = filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->district = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->city = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $this->clienteModel->phoneNumber =  filter_input(INPUT_POST, 'numeroCelular', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->insert($idLogin);
     }
     public function selectByIdLogin($idLogin)
     {
         $datas =  $this->clienteModel->selectByIdLogin($idLogin);
         return $datas;
     }
+    public function selectById($id)
+    {
+        $datas =  $this->clienteModel->selectById($id);
+        return $datas;
+    }
     public function update()
     {
 
-        $this->id = $_SESSION["idCliente"];
 
 
-        $this->name = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->lastName = filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->zipCode = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->street = filter_input(INPUT_POST, 'rua', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->number = filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->district = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->city = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->idCliente = filter_input(INPUT_POST, 'idCliente', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->name = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->lastName = filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->zipCode = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->street = filter_input(INPUT_POST, 'rua', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->number = filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->district = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->city = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_SPECIAL_CHARS);
 
-        $this->phoneNumber =  filter_input(INPUT_POST, 'numeroCelular', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->residentialNumber =  filter_input(INPUT_POST, 'numeroResidencial', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->update($this->id, $this->name, $this->lastName, $this->zipCode, $this->street, $this->number, $this->district, $this->city, $this->residentialNumber, $this->phoneNumber);
+        $this->clienteModel->phoneNumber =  filter_input(INPUT_POST, 'numeroCelular', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteModel->update();
     }
     public function myRequests($id)
     {

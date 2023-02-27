@@ -10,7 +10,6 @@ if (sizeof($this->datas['myProducts'][0]) != 0) {
         // echo $idCliente;
     }
 }
-echo($this->datas['address']);
 
 ?>
 <!doctype html>
@@ -64,12 +63,12 @@ echo($this->datas['address']);
 
         }
 
-        #valorTotal {
+        #valorPedido {
             background-color: transparent;
 
         }
 
-        #valorTotal:focus-visible {
+        #valorPedido:focus-visible {
             outline: 0px;
         }
 
@@ -104,8 +103,8 @@ echo($this->datas['address']);
 
         <section class="container  flex-column p-4">
             <form action="../pedido/insert" method="POST">
-                <input type="hidden" name="id" value="<?php echo $idCliente;?>">
-                <input type="hidden" name="produto" value="<?php echo $idProduto;?>">
+                <input type="hidden" name="idCliente" value="<?php echo $idCliente; ?>">
+                <input type="hidden" name="idProduto" value="<?php echo $idProduto; ?>">
                 <div class="card   mb-3">
                     <div class="row  align-items-center g-0">
                         <div class="col">
@@ -116,12 +115,16 @@ echo($this->datas['address']);
                                 <h5 class="card-title"><?php echo $nomeProduto; ?></h5>
                                 <p class="card-text">Valor:<span class="fw-bold" id="preco"> <?php echo $preco; ?></span>
                                 <div class="mb-3">
-                                    <label for="" class="form-label">
-                                        <span>Quantidade</span>
-                                        <input type="number" name="quantidade" value="1" id="quantidade" min="1" class="form-control" placeholder="" aria-describedby="helpId">
+                                    <label class=" mb-2 form-label">
+                                        <label>Quantidade</label>
+                                        <input type="number" name="quantidadePedido" value="1" id="quantidadePedido" min="1" class="form-control" placeholder="" aria-describedby="helpId">
                                     </label>
                                 </div>
-                                <p>Total: <input type="text" value="<?php echo $preco; ?>" id="valorTotal" class="border-0" name="valorTotal" readonly></p>
+                                <div>
+
+                                    <p>Total:</p>
+                                    <input type="text" value="<?php echo $preco; ?>" id="valorPedido" class="border-0" name="valorPedido" readonly>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -131,14 +134,18 @@ echo($this->datas['address']);
                         <div class="col">
                             <div class="card-body">
                                 <div class="mb-3">
-                                    <label for="" class="form-label">
+                                    <label for="" class=" mb-2 form-label">
                                         Endereço de entrega:
                                     </label>
-                                    <input type="text" name="" id="endereco" class="form-control" placeholder="" aria-describedby="helpId" value="<?php  echo($this->datas['address']);?>" required>
+                                    <input type="text" name="endereco" id="endereco" class="form-control" placeholder="" aria-describedby="helpId" value="<?php echo ($this->datas['address']); ?>" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="">Data de entrega</label>
+                                    <label class=" mb-2 form-label" for="">Data de entrega</label>
                                     <input type="date" min="<?php echo $datahoje; ?>" name="dataEntrega" id="dataEntrega" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class=" mb-2 form-label" for="hora da entrega">Hora da entrega</label>
+                                    <input type="time" id="" min="08:00" max="20:00" name="hora" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -160,10 +167,10 @@ echo($this->datas['address']);
     <?php
     include FOOTER; ?>
     <script>
-        const inputQuantidade = document.querySelector("#quantidade");
+        const inputQuantidade = document.querySelector("#quantidadePedido");
         const precoElemento = document.querySelector("#preco");
-        const inputValorTotal = document.querySelector("#valorTotal");
-        quantidade.addEventListener("click", () => {
+        const inputValorTotal = document.querySelector("#valorPedido");
+        inputQuantidade.addEventListener("click", () => {
 
             let quantidade = inputQuantidade.value;
             let preco = precoElemento.textContent;

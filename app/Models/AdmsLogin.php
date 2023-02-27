@@ -11,6 +11,10 @@ class AdmsLogin extends Conn
 
 
     private object $conn;
+    public function __construct()
+    {
+        $this->conn = $this->connect();
+    }
     public function getResultado(): bool
     {
         return $this->resultado;
@@ -32,6 +36,25 @@ class AdmsLogin extends Conn
             $_SESSION["msg"] = "Email não cadastrado";
             $this->resultado = false;
         }
+    }
+    public function insert($password, $login)
+    {
+        $query = "INSERT INTO login (login,senha) VALUES (?,?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(1, $login);
+        $stmt->bindValue(2, $password);
+        $stmt->execute();
+    }
+    public function getidLogin($login)
+
+    {
+        $query = "SELECT idLogin FROM login WHERE login=?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(1, $login);
+        $stmt->execute();
+        $idlogin = $stmt->fetch();
+        return $idlogin;
+        # code...
     }
     private function validarSenha()
     {

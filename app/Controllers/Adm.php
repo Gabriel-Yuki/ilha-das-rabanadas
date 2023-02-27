@@ -23,9 +23,6 @@ class Adm
     }
     public function pedidos()
     {
-        $this->datas["request"] = $this->pedidoDao->listOrders();
-        $Pedido = new ConfigView("Adm/AreaPedidos", $this->datas["request"]);
-        $Pedido->renderizar();
     }
     public function produtos()
     {

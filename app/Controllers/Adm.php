@@ -23,7 +23,8 @@ class Adm
     }
     public function pedidos()
     {
-        $pedido = new \Core\ConfigView('Adm/Pedidos');
+        $this->datas['request'] = $this->pedidoDao->listOrders();
+        $pedido = new \Core\ConfigView('Adm/Pedidos',$this->datas);
         $pedido->renderizar();
     }
     public function produtos()

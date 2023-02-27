@@ -10,7 +10,8 @@ include "./App/Views/message.php";
 
 <head>
 
-    <title>ilhas das Rabanadas</title>
+<title>Ilhas das Rabanadas</title>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

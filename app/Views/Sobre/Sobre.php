@@ -12,7 +12,7 @@ include "./app/config.php"; ?>
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>/style.css">
+    <link rel="stylesheet" href="<?php echo CSS_PADRAO; ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo CSS; ?>/sobre/sobre.css">
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
@@ -20,6 +20,23 @@ include "./app/config.php"; ?>
   body{
     font-size: 20px;
   }
+  #img{
+    width: 600px;
+  }
+  #div{
+    text-align: center;
+  }
+  #texto{
+    text-align: justify;
+  }
+  #secao-servico {
+background-color:rgba(255, 189, 89, 1);
+}
+#cor{
+    background-color: rgba(217, 180, 72, 0.3);
+}
+  
+
 </style>
 
 </head>
@@ -31,14 +48,15 @@ include "./app/config.php"; ?>
     include './app/Views/Headers/headerManager.php';
     ?>
 
+<section id="cor"  class="d-flex  justify-content-center align-center">
 
-    <div id="card" class="container " role="alert">
-    <br><h1 class="text-center"><b> Sobre a Ilha</b></h1><br>
-        <div class="row">
-            <div class="col">
-                <img src="<?php echo IMG ?>/img/ilhaprat.jpg" alt="">
+<div id="card" class="container-fluid my-3 " role="alert"><h1 class="text-center"><b> Sobre a Ilha</b></h1>
+    <div class="container">
+        <div id="div" class="row">
+            <div class="col-6">
+                <img id="img" src="<?php echo IMG ?>/img/ilhaprat.jpg" alt="">
             </div>
-            <div class="col">
+            <div id="texto" class="col-4 ">
             A missão da Ilha é proporcionar sabores diferentes para que as pessoas 
             lembrem de nós ao pensarem em rabanadas. Uma empresa dedicada em atender
             da melhor maneira nossos clientes e proporcionar uma experiência diferenciada
@@ -52,25 +70,37 @@ include "./app/config.php"; ?>
            
             </div>
         </div>
-    </div>
-    <div id="card" class="container body" role="alert">
+        </div>
+</div>
+
+
+
+
+</section>
+    <section id="secao-servico" class="d-flex  justify-content-center align-center">
+    <div id="card" class="container-fluid" role="alert">
     <br><h1 class="text-center"><b> Nossa Missão</b></h1><br>
+    <div class="container">
         <div class="row">
-            <div class="col">
-                <img src="<?php echo IMG ?>/img/miss.png" alt="" width="550px" padding="250px">
+            <div class="col-4">
+                <img src="<?php echo IMG ?>/img/miss.png" alt="" width="400px" padding="250px">
             </div>
-            <div class="col">
+            <div class="col-4">
             Oferecer ao consumidor brasileiro produtos reconhecidamente líderes em qualidade e em valor nutricional que contribuam para uma alimentação equilibrada, gerando sempre oportunidades de negócios para a empresa e valor compartilhado com a sociedade brasileira.            Servir alimentos de qualidade com rapidez e simpatia num ambiente limpo e agradável.
             </div>
-            <div class="col">
-                <img src="<?php echo IMG ?>/img/missa.png" alt="" >
+            <div class="col-4">
+                <img src="<?php echo IMG ?>/img/missa.png" alt="" width="340px" >
             </div>
         </div>
-    </div>
-    <div id="card" class="container body" role="alert">
+        </div>
+    </section>
+    <section id="cor" class="d-flex  justify-content-center align-center">
+    <div id="card" class="container-fluid" role="alert">
     <br><h1 class="text-center"><b> Nossos Valores</b></h1><br>
+    <div class="container ">
+       
         <div class="row">
-            <div class="col">
+            <div id="texto" class="col-3">
              <br> <br> <br> <br><ul>
             <li> <b> Comprometimento</b></li>
             <li><b> Honestidade</b></li>
@@ -79,52 +109,34 @@ include "./app/config.php"; ?>
             <li><b> Foco no Resultado</b></li>
             </ul>
             </div>
-            <div class="col">
-                <img src="<?php echo IMG ?>/img/val.png" alt="" width="550px">
+            <div class="col-4">
+                <img src="<?php echo IMG ?>/img/val.png" alt="" width="450px">
             </div>
         </div>
-    </div>
-    <div id="card" class="container body" role="alert">
+      
+        </div>
+    </div>  
+    </section>
+    <section id="secao-servico"  class="flex  justify-content-center align-center">
+    <div id="card" class="container-fluid" role="alert">
     <br><h1 class="text-center body"><b>Nossa Visão</b></h1><br>
+    <div class="container">
         <div class="row">
-            <div class="col">
-                <img src="<?php echo IMG ?>/img/ilhagrup6.jpg" alt="">
+            <div class="col-6">
+                <img id="img" src="<?php echo IMG ?>/img/ilhagrup6.jpg" alt="">
             </div>
-            <div class="col">
+            <div id="texto" class="col-4">
                 Buscamos ser referência em comercialização de rabanadas na Baixada Fluminense
                 até o ano de 2028, trabalhos com pensamento construtivo no intuito de nos torna-mos
                 uma das cinco empresas alimenticias lideres em distribuição de produtos ricos em 
                 valores nutricionais.
             </div>
         </div>
-    </div>
-    <div id="card" class="container body" role="alert">
-    <br><b><h1 class="text-center"><b> Trabalhe Conosco</b></h1><br>
-        <h2 class="text-center">Quer fazer parte da nossa família? Envie-nos seu currículo!</h2>
-        <div class="row">
-            <div class="col">
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputName1" class="form-label">Nome</label>
-                        <input type="name" class="form-control" id="exampleInputName1" aria-describedby="nameHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputtext1" class="form-label">Currículo</label>
-                        <input type="arquiv" class="form-control" id="exampleInputimg1">
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Enviar-nos</button>
-                </form>
-            </div>
-            <div class="col">
-                <img src="<?php echo IMG ?>/img/logo-footer.webp" alt=""  width="500x">
-            </div>
         </div>
     </div>
+    </section>
+    
+   
 
 
 

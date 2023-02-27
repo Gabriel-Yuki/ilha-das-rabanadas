@@ -4,7 +4,8 @@ include "./app/config.php"; ?>
 <html lang="pt-br">
 
 <head>
-    <title>Title</title>
+<title>Ilhas das Rabanadas</title>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
 

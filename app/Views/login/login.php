@@ -1,7 +1,7 @@
 <?php
 
 include "./app/config.php";
-
+ECHO(password_hash("aa",PASSWORD_DEFAULT));
 
 ?>
 <!doctype html>

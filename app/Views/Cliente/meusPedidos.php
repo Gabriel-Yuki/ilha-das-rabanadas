@@ -16,6 +16,7 @@
 
 
         foreach ($this->datas["request"] as $data) {
+
             extract($data);
             echo (" <tr class=''>
             <td scope='row'> $idPedido</td>
@@ -64,7 +65,7 @@
                     </div>
                     <div class='modal-body'>
                             <h6>Codigo do Pedido</h6>
-                            <input type='text' name='justificativa' id='codigoPedido' value ='$idPedido' required class='form-control'>
+                            <input type='text' name='justificativa' id='codigoPedido' value ='$idPedido' required readonly class='form-control'>
                             <h6>Dados do pedido a ser mudado!</h6>
                             <input type='text' name='dado' id='dado' required class='form-control'>
                     </div>
@@ -74,8 +75,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div><script>
+        const myModalCancel = new bootstrap.Modal(document.getElementsById('cancel$idPedido'), options);
+        const myModalEdit = new bootstrap.Modal(document.getElementsById('edit$idPedido'), options);
+        </script>
         ");
         }
 

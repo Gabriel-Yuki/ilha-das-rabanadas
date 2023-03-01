@@ -5,7 +5,7 @@ include "./app/config.php";
 <html lang="pt-br">
 
 <head>
-<title>Ilhas das Rabanadas</title>
+    <title>Ilhas das Rabanadas</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -58,34 +58,34 @@ include "./app/config.php";
 
             if (isset($this->datas["request"])) {
 
-
                 include './app/Views/Adm/meusPedidos.php';
             } else {
-                include './app/Views/Cliente/semPedidos.php';
+                include './app/Views/semPedidos.php';
             }
             ?>
         </div>
 
 
     </div>
-
-
+  
     <script>
-        const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
-    </script>
-    
-        const inputElementEdit = document.querySelector("#edit");
-        const text = document.querySelector("#dado");
-       
+        const inputElementCancel = document.querySelector("#justifyCancel");
+        const inputText = document.querySelector("#justify");
+        const codigoPedido = document.querySelector("#codigoPedido");
 
-        inputElementEdit.addEventListener("click", () => {
+        inputElementCancel.addEventListener("click", () => {
 
-            let justify = text.value;
+            let justify = inputText.value;
             let codigo = codigoPedido.value;
-            console.log(justify);
-            window.location.href = `https://wa.me/5521982441600?text=Olá!; Quero fazer uma mudança no meu pedido! CODIGO DO PEDIDO:${codigo}!Minha mudança:${justify}.`;
-        })
+            const url  = `https://wa.me/5521999999999?text=Olá!
+            Queria efetuar o cancelamento do meu pedido!
+             CODIGO DO PEDIDO:${codigo}!
+             Minha justificativa:${justify}.`;
+            open(url);
+        });
     </script>
+
+
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

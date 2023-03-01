@@ -16,28 +16,19 @@ include "./app/config.php"; ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo CSS; ?>/sobre/sobre.css">
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-<style>
-  body{
-    font-size: 20px;
-  }
-  #img{
-    width: 600px;
-  }
-  #div{
-    text-align: center;
-  }
-  #texto{
-    text-align: justify;
-  }
-  #secao-servico {
-background-color:rgba(255, 189, 89, 1);
-}
-#cor{
-    background-color: rgba(217, 180, 72, 0.3);
-}
-  
+    <style>
+        .text {
+            text-align: justify;
+        }
 
-</style>
+        .corPrimaria {
+            background-color: #FFD9A1;
+        }
+
+        .corSecundaria {
+            background-color: #FFBD59;
+        }
+    </style>
 
 </head>
 
@@ -48,95 +39,132 @@ background-color:rgba(255, 189, 89, 1);
     include './app/Views/Headers/headerManager.php';
     ?>
 
-<section id="cor"  class="d-flex  justify-content-center align-center">
-
-<div id="card" class="container-fluid my-3 " role="alert"><h1 class="text-center"><b> Sobre a Ilha</b></h1>
-    <div class="container">
-        <div id="div" class="row">
-            <div class="col-6">
-                <img id="img" src="<?php echo IMG ?>/img/ilhaprat.jpg" alt="">
-            </div>
-            <div id="texto" class="col-4 ">
-            A missão da Ilha é proporcionar sabores diferentes para que as pessoas 
-            lembrem de nós ao pensarem em rabanadas. Uma empresa dedicada em atender
-            da melhor maneira nossos clientes e proporcionar uma experiência diferenciada
-            para nossos colaboradores.
-            Na Ilha valorizamos a sua experiência buscando eleva-la com um serviço de excelência 
-            e um atendimento acolhedor.
-            Na nossa visão buscamos ser referência em comercialização de rabanadas
-            na Baixada Fluminense até o ano de 2028, fazendo que elas sejam consumidas
-            não apenas em período natalino.
-               
-           
-            </div>
-        </div>
-        </div>
-</div>
 
 
-
-
-</section>
-    <section id="secao-servico" class="d-flex  justify-content-center align-center">
-    <div id="card" class="container-fluid" role="alert">
-    <br><h1 class="text-center"><b> Nossa Missão</b></h1><br>
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-                <img src="<?php echo IMG ?>/img/miss.png" alt="" width="400px" padding="250px">
+    <section class="container-fluid corPrimaria py-3">
+        <div class="container">
+            <h1 class="text-center">Sobre a Ilha</h1>
+            <div class="row align-items-center">
+                <div class="col">
+                    <img id="img" src="<?php echo IMG ?>/img/ilhaprat.jpg" alt="" width="70%" class="img-fluid">
+                </div>
+                <div class="col">
+                    <p class=" text"> A missão da Ilha é proporcionar sabores diferentes para que as pessoas
+                        lembrem de nós ao pensarem em rabanadas. Uma empresa dedicada em atender
+                        da melhor maneira nossos clientes e proporcionar uma experiência diferenciada
+                        para nossos colaboradores.
+                        Na Ilha valorizamos a sua experiência buscando eleva-la com um serviço de excelência
+                        e um atendimento acolhedor.
+                        Na nossa visão buscamos ser referência em comercialização de rabanadas
+                        na Baixada Fluminense até o ano de 2028, fazendo que elas sejam consumidas
+                        não apenas em período natalino.
+                    </p>
+                </div>
             </div>
-            <div class="col-4">
-            Oferecer ao consumidor brasileiro produtos reconhecidamente líderes em qualidade e em valor nutricional que contribuam para uma alimentação equilibrada, gerando sempre oportunidades de negócios para a empresa e valor compartilhado com a sociedade brasileira.            Servir alimentos de qualidade com rapidez e simpatia num ambiente limpo e agradável.
-            </div>
-            <div class="col-4">
-                <img src="<?php echo IMG ?>/img/missa.png" alt="" width="340px" >
-            </div>
-        </div>
         </div>
     </section>
-    <section id="cor" class="d-flex  justify-content-center align-center">
-    <div id="card" class="container-fluid" role="alert">
-    <br><h1 class="text-center"><b> Nossos Valores</b></h1><br>
-    <div class="container ">
-       
-        <div class="row">
-            <div id="texto" class="col-3">
-             <br> <br> <br> <br><ul>
-            <li> <b> Comprometimento</b></li>
-            <li><b> Honestidade</b></li>
-            <li><b> Inovação</b></li>
-            <li><b> Trabalho em equipe</b></li>
-            <li><b> Foco no Resultado</b></li>
-            </ul>
-            </div>
-            <div class="col-4">
-                <img src="<?php echo IMG ?>/img/val.png" alt="" width="450px">
+
+
+
+    <section class="container-fluid corSecundaria py-3">
+        <div class="container">
+            <h1 class="text-center">Nossa missão</h1>
+            <div class="row align-items-center">
+
+                <div class="col">
+                    <p class=" text"> A missão da Ilha é proporcionar sabores diferentes para que as pessoas
+                        lembrem de nós ao pensarem em rabanadas. Uma empresa dedicada em atender
+                        da melhor maneira nossos clientes e proporcionar uma experiência diferenciada
+                        para nossos colaboradores.
+                        Na Ilha valorizamos a sua experiência buscando eleva-la com um serviço de excelência
+                        e um atendimento acolhedor.
+                        Na nossa visão buscamos ser referência em comercialização de rabanadas
+                        na Baixada Fluminense até o ano de 2028, fazendo que elas sejam consumidas
+                        não apenas em período natalino.
+                    </p>
+                </div>
+                <div class="col">
+                    <img id="img" src="<?php echo IMG ?>/3.png" alt="" width="70%" class="img-fluid">
+                </div>
             </div>
         </div>
       
-        </div>
-    </div>  
     </section>
-    <section id="secao-servico"  class="flex  justify-content-center align-center">
-    <div id="card" class="container-fluid" role="alert">
-    <br><h1 class="text-center body"><b>Nossa Visão</b></h1><br>
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <img id="img" src="<?php echo IMG ?>/img/ilhagrup6.jpg" alt="">
+
+    <section class="container-fluid corPrimaria py-3">
+        <div class="container">
+            <h1 class="text-center">Nossos valores</h1>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <img id="img" src="<?php echo IMG ?>/4.png" alt="" width="70%" class="img-fluid">
+                </div>
+                <div class="col">
+                    <ul class="d-flex flex-column gap-5">
+                        <li class="d-flex align-items-center gap-2 "><lord-icon src="https://cdn.lordicon.com/egiwmiit.json" trigger="loop" delay="2000" style="width:20px;height:20px">
+                            </lord-icon>
+                            <span>Comprometimento.</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-2"> <lord-icon src="https://cdn.lordicon.com/egiwmiit.json" trigger="loop" delay="2000" style="width:20px;height:20px">
+                            </lord-icon>
+                            <span> Honestidade</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-2"><lord-icon src="https://cdn.lordicon.com/egiwmiit.json" trigger="loop" delay="2000" style="width:20px;height:20px">
+                            </lord-icon>
+                            <span> Inovação</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-2"><lord-icon src="https://cdn.lordicon.com/egiwmiit.json" trigger="loop" delay="2000" style="width:20px;height:20px">
+                            </lord-icon>
+                            <span> Trabalho em equipe</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-2"><lord-icon src="https://cdn.lordicon.com/egiwmiit.json" trigger="loop" delay="2000" style="width:20px;height:20px">
+                            </lord-icon>
+                            <span> Foco no Resultado</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div id="texto" class="col-4">
-                Buscamos ser referência em comercialização de rabanadas na Baixada Fluminense
-                até o ano de 2028, trabalhos com pensamento construtivo no intuito de nos torna-mos
-                uma das cinco empresas alimenticias lideres em distribuição de produtos ricos em 
-                valores nutricionais.
-            </div>
+
         </div>
-        </div>
-    </div>
     </section>
-    
-   
+
+    <section class="container-fluid corSecundaria py-3">
+        <!-- <div id="card" class="container-fluid" role="alert">
+            <br>
+            <h1 class="text-center body"><b>Nossa Visão</b></h1><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <img id="img" src="<?php echo IMG ?>/4.png" alt="">
+                    </div>
+                    <div id="texto" class="col-4">
+                        Buscamos ser referência em comercialização de rabanadas na Baixada Fluminense
+                        até o ano de 2028, trabalhos com pensamento construtivo no intuito de nos torna-mos
+                        uma das cinco empresas alimenticias lideres em distribuição de produtos ricos em
+                        valores nutricionais.
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="container">
+            <h1 class="text-center">Nossa visão</h1>
+            <div class="row align-items-center">
+
+                <div class="col">
+                    <p class=" text"> 
+                    Buscamos ser referência em comercialização de rabanadas na Baixada Fluminense
+                        até o ano de 2028, trabalhos com pensamento construtivo no intuito de nos torna-mos
+                        uma das cinco empresas alimenticias lideres em distribuição de produtos ricos em
+                        valores nutricionais.
+                    </p>
+                </div>
+                <div class="col">
+                    <img id="img" src="<?php echo IMG ?>/5.png" alt="" width="70%" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 
 

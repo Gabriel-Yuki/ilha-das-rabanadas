@@ -70,9 +70,8 @@ include "./app/config.php";
 
 
     <script>
-        const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
-    </script>
-    <script>
+       
+
         const inputElementCancel = document.querySelector("#justifyCancel");
         const inputText = document.querySelector("#justify");
         const codigoPedido = document.querySelector("#codigoPedido");
@@ -81,28 +80,28 @@ include "./app/config.php";
 
             let justify = inputText.value;
             let codigo = codigoPedido.value;
-            console.log(justify);
-            window.location.href = `https://wa.me/5521982441600?text=Olá!Queria efetuar o cancelamento do meu pedido! CODIGO DO PEDIDO:${codigo}!Minha justificativa:${justify}.`;
-        })
+            window.location.href = `https://wa.me/5521999999999?text=Olá!Queria efetuar o cancelamento do meu pedido! CODIGO DO PEDIDO:${codigo}!Minha justificativa:${justify}.`;
+        });
         const inputElementEdit = document.querySelector("#edit");
         const text = document.querySelector("#dado");
-       
+
 
         inputElementEdit.addEventListener("click", () => {
 
             let justify = text.value;
             let codigo = codigoPedido.value;
-            console.log(justify);
-            window.location.href = `https://wa.me/5521982441600?text=Olá!; Quero fazer uma mudança no meu pedido! CODIGO DO PEDIDO:${codigo}!Minha mudança:${justify}.`;
-        })
+            window.location.href = `https://wa.me/5521999999999?text=Olá!Quero fazer uma mudança no meu pedido! CODIGO DO PEDIDO:${codigo}!Minha mudança:${justify}.`;
+        });
     </script>
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+      </script>
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+      </script>
 </body>
 
 </html>

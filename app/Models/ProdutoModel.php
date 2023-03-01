@@ -5,77 +5,83 @@ namespace App\Models;
 class ProdutoModel extends Conn
 {
 
-    public string $nome, $tipo, $descricao;
-    public float $preco;
-    public string $img_prod;
-    public int $id;
+    public string $nomeProduto, $categoria, $descricao, $preco, $imgProduto;
+    public  $id;
 
     private object $conn;
     public function __construct()
     {
         $this->conn = $this->connect();
     }
-    public function selectById(int $id)
+    public function selectById($id)
     {
-        $query = "SELECT * FROM produto WHERE id=?";
+        $query = "SELECT * FROM produto WHERE idProduto=?";
         $stmt = $this->conn->prepare($query);
         $stmt->bindValue(1, $id);
         $stmt->execute();
         return $stmt->fetchAll();
     }
-    public function listar()
+    public function listProducts()
     {
 
-        $query = "SELECT * FROM produto";
+        $query = "SELECT * FROM `produto`";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
-        return $stmt->fetchAll();
+        return   $stmt->fetchAll();
     }
     public function insert()
     {
-        $nome = $this->nome;
-        $descricao = $this->descricao;
-        $tipo = $this->tipo;
-        $preco = $this->preco;
-        $img_prod = $this->img_prod;
 
-        $query = "INSERT INTO produto (nome,descricao,tipo,preco,img_prod) VALUES (?,?,?,?,?)";
+
+        $query = "INSERT INTO produto (nomeProduto,descricao,categoria,preco,imagem ) VALUES (?,?,?,?,?)";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindValue(1, $nome);
-        $stmt->bindValue(2, $descricao);
-        $stmt->bindValue(3, $tipo);
-        $stmt->bindValue(4, $preco);
-        $stmt->bindValue(5, $img_prod);
-        
+        $stmt->bindValue(1,  $this->nomeProduto);
+        $stmt->bindValue(2, $this->descricao);
+        $stmt->bindValue(3, $this->categoria);
+        $stmt->bindValue(4, $this->preco);
+        $stmt->bindValue(5, $this->imgProduto);
 
 
-        $stmt->execute();
+
+        return $stmt->execute();
     }
-    public function delete(int $id)
+    public function delete()
     {
-        $query = "DELETE FROM `produto` WHERE id = ?";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindValue(1, $id);
-        $stmt->execute();
+        if ($this->orderedProduct($this->id) > 0) {
+            return "false";
+        } else {
+
+            $query = "DELETE FROM `produto` WHERE idProduto = ?";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindValue(1, $this->id);
+            $stmt->execute();
+            return "true";
+        }
     }
     public function update()
     {
-        $id = $this->id;
-        $nome = $this->nome;
-        $descricao = $this->descricao;
-        $tipo = $this->tipo;
-        $preco = $this->preco;
-        $img_prod = $this->img_prod;
-        $query = "UPDATE produto SET nome=?,descricao=?,tipo=?,preco=?,img_prod=? WHERE id = ? ";
+
+        $query = "UPDATE `produto` SET nomeProduto=?,descricao=?,categoria=?,preco=?,imagem=?  WHERE idProduto = ?;";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindValue(1, $nome);
-        $stmt->bindValue(2, $descricao);
-        $stmt->bindValue(3, $tipo);
-        $stmt->bindValue(4, $preco);
-        $stmt->bindValue(5, $img_prod);
-        $stmt->bindValue(6, $id);
+        $stmt->bindValue(1,  $this->nomeProduto);
+        $stmt->bindValue(2, $this->descricao);
+        $stmt->bindValue(3, $this->categoria);
+        $stmt->bindValue(4, $this->preco);
+        $stmt->bindValue(5, $this->imgProduto);
+        $stmt->bindValue(6, $this->id);
 
 
+
+        return $stmt->execute();
+    }
+    private function orderedProduct($id)
+    {
+
+        $query = "SELECT * FROM pedido WHERE idProduto=?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(1, $id);
         $stmt->execute();
+        $ordersNumber = sizeof($stmt->fetchAll());
+        return $ordersNumber;
     }
 }

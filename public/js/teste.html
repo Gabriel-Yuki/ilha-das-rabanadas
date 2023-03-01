@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="text" />
+    <script>
+        let input = document.querySelector("#text")
+        input.addEventListener("blur", () => {
+            let text = input.value;
+            if (text == "") { return console.log('vazio') }
+           for (let index = 0; index < text.length; index++) {
+            const element = text[index];
+            element.replace("","+");
+            console.log(element);
+            
+           }
+
+        });
+
+
+
+    </script>
+    <!-- <script src="viaCep.js"></script> -->
+
+
+
+</body>
+
+</html>

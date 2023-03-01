@@ -6,52 +6,50 @@ use Core\ConfigView;
 
 class Login
 {
-    private object $clienteModel;
+    private object $loginModel;
+    private object $clienteDao;
     private $dados;
     public function __construct()
     {
-        $this->clienteModel = new \App\Models\ClienteModel(); //instanciando a class model
-
+        $this->clienteDao = new \App\Helpers\ClienteDao(); //instanciando a class model
+        $this->loginModel = new \App\Models\AdmsLogin();
     }
     public function index()
     {
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        var_dump($this->dados);
 
-        if (!empty($this->dados['SendLogin'])) {
-            $status = new \App\Models\AdmsLogin();
-            $status->login($this->dados);
-            if ($status->getResultado()) {
+        if (!empty($this->dados['sendLogin'])) {
+            $this->loginModel->login($this->dados);
+            if ($this->loginModel->getResultado()) {
                 echo "logado";
+                if ($_SESSION['idLogin'] == 1) {
+                    return header("Location:../adm/index");
+                }
+                return  header("Location:../cliente/index");
             } else {
-                echo 'invalido';
+                $this->dados['form'] = $this->dados;
             }
         }
+
         $carregarView = new \Core\ConfigView("Login/login", $this->dados);
 
         $carregarView->renderizar();
     }
-public function cadastrar(){
-    $carregarView = new \Core\ConfigView("Login/Cadastro", $this->dados);
+    public function cadastrar()
+    {
+        $carregarView = new \Core\ConfigView("Login/cadastro", $this->dados);
 
-    $carregarView->renderizar();
-
-}
+        $carregarView->renderizar();
+    }
     public function insert()
     {
+        $password = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $login = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
 
-        $this->clienteModel->nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->sobrenome = filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->cep = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->rua = filter_input(INPUT_POST, 'rua', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->numero = filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->bairro = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->cidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
-
-        $this->clienteModel->insert();
-        $carregarView = new \Core\ConfigView("Login/login", $this->dados);
-        $carregarView->renderizar();
+        $this->loginModel->insert($password, $login);
+        $idLogin = $this->loginModel->getidLogin($login)[0];
+        $this->clienteDao->insert($idLogin);
+        header('Location: ../login/index');
     }
 }

@@ -1,0 +1,65 @@
+
+section {
+height: 525px;
+}
+
+.link:hover {
+
+
+text-decoration: underline;
+}
+
+.banner {
+
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+overflow: hidden;
+height: 100%;
+}
+
+/* boas vindas */
+#boas-vindas-banner {
+background-image: url("../../imgs/img/banner.webp") !important;
+}
+
+h1 {
+text-align: center;
+
+}
+
+h1>p {
+font-size: 25px;
+
+}
+
+/* fim boas-vindas */
+
+/* cardapio */
+#secao-cardapio {
+background-color: #FFBD59;
+}
+
+
+/* fim cardapio */
+.col-4 {
+width: 20% !important;
+}
+
+#secao-servico {
+background-color: rgba(217, 180, 72, 0.3);
+}
+
+/* sobre */
+
+#sobre-banner {
+background-image: url("../../imgs/img/sobre.webp");
+
+}
+
+#btn-sobre {
+width: 20em;
+height: 3em;
+}
+
+/* fim sobre */

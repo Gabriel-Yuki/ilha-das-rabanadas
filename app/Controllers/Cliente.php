@@ -6,53 +6,82 @@ use Core\ConfigView;
 
 class Cliente
 {
-    private object $clienteModel;
-    private array $dados;
+    private  $idLogin, $id,$rua,$bairro,$numero;
+    private object $clienteDao;
+    private  array $datas;
     private string $pathView = "\Cliente";
 
 
     public function __construct()
     {
-        $this->clienteModel = new \App\Models\ClienteModel(); //instanciando a class model
+        $this->clienteDao = new \App\Helpers\ClienteDao();
+        $this->idLogin = $_SESSION["idLogin"];
+        $this->id = $this->clienteDao->selectByIdLogin($this->idLogin)[0]['idCliente'];
+        $this->rua = $this->clienteDao->selectByIdLogin($this->idLogin)[0]['rua'];
+        $this->bairro = $this->clienteDao->selectByIdLogin($this->idLogin)[0]['bairro'];
+
+        $this->numero = $this->clienteDao->selectByIdLogin($this->idLogin)[0]['numero'];
+
+
+
 
     }
     public function index()
     {
 
+
+
         $dashboard = new ConfigView($this->pathView . "\Dashboard");
         $dashboard->renderizar();
     }
-    public function MeusPedidos()
+    public function perfil()
     {
+
+        $this->datas["informations"] = $this->clienteDao->selectById($this->id);
+
+        $perfil = new ConfigView($this->pathView . "\Perfil", $this->datas);
+        $perfil->renderizar();
+    }
+    public function meusPedidos()
+    {
+
+
+
+
+        $this->datas["request"] = $this->clienteDao->myRequests($this->id);
+
+
+        $pedidos = new ConfigView($this->pathView . "\Pedidos", $this->datas);
+        $pedidos->renderizar();
     }
     public function atualizarPerfil()
     {
-        $this->dados["informacoes"] = $this->clienteModel->selectById(1);
 
-        $formUpdate = new ConfigView($this->pathView . "\EditarPerfil", $this->dados);
+        $this->datas["informations"] = $this->clienteDao->selectById($this->id);
+
+        $formUpdate = new ConfigView($this->pathView . "\EditarPerfil", $this->datas);
         $formUpdate->renderizar();
     }
     public function update()
     {
-        $this->clienteModel->id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->clienteDao->update();
 
 
-        $this->clienteModel->nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->sobrenome = filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->cep = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->rua = filter_input(INPUT_POST, 'rua', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->numero = filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->bairro = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->cidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->clienteModel->update();
-
-
-        header('Location:meuPerfil');
+        header('Location:perfil');
     }
-    public function meuPerfil()
+
+    public function minhascompras()
     {
-        $perfil = new ConfigView($this->pathView . "\Perfil");
-        $perfil->renderizar();
+        $teste = new ConfigView($this->pathView . "\minhascompras");
+        $teste->renderizar();
+    }
+    public function getId()
+    {
+        return $this->id;
+    }
+    public function getAddress()
+    {
+        $address = $this->rua.", ".$this->numero.", ".$this->bairro;
+        return $address;
     }
 }

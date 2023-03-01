@@ -4,60 +4,65 @@ namespace App\Controllers;
 
 use App\Models\ProdutoModel;
 
-class Produto
+class Produto extends Upload
 {
 
-    private array $dados;
-    private object $produtoModel;
+    private array $datas;
+    private object $produtoDao;
+
     public function __construct()
     {
-        $this->produtoModel = new \App\Models\ProdutoModel(); //instanciando a class model
-
+        $this->produtoDao = new \App\Helpers\ProdutoDao();
     }
     public function index()
     {
 
 
-        $this->dados['produtos'] = $this->produtoModel->listar(); //chamando todos os itens do db
-        $carregarView = new \Core\ConfigView("Produto/Cardapio", $this->dados);
+        $this->datas['products'] = $this->produtoDao->listProducts(); //chamando todos os itens do db
+        $carregarView = new \Core\ConfigView("Produto/Cardapio", $this->datas);
         $carregarView->renderizar();
     }
     public function insert()
-    {
-        //
-        $this->produtoModel->nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->produtoModel->descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->produtoModel->preco = filter_input(INPUT_POST, 'preco', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->produtoModel->tipo = filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->produtoModel->img_prod = ""; //terminar de fazer
-        $this->produtoModel->insert();
-        header('Location: ./index');
+    { // {  $teste = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        //     var_dump($teste);
+        $status = $this->produtoDao->insert();
+        if ($status) {
+            $_SESSION['msg'] = "Cadastrado com sucesso!";
+
+
+            header("Location: ../adm/produtos");
+        } else {
+
+            $_SESSION['msg'] = "Verifique se todos os campos estão preenchidos!";
+
+            header("Location: ../adm/cadastrarproduto");
+        }
     }
     public function form()
     {
-        $carregarView = new \Core\ConfigView("Produto/CadastrarProduto", []);
-        $carregarView->renderizar();
+        $cadastro = new \Core\ConfigView("Produto/CadastrarProduto");
+        $cadastro->renderizar();
     }
-    public function editar_artigo()
-    {
-        $id = $_GET['id'];
-        $this->dados['artigo'] = $this->produtoModel->selectById($id);
-        $carregarView = new \Core\ConfigView("Produto/AtualizarProduto", $this->dados);
-        $carregarView->renderizar();
-    }
+
     public function update()
 
     {
-        $this->produtoModel->id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
-        $this->produtoModel->titulo = filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->produtoModel->conteudo = filter_input(INPUT_POST, 'conteudo', FILTER_SANITIZE_SPECIAL_CHARS);
-        $this->produtoModel->update();
-        header('Location: ./index');
+        $status = $this->produtoDao->update();
+        if ($status) {
+            $_SESSION['msg'] = "Atualizado com sucesso";
+            header("Location: ../adm/produtos");
+        }
     }
     public function delete()
     {
-        $id = $_GET['id'];
-        $this->produtoModel->delete($id);
-        header('Location: ./index');
+        echo $this->produtoDao->delete();
+
+        if ($this->produtoDao->delete() == "true") {
+            $_SESSION['msg'] = "Deletado com sucesso!";
+            header('Location: ../adm/produtos');
+        } else {
+            $_SESSION['msg'] = "Falha ao deletar! Verifique se esse produto foi pedido!";
+            header('Location: ../adm/produtos');
+        }
     }
 }

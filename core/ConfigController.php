@@ -1,4 +1,5 @@
 <?php
+
 namespace Core;
 
 // responsavel por indicar as rotas para o  controller
@@ -23,18 +24,19 @@ class ConfigController
         $this->urlMetodo = $this->urlConjunto[1]; //atribui ao metodo
       } else {
         // passou so o controller
-        $this->urlController = "error";
+        $this->urlController = "home";
         $this->urlMetodo = "index";
       }
     } else {
       $this->urlController = "Home";
       $this->urlMetodo = "index";
     }
-
   }
   public function carregar()
   {
     // carregar a requisição feita pelo user 
+    $permissao = new \Core\Permissao();
+    $permissao->index($this->urlController, $this->urlMetodo);
     $classe = "\\App\\Controllers\\" . $this->urlController;
     $metodo = $this->urlMetodo;
     $classeCarregar = new $classe;

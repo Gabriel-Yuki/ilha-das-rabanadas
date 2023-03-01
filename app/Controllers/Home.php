@@ -14,5 +14,10 @@ class Home
         $carregarhome = new ConfigView($this->pathHome . "/home");
         $carregarhome->renderizar();
     }
+    public function sobre(){
+        $carregarhome = new ConfigView("Sobre/Sobre");
+        $carregarhome->renderizar();
+
+    }
    
 }

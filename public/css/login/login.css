@@ -1,0 +1,38 @@
+
+main{
+    height: 93vh;
+}
+#container-form {
+
+    width: 480px;
+    background-color: #ffbd59;
+    padding: 3em;
+    box-shadow: 3px 4px 6px #000000b0;
+    z-index: 4;
+}
+
+form {
+    width: 50%;
+
+
+}
+
+.inputs {
+    width: 150%;
+}
+
+.btn {
+    width: 155px;
+    height: 40px;
+}
+
+#entrar {
+    background-color: rgba(65, 191, 97, 0.55);
+}
+
+#entrar:hover {
+    background-color: #41BF61;
+}
+
+
+

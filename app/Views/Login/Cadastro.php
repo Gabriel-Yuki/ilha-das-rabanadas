@@ -51,7 +51,7 @@ include "./app/config.php"; ?>
 
       </div>
       <div class="mb-3 row">
-       
+
         <div class="col-6">
           <label for="numeroCelular" class="form-label">Telefone celular</label>
           <input type="text" required name="numeroCelular" id="numeroCelular" class="form-control" placeholder="(99) 9999-9999" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})" title="Número de telefone precisa ser no formato (99) 9999-9999" required="required">
@@ -60,7 +60,7 @@ include "./app/config.php"; ?>
       <div class="mb-3 row">
         <div class="col-6">
           <label for="cep" class="form-label">Cep</label>
-          <input type="text" required name="cep" id="cep" class="form-control" placeholder="99999-999" aria-describedby="helpId" pattern= "\d{5}-?\d{3}" maxlength="9">
+          <input type="text" required name="cep" id="cep" class="form-control" placeholder="99999-999" aria-describedby="helpId" pattern="\d{5}-?\d{3}" maxlength="9">
         </div>
       </div>
 

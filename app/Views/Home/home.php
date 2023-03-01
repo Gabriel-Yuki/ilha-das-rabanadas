@@ -25,6 +25,10 @@ include "./app/config.php"; ?>
             width: 15em;
             height: 20em;
         }
+        .card-body{ 
+
+            background-color: white;
+        }
     </style>
 
 </head>
@@ -54,7 +58,7 @@ include "./app/config.php"; ?>
                 <div class="col-4">
                     <div class="card">
                         <img src="<?php echo IMG ?>/img/rabanada-vegana.webp" alt="" class="fluid">
-                        <div class="card-body">
+                        <div class="card-body" st>
                             <h5 class="card-title">Rabanadas veganas</h5>
                         </div>
                     </div>

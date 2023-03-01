@@ -1,7 +1,6 @@
 <?php
 include "./app/config.php";
 
-include './app/Views/message.php';
 
 ?>
 <!doctype html>

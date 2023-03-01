@@ -1,7 +1,7 @@
 <?php
 
 include "./app/config.php";
-include "./App/Views/message.php";
+include './app/Views/message.php';
 
 ?>
 
@@ -39,7 +39,7 @@ include "./App/Views/message.php";
             <div id="doces">
                 <h3>Doces</h3>
 
-                <div class="d-flex flex-row  align-items-center justify-content-between flex-wrap gap-5 ">
+                <div class="d-flex flex-row  align-items-center  flex-wrap gap-5 ">
                     <?php
 
                     foreach ($this->datas["products"] as $produto) {
@@ -54,12 +54,27 @@ include "./App/Views/message.php";
             <div id="salgados">
                 <h3>Salgados</h3>
 
-                <div class="d-flex flex-row  align-items-center justify-content-between flex-wrap gap-5">
+                <div class="d-flex flex-row  align-items-center  flex-wrap gap-5">
                     <?php
 
                     foreach ($this->datas["products"] as $produto) {
                         extract($produto);
                         if ($categoria === "Salgado") {
+
+                            include './app/Views/Adm/include-produtos.php';
+                        }
+                    } ?>
+                </div>
+            </div>
+            <div id="Vegana">
+                <h3>Vegana</h3>
+
+                <div class="d-flex flex-row  align-items-center  flex-wrap gap-5">
+                    <?php
+
+                    foreach ($this->datas["products"] as $produto) {
+                        extract($produto);
+                        if ($categoria === "Vegana") {
 
                             include './app/Views/Adm/include-produtos.php';
                         }

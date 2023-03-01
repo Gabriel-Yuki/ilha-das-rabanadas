@@ -42,4 +42,13 @@ class Pedido
         }
         echo "ERROR";
     }
+    public function getById($idPedido)
+    {
+        return    $this->pedidoDao->getById($idPedido);
+    }
+    public function edit()
+    {
+        $this->pedidoDao->edit();
+        header("Location:../adm/pedidos");
+    }
 }

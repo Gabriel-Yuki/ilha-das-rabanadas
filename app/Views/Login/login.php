@@ -23,14 +23,15 @@ include "./app/config.php";
 
 </head>
 <style>
-    @media (max-width: 600px)
-{
-  .facet_sidebar
-   {
-    display: none;
-   }
-}  
-      </style>
+  @media (max-width: 600px) {
+    .facet_sidebar {
+      display: none;
+    }
+
+   
+  }
+</style>
+
 <body>
   <main class="m-auto d-flex flex-column align-items-center">
 
@@ -47,7 +48,7 @@ include "./app/config.php";
           <label for="" class="form-label">Senha</label>
           <input type="password" class="form-control" name="password" id="password" placeholder="">
         </div>
-        <p class="text-danger">
+        <p style=" width: max-content;" class="text-danger">
           <?php if (isset($_SESSION['msg'])) {
 
             echo $_SESSION['msg'];

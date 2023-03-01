@@ -31,41 +31,13 @@ include "./app/config.php"; ?>
             <div id="doces">
                 <h3>Rabanadas Doces</h3>
 
-                <div class="d-flex flex-row  align-items-center  flex-wrap gap-5 ">
+                <div class="d-flex flex-row  align-items-center justify-content-between flex-wrap gap-5 ">
                     <?php
 
                     foreach ($this->datas["products"] as $produto) {
                         extract($produto);
                         if ($categoria === "Doce") {
-                            include './app/Views/Produto/produto.php';
-                        }
-                    } ?>
-                </div>
-            </div>
-            <div id="Salgados">
-                <h3>Rabanadas Salgadas</h3>
-
-                <div class="d-flex flex-row  align-items-center  flex-wrap gap-5 ">
-                    <?php
-
-                    foreach ($this->datas["products"] as $produto) {
-                        extract($produto);
-                        if ($categoria === "Salgado") {
-                            include './app/Views/Produto/produto.php';
-                        }
-                    } ?>
-                </div>
-            </div>
-            <div id="Vegana">
-                <h3>Rabanadas Veganas</h3>
-
-                <div class="d-flex flex-row  align-items-center  flex-wrap gap-5 ">
-                    <?php
-
-                    foreach ($this->datas["products"] as $produto) {
-                        extract($produto);
-                        if ($categoria === "Vegana") {
-                            include './app/Views/Produto/produto.php';
+                            include './app/Views/Produto/produtoEdit.php';
                         }
                     } ?>
                 </div>

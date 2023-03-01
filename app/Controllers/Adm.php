@@ -6,6 +6,7 @@ use Core\ConfigView;
 
 class Adm
 {
+    private $idPedido;
     private object $produtoDao;
     private array $datas;
     private object $pedidoDao;
@@ -24,7 +25,7 @@ class Adm
     public function pedidos()
     {
         $this->datas['request'] = $this->pedidoDao->listOrders();
-        $pedido = new \Core\ConfigView('Adm/Pedidos',$this->datas);
+        $pedido = new \Core\ConfigView('Adm/Pedidos', $this->datas);
         $pedido->renderizar();
     }
     public function produtos()
@@ -46,5 +47,29 @@ class Adm
 
         $formAtualizar = new ConfigView("Adm/AtualizarProduto", $this->datas);
         $formAtualizar->renderizar();
+    }
+    public function editarPedido()
+    {
+        $_SESSION["idPedido"] = $_GET["idPedido"];
+        $this->datas['products'] = $this->produtoDao->listProducts();
+
+        $cardapioEdit = new ConfigView("Produto/CardapioEdit", $this->datas);
+        $cardapioEdit->renderizar();
+    }
+    public function editPedido()
+    {
+        $id = $_GET["id"];
+        $idPedido = $_SESSION["idPedido"];
+        $this->datas['prdutos'] = $this->produtoDao->selectById($id);
+        $this->datas["pedido"] = $this->pedidoDao->getById($idPedido);
+        $carrinhoEdit = new ConfigView("Adm/carrinhoEdit", $this->datas);
+        $carrinhoEdit->renderizar();
+    }
+    public function deletePedido()
+    {
+        $idPedido = $_GET['id'];
+        $this->pedidoDao->delete($idPedido);
+        $_SESSION['msg'] = "Deletado com sucesso";
+        header('Location: ../adm/pedidos');
     }
 }

@@ -6,7 +6,7 @@ use Core\ConfigView;
 
 class Carrinho
 {
-    public $idCliente;
+    public $idCliente=null;
     private object $carrinhoDao;
     private object $cliente, $pedido;
     private array $datas;
@@ -22,9 +22,14 @@ class Carrinho
     public function index()
 
     {
-        $idProduto = $_GET["id"];
+        if (isset($_SESSION['idLogin'])) {
+            $idProduto = $_GET["id"];
         $this->carrinhoDao->insert($idProduto, $this->idCliente);
         $this->getMyproducts();
+        }
+        $_SESSION['msg']= "Precisa estar logado para encomendar um produto!!";
+        header('Location:../login/index');
+      
     }
 
     public function getMyproducts()
@@ -38,6 +43,6 @@ class Carrinho
     public function insert()
     {
         $this->pedido->insert();
-        
     }
+  
 }

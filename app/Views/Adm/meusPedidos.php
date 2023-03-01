@@ -29,9 +29,11 @@
                                     <td>
 
 
-                                        <button type='button' class='btn btn-outline-success ' data-bs-toggle='modal' data-bs-target='#edit$idPedido'>
-                                            <i class='bi bi-pencil'></i> <span>Editar Pedido</span>
-                                        </button>
+                                        <a href='../adm/editarPedido?idPedido=$idPedido'>
+                                            <button type='button' class='btn btn-outline-success ' data-bs-toggle='modal' data-bs-target='#edit$idPedido'>
+                                                <i class='bi bi-pencil'></i> <span>Editar Pedido</span>
+                                            </button>
+                                        </a>
                                         <button  type='button' class='btn btn-outline-danger'data-bs-toggle='modal' data-bs-target='#cancel$idPedido'>
                                             <i class='bi bi-trash'></i>     <span>Cancelar</span>
                                         </button>
@@ -51,7 +53,7 @@
                                     <input type='text' name='justificativa' id='justify' required class='form-control'>
                                 </div>
                                 <div class='modal-footer'>
-                                    <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
+                                    <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cancelar</button>
                                     <button type='button' class='btn btn-primary' id='justifyCancel'>Enviar</button>
                                 </div>
                             </div>

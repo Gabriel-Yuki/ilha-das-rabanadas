@@ -72,7 +72,8 @@ include "./app/config.php"; ?>
             <div class="row align-items-center">
 
                 <div class="col">
-                    <p class=" text"> A missão da Ilha é proporcionar sabores diferentes para que as pessoas
+                    <p class=" text"> 
+                        A missão da Ilha é proporcionar sabores diferentes para que as pessoas
                         lembrem de nós ao pensarem em rabanadas. Uma empresa dedicada em atender
                         da melhor maneira nossos clientes e proporcionar uma experiência diferenciada
                         para nossos colaboradores.

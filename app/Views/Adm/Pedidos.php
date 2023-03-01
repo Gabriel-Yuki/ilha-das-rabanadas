@@ -1,5 +1,7 @@
 <?php
 include "./app/config.php";
+include './app/Views/message.php';
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -67,7 +69,7 @@ include "./app/config.php";
 
 
     </div>
-  
+
     <script>
         const inputElementCancel = document.querySelector("#justifyCancel");
         const inputText = document.querySelector("#justify");
@@ -77,11 +79,12 @@ include "./app/config.php";
 
             let justify = inputText.value;
             let codigo = codigoPedido.value;
-            const url  = `https://wa.me/5521999999999?text=Olá!
+            const url = `https://wa.me/5521999999999?text=Olá!
             Queria efetuar o cancelamento do meu pedido!
              CODIGO DO PEDIDO:${codigo}!
              Minha justificativa:${justify}.`;
             open(url);
+            window.location.href = `http://localhost/projetointegrador/adm/deletePedido?id=${codigo}`;
         });
     </script>
 

@@ -17,7 +17,8 @@ class PedidoDao
     }
     public function listOrders()
     {
-        $this->listOrders();
+       return $this->pedidoModel->listOrders();
+
     }
     public function insert()
 

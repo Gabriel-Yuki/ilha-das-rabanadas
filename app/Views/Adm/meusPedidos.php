@@ -75,7 +75,18 @@
                 </div>
             </div>
         </div>
-        
+        <script>
+        const inputElementCancel = document.querySelector("#justifyCancel");
+        const inputText = document.querySelector("#justify");
+        const codigoPedido = document.querySelector("#codigoPedido");
+
+        inputElementCancel.addEventListener("click", () => {
+
+            let justify = inputText.value;
+            let codigo = codigoPedido.value;
+            console.log(justify);
+            window.location.href = `https://wa.me/5521982441600?text=Olá!Queria efetuar o cancelamento do meu pedido! CODIGO DO PEDIDO:${codigo}!Minha justificativa:${justify}.`;
+        })
         ");
         }
 

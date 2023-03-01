@@ -48,6 +48,8 @@ class PedidoModel extends Conn
 
         $query = "SELECT * FROM pedido";
         $stmt = $this->conn->prepare($query);
-        return $stmt->execute();
+       $stmt->execute();
+       $datas=$stmt ->fetchAll();
+       return $datas;
     }
 }

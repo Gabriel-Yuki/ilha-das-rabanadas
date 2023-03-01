@@ -96,7 +96,7 @@ foreach ($this->datas["informations"] as $data) {
 
 
 
-      <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn" type="submit" value="Finalizar o cadastro"></div>
+      <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn" type="submit" value="Finalizar"></div>
 
     </form>
   </div>

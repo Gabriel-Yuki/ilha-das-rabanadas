@@ -37,6 +37,7 @@ include "./app/config.php"; ?>
 
   <div class="container d-flex justify-content-center align-items-center my-5 flex-column gap-3">
     <h1 class="text-center">Cadastro</h1>
+    <h5 class="text-danger">Obs: só fazemos entregas em Nova Iguaçu!</h5>
     <form action="insert" method="POST" class="rounded">
       <div class="mb-4 row">
 
@@ -82,7 +83,7 @@ include "./app/config.php"; ?>
         </div>
         <div class="col">
           <label for="cidade" class="form-label">Cidade</label>
-          <input readonly value="Nova Iguaçu" name="cidade" id="localidade" class="form-control " placeholder="" aria-describedby="helpId">
+          <input  value="Nova Iguaçu" name="cidade" id="localidade" class="form-control " placeholder="" aria-describedby="helpId">
         </div>
       </div>
       <div class="mb-4 row">

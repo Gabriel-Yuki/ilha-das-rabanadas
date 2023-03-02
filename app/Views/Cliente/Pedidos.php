@@ -56,7 +56,9 @@ include "./app/config.php";
             <?php
 
             if (isset($this->datas["request"])) {
-
+                if ($_SESSION['endereco'] !== 'Nova Iguaçu') {
+                    echo ("<h5 class='text-danger'>Obs: você não está elegível para o nosso serviço de entregas!Por gentileza, retirar sua encomenda na nossa loja!</h5>");
+                }
 
                 include './app/Views/Cliente/meusPedidos.php';
             } else {
@@ -70,8 +72,6 @@ include "./app/config.php";
 
 
     <script>
-       
-
         const inputElementCancel = document.querySelector("#justifyCancel");
         const inputText = document.querySelector("#justify");
         const codigoPedido = document.querySelector("#codigoPedido");
@@ -95,13 +95,11 @@ include "./app/config.php";
     </script>
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-      </script>
-    
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-      </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

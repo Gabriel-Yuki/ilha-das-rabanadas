@@ -2,21 +2,14 @@
 include "./app/config.php";
 date_default_timezone_set('America/Sao_Paulo');
 $datahoje = date('Y-m-d', time());
-// var_dump($this->datas['myProducts']);
-if (sizeof($this->datas['myProducts'][0]) != 0) {
 
-    foreach ($this->datas['myProducts'] as $myProducts) {
-        extract($myProducts);
-        // echo $idCliente;
-    }
-}
 
 ?>
 <!doctype html>
 <html lang="pt-br">
 
 <head>
-    <title>Title</title>
+    <title>Ilhas das rabanadas</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -100,64 +93,79 @@ if (sizeof($this->datas['myProducts'][0]) != 0) {
 
 
         <h1 class="text-center">Seu carrinho </h1>
+        <?php if ($this->datas['myProducts'] == "false") {
+        ?>
+            <div class="text-center">
+                <img src="<?php echo IMG; ?>/8.png" alt="imagem de nao há pedidos"></img>
+                <h4>Seu carrinho está vazio!</h4>
+            </div>
 
-        <section class="container  flex-column p-4">
-            <form action="../pedido/insert" method="POST">
-                <input type="hidden" name="idCliente" value="<?php echo $idCliente; ?>">
-                <input type="hidden" name="idProduto" value="<?php echo $idProduto; ?>">
-                <div class="card   mb-3">
-                    <div class="row  align-items-center g-0">
-                        <div class="col">
-                            <img src="<?php echo $imagem; ?> " class="" alt="..." height="100%" width="90%">
-                        </div>
-                        <div class="col">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo $nomeProduto; ?></h5>
-                                <p class="card-text">Valor:<span class="fw-bold" id="preco"> <?php echo $preco; ?></span>
-                                <div class="mb-3">
-                                    <label class=" mb-2 form-label">
-                                        <label>Quantidade</label>
-                                        <input type="number" name="quantidadePedido" value="1" id="quantidadePedido" min="1" class="form-control" placeholder="" aria-describedby="helpId">
-                                    </label>
-                                </div>
-                                <div>
+        <?php } else {
+            if (sizeof($this->datas['myProducts'][0]) != 0) {
+                foreach ($this->datas['myProducts'] as $myProducts) {
+                    extract($myProducts);
+                }
+            } ?>
+            <section class="container  flex-column p-4">
+                <form action="../pedido/insert" method="POST">
+                    <input type="hidden" name="idCliente" value="<?php echo $idCliente; ?>">
+                    <input type="hidden" name="idProduto" value="<?php echo $idProduto; ?>">
+                    <div class="card   mb-3">
+                        <div class="row  align-items-center g-0">
+                            <div class="col">
+                                <img src="<?php echo $imagem; ?> " class="" alt="..." height="100%" width="90%">
+                            </div>
+                            <div class="col">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $nomeProduto; ?></h5>
+                                    <p class="card-text">Valor:<span class="fw-bold" id="preco"> <?php echo $preco; ?></span>
+                                    <div class="mb-3">
+                                        <label class=" mb-2 form-label">
+                                            <label>Quantidade</label>
+                                            <input type="number" name="quantidadePedido" value="1" id="quantidadePedido" min="1" class="form-control" placeholder="" aria-describedby="helpId">
+                                        </label>
+                                    </div>
+                                    <div>
 
-                                    <p>Total:</p>
-                                    <input type="text" value="<?php echo $preco; ?>" id="valorPedido" class="border-0" name="valorPedido" readonly>
+                                        <p>Total:</p>
+                                        <input type="text" value="<?php echo $preco; ?>" id="valorPedido" class="border-0" name="valorPedido" readonly>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card   mb-3">
-                    <div class="row g-0">
-                        <div class="col">
-                            <div class="card-body">
-                                <div class="mb-3">
-                                    <label for="" class=" mb-2 form-label">
-                                        Endereço de entrega:
-                                    </label>
-                                    <input type="text" name="endereco" id="endereco" class="form-control" placeholder="" aria-describedby="helpId" value="<?php echo ($this->datas['address']); ?>" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class=" mb-2 form-label" for="">Data de entrega</label>
-                                    <input type="date" min="<?php echo $datahoje; ?>" name="dataEntrega" id="dataEntrega" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class=" mb-2 form-label" for="hora da entrega">Hora da entrega</label>
-                                    <input type="time" id="" min="08:00" max="20:00" name="hora" class="form-control" required>
+                    <div class="card   mb-3">
+                        <div class="row g-0">
+                            <div class="col">
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="" class=" mb-2 form-label">
+                                            Endereço de entrega:
+                                        </label>
+                                        <input type="text" name="endereco" id="endereco" class="form-control" placeholder="" aria-describedby="helpId" value="<?php echo ($this->datas['address']); ?>" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class=" mb-2 form-label" for="">Data de entrega</label>
+                                        <input type="date" min="<?php echo $datahoje; ?>" name="dataEntrega" id="dataEntrega" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class=" mb-2 form-label" for="hora da entrega">Hora da entrega</label>
+                                        <input type="time" id="" min="08:00" max="20:00" name="hora" class="form-control" required>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="d-flex " id="buttons">
-                    <button type="button" class="btn btn-secondary">Cancelar encomenda</button>
-                    <input type="submit" class=" btn btn-success" value="Fechar encomenda">
-                </div>
-            </form>
+                    <div class="d-flex " id="buttons">
+                        <a href="../carrinho/delete"><button type="button" class="btn btn-secondary">Cancelar encomenda</button></a>
+                        <input type="submit" class=" btn btn-success" value="Fechar encomenda">
+                    </div>
+                </form>
 
-        </section>
+            </section>
+        <?php
+        }
+        ?>
     </main>
 
 

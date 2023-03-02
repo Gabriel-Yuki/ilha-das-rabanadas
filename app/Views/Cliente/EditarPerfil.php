@@ -75,7 +75,7 @@ foreach ($this->datas["informations"] as $data) {
       <div class="mb-4 row">
         <div class="col-10">
           <label for="rua" class="form-label">Rua</label>
-          <input type="text" required name="rua" value="<?php echo $rua; ?>" id=" logradouro" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="text" required name="rua" value="<?php echo $rua; ?>" id="logradouro" class="form-control" placeholder="" aria-describedby="helpId">
         </div>
         <div class="col">
           <label for="numero" class="form-label">Número</label>
@@ -96,7 +96,7 @@ foreach ($this->datas["informations"] as $data) {
 
 
 
-      <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn" type="submit" value="Finalizar"></div>
+      <div id="button-submit " class="d-flex justify-content-center"><input id="finalizar" class="btn" type="submit" value="Atualizar"></div>
 
     </form>
   </div>

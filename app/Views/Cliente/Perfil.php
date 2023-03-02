@@ -97,7 +97,7 @@ foreach ($this->datas["informations"] as $data) {
 
 
 
-      <a href="./atualizarPerfil" id="button-submit " class=" nav-link d-flex justify-content-center"><input id="finalizar" class="btn" type="submit" value="Atualizar"></a>
+      <a href="./atualizarPerfil" id="button-submit " class=" nav-link d-flex justify-content-center"><input id="finalizar" class="btn" type="submit" value="Editar"></a>
 
     </div>
   </div>

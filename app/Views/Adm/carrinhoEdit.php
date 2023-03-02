@@ -2,8 +2,7 @@
 include "./app/config.php";
 date_default_timezone_set('America/Sao_Paulo');
 $datahoje = date('Y-m-d', time());
-var_dump($this->datas["pedido"]);
-echo "<br>";
+
 
 
 foreach ($this->datas['prdutos'] as $myProducts) {

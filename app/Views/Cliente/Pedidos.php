@@ -5,7 +5,7 @@ include "./app/config.php";
 <html lang="pt-br">
 
 <head>
-    <title>Title</title>
+    <title>Ilha das rabanadas</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -80,7 +80,8 @@ include "./app/config.php";
 
             let justify = inputText.value;
             let codigo = codigoPedido.value;
-            window.location.href = `https://wa.me/5521999999999?text=Olá!Queria efetuar o cancelamento do meu pedido! CODIGO DO PEDIDO:${codigo}!Minha justificativa:${justify}.`;
+          const url= `https://wa.me/5521999999999?text=Olá!Queria efetuar o cancelamento do meu pedido! CODIGO DO PEDIDO:${codigo}!Minha justificativa:${justify}.`;
+          open(url);
         });
         const inputElementEdit = document.querySelector("#edit");
         const text = document.querySelector("#dado");
@@ -90,7 +91,8 @@ include "./app/config.php";
 
             let justify = text.value;
             let codigo = codigoPedido.value;
-            window.location.href = `https://wa.me/5521999999999?text=Olá!Quero fazer uma mudança no meu pedido! CODIGO DO PEDIDO:${codigo}!Minha mudança:${justify}.`;
+            const url= `https://wa.me/5521999999999?text=Olá!Quero fazer uma mudança no meu pedido! CODIGO DO PEDIDO:${codigo}!Minha mudança:${justify}.`;
+            open(url);
         });
     </script>
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>

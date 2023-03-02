@@ -25,7 +25,8 @@ class Login
                 if ($_SESSION['idLogin'] == 1) {
                     return header("Location:../adm/index");
                 }
-                return  header("Location:../cliente/index");
+                $_SESSION['msg']="Bem-vindo a Ilha!!";
+                return  header("Location:../home/index");
             } else {
                 $this->dados['form'] = $this->dados;
             }

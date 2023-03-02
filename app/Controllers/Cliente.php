@@ -6,7 +6,7 @@ use Core\ConfigView;
 
 class Cliente
 {
-    private  $idLogin, $id,$rua,$bairro,$numero;
+    private  $idLogin, $id, $rua, $bairro, $numero;
     private object $clienteDao;
     private  array $datas;
     private string $pathView = "\Cliente";
@@ -21,10 +21,7 @@ class Cliente
         $this->bairro = $this->clienteDao->selectByIdLogin($this->idLogin)[0]['bairro'];
 
         $this->numero = $this->clienteDao->selectByIdLogin($this->idLogin)[0]['numero'];
-
-
-
-
+        $_SESSION['endereco'] = $this->clienteDao->selectByIdLogin($this->idLogin)[0]['cidade'];
     }
     public function index()
     {
@@ -65,7 +62,7 @@ class Cliente
     public function update()
     {
         $this->clienteDao->update();
-
+        $_SESSION['msg'] = "Perfil atualizado com sucesso!";
 
         header('Location:perfil');
     }
@@ -81,7 +78,7 @@ class Cliente
     }
     public function getAddress()
     {
-        $address = $this->rua.", ".$this->numero.", ".$this->bairro;
+        $address = $this->rua . ", " . $this->numero . ", " . $this->bairro;
         return $address;
     }
 }

@@ -28,7 +28,7 @@ include "./app/config.php";
 <body>
     <?php include "./app/Views/Headers/header-dashboards.php" ?>
     <main>
-        <h1 class="text-center my-4">Seu dashboard</h1>
+        <h1 class="text-center my-4">Área do Cliente</h1>
         <div class="container">
             <div id="container-cards" class=" d-flex  justify-content-evenly">
                 <div class="card">

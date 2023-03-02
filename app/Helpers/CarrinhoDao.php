@@ -25,6 +25,10 @@ class CarrinhoDao
 
 
     }
+    public function getIdCart()
+    {
+        # code...
+    }
     public function getProducts($id)
     {
         $clientCart = $this->carrinhoModel->verifyCart($id);

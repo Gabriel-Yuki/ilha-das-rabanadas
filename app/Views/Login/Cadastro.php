@@ -33,60 +33,26 @@ include "./app/config.php"; ?>
         <img width="60%" src="<?php echo IMG ?>/img/logo-dashboards.webp" alt="">
       </div>
     </header>
-    <main>
-    
-    
-        <form action="insert" method="POST">
-        <div class="row">
-          <div  class="col-6">
-            <label for="nome" class="form-label">Nome</label>
-            <input type="text" name="nome" id="nome" class="form-control" placeholder="Seu nome" aria-describedby="helpId">
-          </div>
-          <div class="col-6">
-            <label for="sobrenome" class="form-label">Sobrenome</label>
-            <input type="text" name="sobrenome" id="sobrenome" class="form-control" placeholder="Seu sobrenome" aria-describedby="helpId">
-          </div>
-          <div class="mb-3">
-            <label for="cep" class="form-label">Cep</label>
-            <input type="text" name="cep" id="cep" class="form-control" placeholder="11111-111" aria-describedby="helpId">
-          </div>
-          <div class="mb-3">
-            <label for="rua" class="form-label">Rua</label>
-            <input type="text" name="rua" id="rua" class="form-control" placeholder="" aria-describedby="helpId">
-          </div>
-          <div class="mb-3">
-            <label for="numero" class="form-label">numero</label>
-            <input type="text" name="numero" id="numero" class="form-control" placeholder="" aria-describedby="helpId">
+  </div>
 
-          </div>
-          <div class="mb-3">
-            <label for="bairro" class="form-label">Bairro</label>
-            <input type="text" name="bairro" id="bairro" class="form-control" placeholder="" aria-describedby="helpId">
-          </div>
-          <div class="mb-3">
-            <label for="cidade" class="form-label">Cidade</label>
-            <input type="text" name="cidade" id="cidade" class="form-control" placeholder="" aria-describedby="helpId">
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">email</label>
-            <input type="email" name="email" id="email" class="form-control" placeholder="Seu email" aria-describedby="helpId">
-          </div>
-          <div class="mb-3">
-            <label for="senha" class="form-label"> Senha</label>
-            <input type="password" name="senha" id="senha" class="form-control" placeholder="Seu senha" aria-describedby="helpId">
-          </div>
-          <div class="mb-3">
-            <label for="senha" class="form-label">Confime sua enha</label>
-            <input type="password" name="senha" id="senha" class="form-control" placeholder="Seu senha" aria-describedby="helpId">
-          </div>
-          <input type="submit" value="Cadastrar">
-          </div>
-        </form>
-  
+  <div class="container d-flex justify-content-center align-items-center my-5 flex-column gap-3">
+    <h1 class="text-center">Cadastro</h1>
+    <h5 class="text-danger">Obs: só fazemos entregas em Nova Iguaçu!</h5>
+    <form action="insert" method="POST" class="rounded">
+      <div class="mb-4 row">
+
+        <div class="col-6">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" required name="nome" id="nome" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
+        <div class="col-6">
+          <label for="sobrenome" class="form-label">Sobrenome</label>
+          <input type="text" required name="sobrenome" id="sobrenome" class="form-control" placeholder="" aria-describedby="helpId">
+        </div>
 
       </div>
       <div class="mb-3 row">
-       
+
         <div class="col-6">
           <label for="numeroCelular" class="form-label">Telefone celular</label>
           <input type="text" required name="numeroCelular" id="numeroCelular" class="form-control" placeholder="(99) 9999-9999" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})" title="Número de telefone precisa ser no formato (99) 9999-9999" required="required">
@@ -95,7 +61,7 @@ include "./app/config.php"; ?>
       <div class="mb-3 row">
         <div class="col-6">
           <label for="cep" class="form-label">Cep</label>
-          <input type="text" required name="cep" id="cep" class="form-control" placeholder="99999-999" aria-describedby="helpId" pattern= "\d{5}-?\d{3}" maxlength="9">
+          <input type="text" required name="cep" id="cep" class="form-control" placeholder="99999-999" aria-describedby="helpId" pattern="\d{5}-?\d{3}" maxlength="9">
         </div>
       </div>
 
@@ -117,7 +83,7 @@ include "./app/config.php"; ?>
         </div>
         <div class="col">
           <label for="cidade" class="form-label">Cidade</label>
-          <input readonly value="Nova Iguaçu" name="cidade" id="localidade" class="form-control " placeholder="" aria-describedby="helpId">
+          <input  value="Nova Iguaçu" name="cidade" id="localidade" class="form-control " placeholder="" aria-describedby="helpId">
         </div>
       </div>
       <div class="mb-4 row">

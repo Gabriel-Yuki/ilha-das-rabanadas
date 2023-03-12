@@ -1,4 +1,4 @@
- Ilha das Rabanadas
+ <div align="center"><h1>Ilha das Rabanadas</h1></div>
 
 <div align="center"><img  alt="HTML" width="250" height="250" src="https://raw.githubusercontent.com/JonathanGuimarae3s/ilha-das-rabanadas/main/public/imgs/img/logo-footer.webp" /></div>
 

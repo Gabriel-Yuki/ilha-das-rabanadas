@@ -12,7 +12,7 @@ O sistema tem o objetivo de otimizar o serviço de encomenda que a empresa possu
 Esse sistema foi feito com as seguintes tecnologias :
 
 - Arquitetura de projeto: MVC com conceito singleton
-
+- Banco de Dados: MySQL
 - PHP:
     - SESSIONS
     - PDO
@@ -25,12 +25,16 @@ Esse sistema foi feito com as seguintes tecnologias :
 Além disso, integramos uma api ao sistema, o ***Viacep*** e para animações dos ícones utilizamos a lib ***Lordicon***.
 
 
-Essa é a primeira versao do sistema web!
+Essa é a primeira versão do sistema web!
 
 
 
 Contribuidores: [João Pedro Martins](https://github.com/JoaoPedroCd), [Jonathan Guimarães](https://github.com/JonathanGuimarae3s), [Allan Queiroz](https://github.com/AllanQrz),[Gabriel Gomes](https://github.com/Gabriel-Yuki) e [Lucas Lemos](https://github.com/lucasks1).
 
 
+<div align = 'center'>
+  <p>Obrigado por visualizar o meu projeto. ^^</p>
+<img src="https://c.tenor.com/EJ1C6RDW3YoAAAAM/kakashi-bye-bye-anime.gif">
+</div>
 
 

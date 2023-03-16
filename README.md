@@ -1,6 +1,6 @@
  <div align="center"><h1>Ilha das Rabanadas</h1></div>
 
-<div align="center"><img  alt="HTML" width="250" height="250" src="https://raw.githubusercontent.com/JonathanGuimarae3s/ilha-das-rabanadas/main/public/imgs/img/logo-footer.webp" /></div>
+<div align="center"><img  alt="LOGO" width="250" height="250" src="https://raw.githubusercontent.com/JonathanGuimarae3s/ilha-das-rabanadas/main/public/imgs/img/logo-footer.webp" /></div>
 
 ## Sobre a Ilha :
 
@@ -23,6 +23,21 @@ Esse sistema foi feito com as seguintes tecnologias :
 - Bootstrap: utilizado para fazer a estilização 
 
 Além disso, integramos uma api ao sistema, o ***Viacep*** e para animações dos ícones utilizamos a lib ***Lordicon***.
+
+## Acesso ao site 
+### Requisitos:
+- XAMPP
+### Instruções
+- Baixe esse repositório;
+- Extraia os itens da pasta (o repositorio virá "zipado");
+-  Ponha a pasta que esta dentro da pasta extraída nesse caminho :
+     > C:\xampp\htdocs  
+- URL de acesso :
+    > localhost/ilha-das-rabanadas-main/home/index
+
+
+OBS.: NÃO ESQUEÇA DE IMPORTAR A ÚLTIMA VERSÃO(V.6) BANCO DE DADOS PARA O PHPMYADMIN 
+
 
 
 Essa é a primeira versão do sistema web!

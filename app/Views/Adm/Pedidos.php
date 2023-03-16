@@ -80,7 +80,7 @@ include './app/Views/message.php';
             let justify = inputText.value;
             let codigo = codigoPedido.value;
             const url = `https://wa.me/5521999999999?text=Olá!
-            Queria efetuar o cancelamento do meu pedido!
+           Estamos entrando em contato, pois teremos que cancelar o seu pedido!
              CODIGO DO PEDIDO:${codigo}!
              Minha justificativa:${justify}.`;
             open(url);

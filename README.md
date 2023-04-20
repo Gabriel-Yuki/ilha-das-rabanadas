@@ -9,7 +9,7 @@ A Ilha é uma empresa focada na produção de rabanadas de diversos tipos e sabo
 ## Sobre o sistema : 
 O sistema tem o objetivo de otimizar o serviço de encomenda que a empresa possui.
 <br>
-Esse sistema foi feito com as seguintes tecnologias :
+Esse sistema foi feito com as seguintes tecnologias e conceitos :
 
 - Arquitetura de projeto: MVC com conceito singleton
 - Banco de Dados: MySQL
